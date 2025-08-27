@@ -1,1 +1,31 @@
-
+{
+    "SpellForce State": {
+        "prefix": "SF2.State",
+        "body": [
+			"State {",
+            "\tStateName = \"${1:stateName}\",",
+            "\t${2:SF2.Event},",
+            "\tGotoState = \"${3:stateName(optional parameter)}\",",
+            "}"
+        ],
+        "description": "Erzeugt einen neuen State, der Events 'aufnimmt'."
+    },
+    "SpellForce OnOneTimeEvent": {
+        "prefix": "SF2.Event.OnOneTimeEvent",
+        "body": [
+			"OnOneTimeEvent {",
+            "\tEventName = \"${1:eventName}\",",
+            "\tConditions =",
+            "\t{",
+            "\t\t--Fill me",
+            "\t},",
+            "\tActions =",
+            "\t{",
+            "\t\t--Fill me",
+            "\t},",
+            "\tGotoState = \"${2:stateName(optional parameter)}\",",
+            "}"
+        ],
+        "description": "Event, das nur einmal ausgeführt wird wenn die Bedingungen wahr sind."
+    },
+}
