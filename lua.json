@@ -1,31 +1,223 @@
 {
-    "SpellForce State": {
+    "State": {
         "prefix": "SF2.State",
         "body": [
-			"State {",
-            "\tStateName = \"${1:stateName}\",",
-            "\t${2:SF2.Event},",
-            "\tGotoState = \"${3:stateName(optional parameter)}\",",
+			"State",
+            "{",
+            "\tStateName = \"${1:stateName}\", -- The name of a State.",
+            "\t${2:AddEventsHere}, -- None, one or more events.",
+            "\tGotoState = \"${3:stateName}\", -- The name of a State. Optional",
             "}"
         ],
-        "description": "Erzeugt einen neuen State, der Events 'aufnimmt'."
+        "description": [
+            "Creates a new State that “accepts” events.",
+            "\nOne or more States form a State machine. A State is a container for events.",
+            "Events that have a GotoState parameter allow the script to switch from one State to another.",
+            "This makes it easy to influence the script flow and, of course, which events can be executed at what point in time.",
+            "This is because only the conditions of the events that are currently active in the active State are checked.",
+            "There is always only one active State in a State machine.",
+            "At the beginning, this is the first State of a script.",
+            "\nFor example, if you delay the transition from the first State to the next by inserting the appropriate conditions",
+            "for the event with the corresponding GotoState, you can avoid errors because",
+            "the character might execute something too early, and you also save performance because only",
+            "the conditions for the State transition are checked, but not the conditions for events in other States."
+        ]
     },
-    "SpellForce OnOneTimeEvent": {
+    "OnOneTimeEvent": {
         "prefix": "SF2.Event.OnOneTimeEvent",
         "body": [
-			"OnOneTimeEvent {",
-            "\tEventName = \"${1:eventName}\",",
+			"OnOneTimeEvent",
+            "{",
+            "\tEventName = \"${1:eventName}\", -- The name of an Event (for debugging).",
             "\tConditions =",
             "\t{",
-            "\t\t--Fill me",
+            "\t\t${2:AddConditionsHere} -- Conditions are specified here that must all be true at the same time.",
             "\t},",
             "\tActions =",
             "\t{",
-            "\t\t--Fill me",
+            "\t\t${3:AddActionsHere} -- Here are the actions that need to be performed.",
             "\t},",
-            "\tGotoState = \"${2:stateName(optional parameter)}\",",
+            "\tGotoState = \"${4:stateName}\", -- The name of a State. Optional",
             "}"
         ],
-        "description": "Event, das nur einmal ausgeführt wird wenn die Bedingungen wahr sind."
+        "description": [
+            "Event that is executed only once if the conditions are true.",
+            "\nAn OnEvent that will definitely only be executed once.",
+            "It is simply a wrapper from OnEvent that, in addition to the conditions,",
+            "checks whether the EventFlag of this event is False.",
+            "If the event is executed, the EventFlag is also set to True.",
+            "As a result, the event cannot be executed a second time."
+        ]
+    },
+    "AIAttackFrequencySet": {
+        "prefix": "SF2.Action.AIAttackFrequencySet",
+        "body": [
+            "AIAttackFrequencySet",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name of an AI player.",
+            "\tMinutes =  ${2:1}, -- Number of minutes.",
+            "}"
+        ],
+        "description": [
+            "Sets the attack frequency parameter for an AI player in minutes.",
+            "\nConstruction AI: This value is approximate; AI attacks more often if the squad size is appropriate.",
+            "Here, this value should be considered more as a weighting factor.",
+            "Fast waves of attacks versus slow waves of attacks.",
+            "\nMilitary AI: After this time has elapsed, the second wave of attack is launched,",
+            "regardless of whether there are enough units."
+        ] 
+    },
+    "AIConstructionOffensiveSet": {
+        "prefix": "SF2.Action.AIConstructionOffensiveSet",
+        "body": [
+            "AIConstructionOffensiveSet",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name of an AI player.",
+            "\tPercent = ${2:50} -- A percentage (value between 0 and 100).",
+            "}"
+        ],
+        "description": [
+            "UNTESTED",
+            "Changes the parameter for the build behavior of an AI player.",
+            "\nOnly relevant for Construction AI",
+            "This parameter indicates which goal the AI considers more important: troops or base.",
+            "\nPercentage = 100: The AI first builds military buildings and troops,",
+            "then buildings for resource extraction and workers, and finally, possibly towers.",
+            "\nPercentage = 0: The AI first tries to expand its base and protect it with towers.",
+            "\nUnder no circumstances can it be completely ruled out that the AI will still build towers or regular buildings.",
+            "This parameter is not yet fully implemented in the AI, i.e., it is not balanced."
+        ]
+    },   
+    "OnEvent": {
+        "prefix": "SF2.Event.OnEvent",
+        "body": [
+            "OnEvent",
+            "{",
+            "\tEventName = \"${1:eventName}\", -- The name of an Event (for debugging).",
+            "\tConditions =",
+            "\t{",
+            "\t\t${2:AddConditionsHere} -- Conditions are specified here that must all be true at the same time.",
+            "\t},",
+            "\tActions =",
+            "\t{",
+            "\t\t${3:AddActionsHere} -- Here are the actions that need to be performed.",
+            "\t},",
+            "\tGotoState = \"${4:stateName}\" -- The name of a State. Optional",
+            "}"
+        ],
+        "description": [
+            "Event that is always executed when the conditions are true.",
+            "\nOnEvent is, so to speak, the basis for all other events. It is always executed when the conditions are true.",
+            "This means that you have to make sure that one of the actions prevents the event from being executed over and over again.",
+            "The easiest way to achieve this is to query as a condition whether a certain flag is false and set it to true in the actions.",
+            "However, this would then be an OnOneTimeEvent, and it is better to use this one instead.",
+            "\nTheoretically, you can also have the OnEvent executed every step, but there is no case where this makes sense,",
+            "except perhaps to emphasize the laziness of the script writer. ;)",
+            "\nOn the contrary, an OnEvent that is executed every step causes problems because it burdens the game with unnecessary actions,",
+            "the execution of which costs time. For example, a Goto that is executed every step",
+            "will restart the pathing every step and also lead to jerky behavior of the character.",
+            "\nIn most cases, an event should only be executed once, and then it is better to use OnOneTimeEvent.",
+            "PS: OnEvent corresponds to a transition in the StateMachine."
+        ]
+    },
+    "AIEnemyAdd": {
+        "prefix": "SF2.Action.AIEnemyAdd",
+        "body": [
+            "AIEnemyAdd",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name of an AI player.",
+            "\tTag = \"${2:scriptTag}\" -- A script tag.",
+            "}"
+        ],
+        "description": [
+            "UNTESTED",
+            "Adds the script tag to the AI player's enemy list.",
+            "\nYou can specify a target for the AI using SciptTag/Player(AI or Human) Name/Team Name.",
+            "Depending on the type of target, the following happens:",
+            "\n- Player/Team: The AI attempts to wipe out the opponent (not yet fully implemented).",
+            "\n- Unit: The AI sends out waves of attacks. Once the troop has set off, it does not change its target.",
+            "If it has reached its target and the unit is somewhere else, it tries to attack there.", 
+            "New troops always take the current coordinates of the unit and do not change these coordinates along the way.",
+            "\n- Building/object: The troop goes to the corresponding coordinates and attacks all enemies.",
+            "\nATTENTION: Enemies must be set to Enemy in the TeamAggro table, otherwise Combat will not attack!",
+            "Adding the tag does not make them hostile.",
+            "\nIf the entity represents an object, the AI will send attack troops to the object, and they will remain there.",
+            "This allows you to define “points of interest” for the AI using objects!"
+        ]
+    },
+    "AIEnemyListClear": {
+        "prefix": "SF2.Action.AIEnemyListClear",
+        "body": [
+            "AIEnemyListClear",
+            "{",
+            "\tPlayer = \"${1:playerName}\" -- The player name of an AI player.",
+            "}"
+        ],
+        "description": [
+            "UNTESTED",
+            "Clears the enemy list of an AI player.",
+            "\nThe enemy list created by script for the AI player is cleared."
+        ]
+    },
+    "AIEnemyRemove": {
+        "prefix": "SF2.Action.AIEnemyRemove",
+        "body": [
+            "AIEnemyRemove",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name of an AI player.",
+            "\tTag = \"${2:scriptTag}\" -- A script tag.",
+            "}"
+        ],
+        "description": [
+            "UNTESTED",
+            "Removes the ScriptTag from the AI player's enemy list.",
+            "\nRemoves the ScriptTag entity from the AI player's enemy list."
+        ]
+    },
+    "AILevelSet": {
+        "prefix": "SF2.Action.AILevelSet",
+        "body": [
+            "AILevelSet",
+            "{",
+            "\tPlayer = \"${1:playerName}\",  -- The player name of an AI player.",
+            "\tLevel = ${2:50} -- The level of a unit, item, or spell.",
+            "}"
+        ],
+        "description": [
+            "UNTESTED",
+            "Changes the parameter for the level for an AI player.",
+            "\nThis command sets the unit and building levels of the AI player. This is necessary because the AI does not have an avatar",
+            "whose level it could use to determine the level of your units/buildings.",
+            "\nThe command can also be used to change the AI level during the course of the map by simply setting a new level.",
+            "However, this only affects newly produced buildings and characters; existing ones retain their level."
+        ]
+    },
+    "AIMilitaryOffensiveSet": {
+        "prefix": "SF2.Action.AIMilitaryOffensiveSet",
+        "body": [
+            "AIMilitaryOffensiveSet",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name of an AI player.",
+            "\tPercent = ${2:50} -- A percentage (value between 0 and 100).",
+            "}"
+        ],
+        "description": [
+            "Changes the parameter for military offensive behavior for an AI player.",
+            "\nSpecifies the percentage of military units built by the AI.",
+            "\nPercent = 100 means that the AI is very offensive and sends out attack squads early on.",
+            "Percent = 0 means that the AI is completely defensive and keeps its troops in camp.",
+            "\nMilitary Offensive also affects scouting (locating enemies), for example:",
+            "If the AI is very offensive, there will be much more scouting."
+        ]
+    },
+    "AIPlayerDeactivate": {
+        "prefix": "SF2.Action.AIPlayerDeactivate",
+        "body": [
+            "AIPlayerDeactivate",
+            "{",
+            "\tPlayer = \"${1:playerName}\"  -- The player name of an AI player.",
+            "}"
+        ],
+        "description": "Disables an AI player — it stops producing, building, repairing, and gathering."
     },
 }
