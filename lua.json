@@ -1939,7 +1939,7 @@
         "body": [
             "FigureLookAtEntity",
             "{",
-            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
             "\tTargetTag = \"${2:targetTag}\" -- The script tag of the target.",
             "}"
         ],
