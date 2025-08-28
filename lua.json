@@ -1247,4 +1247,721 @@
         ],
         "description": "Negates the truth value of the entity flag."
     },
+    "EntityTimerStart": {
+        "prefix": "SF2.Action.EntityTimerStart",
+        "body": [
+            "EntityTimerStart",
+            "{",
+            "\tName = \"${1:timer}\" -- The name of the entity timer.",
+            "}"
+        ],
+        "description": "Starts an entity timer."
+    },
+    "EntityTimerStop": {
+        "prefix": "SF2.Action.EntityTimerStop",
+        "body": [
+            "EntityTimerStop",
+            "{",
+            "\tName = \"${1:timer}\" -- The name of the entity timer.",
+            "}"
+        ],
+        "description": "Stops (deletes) an entity timer."
+    },
+    "EntityValueAdd": {
+        "prefix": "SF2.Action.EntityValueAdd",
+        "body": [
+            "EntityValueAdd",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tValue = ${2:50} -- Value of a variable.",
+            "}"
+        ],
+        "description": "Adds the value to the entity variable."
+    },    
+    "EntityValueAddVariable": {
+        "prefix": "SF2.Action.EntityValueAddVariable",
+        "body": [
+            "EntityValueAddVariable",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tVariable = \"${2:var}\" -- The name of the entity variable.",
+            "}"
+        ],
+        "description": [
+            "Adds the variable to the entity variables.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Name + Variable"
+        ]
+    },    
+    "EntityValueDecrease": {
+        "prefix": "SF2.Action.EntityValueDecrease",
+        "body": [
+            "EntityValueDecrease",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "}"
+        ],
+        "description": [
+            "Decrements (reduces) the value by 1.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Name - 1"
+        ]
+    },
+    "EntityValueDivide": {
+        "prefix": "SF2.Action.EntityValueDivide",
+        "body": [
+            "EntityValueDivide",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tValue = ${2:50} -- Value of a variable.",
+            "}"
+        ],
+        "description": "Divides the value by the entity variable."
+    },
+    "EntityValueDivideVariable": {
+        "prefix": "SF2.Action.EntityValueDivideVariable",
+        "body": [
+            "EntityValueDivideVariable",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tVariable = \"${2:var}\" -- The name of the entity variable.",
+            "}"
+        ],
+        "description": [
+            "Divides the variable by the entity variable.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Name / Variable"
+        ]
+    },
+    "EntityValueExchangeVariable": {
+        "prefix": "SF2.Action.EntityValueExchangeVariable",
+        "body": [
+            "EntityValueExchangeVariable",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tVariable = \"${2:var}\" -- The name of the entity variable.",
+            "}"
+        ],
+        "description": [
+            "Replaces the variable with the entity variable.",
+            "\nPerforms the following arithmetic operation:",
+            "Temp = Name",
+            "Name = Variable",
+            "Variable = Temp",
+            "\nIn other words: the values of the two variables are swapped.",
+            "If Name was previously 5 and Variable was 20, then after execution, Name is 20 and Variable has the value 5."
+        ]
+    },
+    "EntityValueIncrease": {
+        "prefix": "SF2.Action.EntityValueIncrease",
+        "body": [
+            "EntityValueIncrease",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "}"
+        ],
+        "description": [
+            "Increments (increases) the value by 1.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Name + 1"
+        ]
+    },
+    "EntityValueMultiply": {
+        "prefix": "SF2.Action.EntityValueMultiply",
+        "body": [
+            "EntityValueMultiply",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tValue = ${2:50} -- Value of a variable.",
+            "}"
+        ],
+        "description": "Multiplies the value by the entity variable."
+    },
+    "EntityValueMultiplyVariable": {
+        "prefix": "SF2.Action.EntityValueMultiplyVariable",
+        "body": [
+            "EntityValueMultiplyVariable",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tVariable = \"${2:var}\" -- The name of the entity variable.",
+            "}"
+        ],
+        "description": [
+            "Multiplies the variable by the entity variable.",
+            "\nPerforms the following calculation:",
+            "Name = Name * Variable"
+        ]
+    },
+    "EntityValueRandomize": {
+        "prefix": "SF2.Action.EntityValueRandomize",
+        "body": [
+            "EntityValueRandomize",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tMinValue = ${2:50}, -- The smallest value that the random function should return.",
+            "\tMaxValue = ${3:50} -- The largest value that the random function should return.",
+            "}"
+        ],
+        "description": "Sets the entity variable to a random value in the min-max range."
+    },
+    "EntityValueSet": {
+        "prefix": "SF2.Action.EntityValueSet",
+        "body": [
+            "EntityValueSet",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tValue = ${2:50} -- Value of a variable.",
+            "}"
+        ],
+        "description": "Sets the entity variable to a specific value."
+    },
+    "EntityValueSetVariable": {
+        "prefix": "SF2.Action.EntityValueSetVariable",
+        "body": [
+            "EntityValueSetVariable",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tVariable = \"${2:var}\" -- The name of the entity variable.",
+            "}"
+        ],
+        "description": [
+            "Assigns the value of the entity variable to the variable.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Variable"
+        ]
+    },
+    "EntityValueSubtract": {
+        "prefix": "SF2.Action.EntityValueSubtract",
+        "body": [
+            "EntityValueSubtract",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tValue = ${2:50} -- Value of a variable.",
+            "}"
+        ],
+        "description": "Subtracts the value from the entity variable."
+    },
+    "EntityValueSubtractVariable": {
+        "prefix": "SF2.Action.EntityValueSubtractVariable",
+        "body": [
+            "EntityValueSubtractVariable",
+            "{",
+            "\tName = \"${1:var}\", -- The name of the entity variable.",
+            "\tVariable = \"${2:var}\" -- The name of the entity variable.",
+            "}"
+        ],
+        "description": [
+            "Subtracts the variable from the entity variable.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Name - Variable"
+        ]
+    },
+    "EventReEnable": {
+        "prefix": "SF2.Action.EventReEnable",
+        "body": [
+            "EventReEnable",
+            "{",
+            "\tName = \"${1:var}\" -- The name of the map variable.",
+            "}"
+        ],
+        "description": [
+            "Allows an OnRepeatEvent to be executed again.",
+            "\nThis re-enables OnOneTimeRepeatEvents.",
+            "Has no effect if the event hasn't been executed yet.",
+            "The name parameter corresponds to the name parameter of the RepeatEvent.",
+            "\nThe command has no effect if there is no RepeatEvent with this name."
+        ]
+    },
+    "FigureAbilityAdd": {
+        "prefix": "SF2.Action.FigureAbilityAdd",
+        "body": [
+            "FigureAbilityAdd",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tAbilityId = ${2:50} -- The Ability ID from the Database.",
+            "}"
+        ],
+        "description": "Gives the character the specified ability."
+    },
+    "FigureAbilityRemove": {
+        "prefix": "SF2.Action.FigureAbilityRemove",
+        "body": [
+            "FigureAbilityRemove",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tAbilityId = ${2:50} -- The Ability ID from the Database.",
+            "}"
+        ],
+        "description": "Removes the specified ability from the character."
+    },
+    "FigureAnimPlayLooped": {
+        "prefix": "SF2.Action.FigureAnimPlayLooped",
+        "body": [
+            "FigureAnimPlayLooped",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tFile = \"${2:file}\" -- A file including the path relative to the ‘redist’ folder.",
+            "}"
+        ],
+        "description": [
+            "Plays the animation in a loop.",
+            "\nMakes the character play a specific animation repeatedly.",
+            "You have to specify an SKA file for a character. For details... ask.",
+            "They can also explain that if a character dies during animation playback,",
+            "they will be dead after the animation ends,",
+            "but the idle standing animation will play until the character rots away."
+        ]
+    },    
+    "FigureAnimPlayOnce": {
+        "prefix": "SF2.Action.FigureAnimPlayOnce",
+        "body": [
+            "FigureAnimPlayOnce",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tFile = \"${2:file}\" -- A file including the path relative to the ‘redist’ folder.",
+            "}"
+        ],
+        "description": [
+            "Plays the animation once.",
+            "\nMakes the character play a specific animation.",
+            "You have to specify an SKA file for a character. For details... ask.",
+            "They can also explain that if a character dies during animation playback,",
+            "they will be dead after the animation ends,",
+            "but the idle standing animation will play until the character rots away."
+        ]
+    },
+    "FigureAttackEntity": {
+        "prefix": "SF2.Action.FigureAttackEntity",
+        "body": [
+            "FigureAttackEntity",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tTargetTag = \"${2:targetTag}\" -- The script tag of the target.",
+            "}"
+        ],
+        "description": [
+            "Gives the character a target to attack. Character defends itself against attacks from other characters.",
+            "\nThe character should attack the entity. The target should be another character or a building.",
+            "\nIf another character or building attracts more hate than the target,",
+            "the character will first attack the targets on which it has built up more hate.",
+            "If the character survives all intermediate attacks, it should ultimately attack the actual target again."
+        ]
+    },
+    "FigureCastSpell": {
+        "prefix": "SF2.Action.FigureCastSpell",
+        "body": [
+            "FigureCastSpell",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tSpell = ${2:50}, -- The Spell ID from the Database.",
+            "\tPower = ${3:50}, -- The strength of the spell.",
+            "\tX = ${4:50}, -- The X coordinate in world coordinates.",
+            "\tY = ${5:50} -- The Y coordinate in world coordinates.",
+            "}"
+        ],
+        "description": "Cast a spell from an entity to a coordinate."
+    },
+    "FigureCastSpellToEntity": {
+        "prefix": "SF2.Action.FigureCastSpellToEntity",
+        "body": [
+            "FigureCastSpellToEntity",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tSpell = ${2:50}, -- The Spell ID from the Database.",
+            "\tPower = ${3:50}, -- The strength of the spell.",
+            "\tTargetTag = \"${4:targetTag}\" -- The script tag of the target.",
+            "}"
+        ],
+        "description": "Casting a spell from one entity to another entity."
+    },
+    "FigureCorpseRotForbid": {
+        "prefix": "SF2.Action.FigureCorpseRotForbid",
+        "body": [
+            "FigureCorpseRotForbid",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Certainly, a character must not disappear after death."
+    },
+    "FigureCutsceneTalkJobSet": {
+        "prefix": "SF2.Action.FigureCutsceneTalkJobSet",
+        "body": [
+            "FigureCutsceneTalkJobSet",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Gives the character the TalkJob in a cutscene."
+    },
+    "FigureDirectionSet": {
+        "prefix": "SF2.Action.FigureDirectionSet",
+        "body": [
+            "FigureDirectionSet",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tDirection = ${2:50} -- A direction in degrees (0-360°). 0° is south, 90° is east.",
+            "}"
+        ],
+        "description": [
+            "Makes the character look in the specified direction.",
+            "\nMakes a character look in a specific direction.",
+            "A direction of 0 makes the figure face south, 90 faces east, 180 faces north, and 270 faces west."
+        ]
+    },
+    "FigureDirectionSetToEntity": {
+        "prefix": "SF2.Action.FigureDirectionSetToEntity",
+        "body": [
+            "FigureDirectionSetToEntity",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tTargetTag = \"${2:targetTag}\" -- The script tag of the target.",
+            "}"
+        ],
+        "description": [
+            "Makes the character look toward the other ScriptTag Entity.",
+            "\nMakes a character look toward the target."
+        ]
+    },    
+    "FigureFollowEntity": {
+        "prefix": "SF2.Action.FigureFollowEntity",
+        "body": [
+            "FigureFollowEntity",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tTargetTag = \"${2:targetTag}\" -- The script tag of the target.",
+            "}"
+        ],
+        "description": "One character should follow another."
+    },    
+    "FigureForceAttackEntity": {
+        "prefix": "SF2.Action.FigureForceAttackEntity",
+        "body": [
+            "FigureForceAttackEntity",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tTargetTag = \"${2:targetTag}\" -- The script tag of the target.",
+            "}"
+        ],
+        "description": [
+            "Gives the character a target to attack. The character ignores attacks from other characters.",
+            "\nThe character should attack the entity. The target should be another character or a building.",
+            "The character will ignore all attacks and focus solely on killing the target.",
+            "Only when the target is destroyed will the character attack other enemies again."
+        ]
+    },
+    "FigureForcedRun": {
+        "prefix": "SF2.Action.FigureForcedRun",
+        "body": [
+            "FigureForcedRun",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tX = ${2:50}, -- The X coordinate in world coordinates.",
+            "\tY = ${3:50} -- The Y coordinate in world coordinates.",
+            "}"
+        ],
+        "description": [
+            "Makes a character run purposefully and without distraction to a specific point.",
+            "\nMakes a character run to the coordinates in “force” mode.",
+            "This means that the character will ignore all opponents along the way and will not be distracted."
+        ]
+    },
+    "FigureForcedRunToEntity": {
+        "prefix": "SF2.Action.FigureForcedRunToEntity",
+        "body": [
+            "FigureForcedRunToEntity",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tTargetTag = \"${2:targetTag}\" -- The script tag of the target.",
+            "}"
+        ],
+        "description": [
+            "Makes a character run purposefully and without distraction to the current position of an entity.",
+            "\nMore specifically, when the character starts running, it will check the coordinates of the target entity and run there.",
+            "If the target is a character and is moving, it will not follow the target, but will continue to run to the original coordinates."
+        ]
+    },
+    "FigureForcedSimpleRun": {
+        "prefix": "SF2.Action.FigureForcedSimpleRun",
+        "body": [
+            "FigureForcedSimpleRun",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tX = ${2:50}, -- The X coordinate in world coordinates.",
+            "\tY = ${3:50} -- The Y coordinate in world coordinates.",
+            "}"
+        ],
+        "description": [
+            "Makes a character run purposefully and without distraction to a specific point.",
+            "\nSee the Figure*Run/Walk command of the same name.",
+            "\nThe only difference concerns pathfinding. SimpleWalk/SimpleRun means that the character chooses a greatly simplified path.",
+            "It will simply choose the direct route (as the crow flies) to the destination and run straight ahead in that direction",
+            "until it either arrives or is stopped by a blocked field.",
+            "\nIn addition, she will simply run through characters that are in her way instead of swiping them away.",
+            "\nThat's why the command is restricted to controlled environments such as cutscenes!",
+            "Anyone who thinks they have a valid reason to use this command outside of a cutscene should know exactly what they are doing!"
+        ]
+    },
+    "FigureForcedSimpleRunToEntity": {
+        "prefix": "SF2.Action.FigureForcedSimpleRunToEntity",
+        "body": [
+            "FigureForcedSimpleRunToEntity",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tTargetTag = \"${2:targetTag}\" -- The script tag of the target.",
+            "}"
+        ],
+        "description": [
+            "Makes a character run purposefully and without distraction to the current position of an entity.",
+            "\nSee the Figure*Run/Walk command of the same name.",
+            "\nThe only difference concerns pathfinding. SimpleWalk/SimpleRun means that the character chooses a greatly simplified path.",
+            "It will simply choose the direct route (as the crow flies) to the destination and run straight ahead in that direction",
+            "until it either arrives or is stopped by a blocked field.",
+            "\nIn addition, she will simply run through characters that are in her way instead of swiping them away.",
+            "\nThat's why the command is restricted to controlled environments such as cutscenes!",
+            "Anyone who thinks they have a valid reason to use this command outside of a cutscene should know exactly what they are doing!"
+        ]
+    },    
+    "FigureForcedSimpleWalkToEntity": {
+        "prefix": "SF2.Action.FigureForcedSimpleWalkToEntity",
+        "body": [
+            "FigureForcedSimpleWalkToEntity",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tTargetTag = \"${2:targetTag}\" -- The script tag of the target.",
+            "}"
+        ],
+        "description": [
+            "Makes a character walk purposefully and without distraction to the current position of an entity.",
+            "\nSee the Figure*Run/Walk command of the same name.",
+            "\nThe only difference concerns pathfinding. SimpleWalk/SimpleRun means that the character chooses a greatly simplified path.",
+            "It will simply choose the direct route (as the crow flies) to the destination and run straight ahead in that direction",
+            "until it either arrives or is stopped by a blocked field.",
+            "\nIn addition, she will simply run through characters that are in her way instead of swiping them away.",
+            "\nThat's why the command is restricted to controlled environments such as cutscenes!",
+            "Anyone who thinks they have a valid reason to use this command outside of a cutscene should know exactly what they are doing!"
+        ]
+    },
+    "FigureForcedSimpleWalk": {
+        "prefix": "SF2.Action.FigureForcedSimpleWalk",
+        "body": [
+            "FigureForcedSimpleWalk",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tX = ${2:50}, -- The X coordinate in world coordinates.",
+            "\tY = ${3:50} -- The Y coordinate in world coordinates.",
+            "}"
+        ],
+        "description": [
+            "Makes a character walk purposefully and without distraction to a specific point.",
+            "\nSee the Figure*Run/Walk command of the same name.",
+            "\nThe only difference concerns pathfinding. SimpleWalk/SimpleRun means that the character chooses a greatly simplified path.",
+            "It will simply choose the direct route (as the crow flies) to the destination and run straight ahead in that direction",
+            "until it either arrives or is stopped by a blocked field.",
+            "\nIn addition, she will simply run through characters that are in her way instead of swiping them away.",
+            "\nThat's why the command is restricted to controlled environments such as cutscenes!",
+            "Anyone who thinks they have a valid reason to use this command outside of a cutscene should know exactly what they are doing!"
+        ]
+    },    
+    "FigureForcedWalk": {
+        "prefix": "SF2.Action.FigureForcedWalk",
+        "body": [
+            "FigureForcedWalk",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tX = ${2:50}, -- The X coordinate in world coordinates.",
+            "\tY = ${3:50} -- The Y coordinate in world coordinates.",
+            "}"
+        ],
+        "description": [
+            "Makes a character walk purposefully and without distraction to a specific point.",
+            "\nMakes a character move to the coordinates in “force” mode.",
+            "This means that the character will ignore all opponents along the way and will not be distracted."
+        ]
+    },
+    "FigureForcedWalkToEntity": {
+        "prefix": "SF2.Action.FigureForcedWalkToEntity",
+        "body": [
+            "FigureForcedWalkToEntity",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tTargetTag = \"${2:targetTag}\" -- The script tag of the target.",
+            "}"
+        ],
+        "description": [
+            "Makes a character walk purposefully and without distraction to the current position of an entity.",
+            "\nMore specifically, when the character starts moving, it will check the coordinates of the target entity and move there.",
+            "If the target is a character and is moving, it will not follow the target, but will continue to move to the original coordinates."
+        ]
+    },
+    "FigureHateClear": {
+        "prefix": "SF2.Action.FigureHateClear",
+        "body": [
+            "FigureHateClear",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Removes all hate from the character, causing them to stop a fight/pursuit."
+    },
+    "FigureHealthAdd": {
+        "prefix": "SF2.Action.FigureHealthAdd",
+        "body": [
+            "FigureHealthAdd",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tPercent = ${2:50} -- A percentage (value between 0 and 100).",
+            "}"
+        ],
+        "description": [
+            "Adds to Figure Health percent of max health points.",
+            "\nAdds a certain percentage of the character's maximum hit points to the current value of the hit points.",
+            "If you transfer 100 percent, you can be sure that the character will have maximum health points afterwards."
+        ]
+    },
+    "FigureHealthSet": {
+        "prefix": "SF2.Action.FigureHealthSet",
+        "body": [
+            "FigureHealthSet",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tPercent = ${2:50} -- A percentage (value between 0 and 100).",
+            "}"
+        ],
+        "description": [
+            "Sets Figure Health to percent of maximum health points.",
+            "\nSets a character's hit points to a certain percentage of their maximum hit points.",
+            "If you transfer 100 percent, you can be sure that the character will have maximum health points afterwards."
+        ]
+    },
+    "FigureHealthSubtract": {
+        "prefix": "SF2.Action.FigureHealthSubtract",
+        "body": [
+            "FigureHealthSubtract",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tPercent = ${2:50} -- A percentage (value between 0 and 100).",
+            "}"
+        ],
+        "description": [
+            "Subtracted from Figure Health percent of max health points.",
+            "\nSubtracts a certain percentage of the character's maximum hit points from the current hit point value.",
+            "If you pass 100 Percent, it is guaranteed that the character will only have 0 health points left. They are then on the edge of death.",
+            "If you want to kill the character, you should use the FigureKill command instead."
+        ]
+    },
+    "FigureHeroSpawn": {
+        "prefix": "SF2.Action.FigureHeroSpawn",
+        "body": [
+            "FigureHeroSpawn",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tTag = \"${2:scriptTag}\", -- A script tag.",
+            "\tX = ${3:50}, -- The X coordinate in world coordinates.",
+            "\tY = ${4:50}, -- The Y coordinate in world coordinates.",
+            "\tDirection = ${5:50} -- A direction in degrees (0-360°). 0° is south, 90° is east.",
+            "}"
+        ],
+        "description": "Spawns the hero with the specified HeroTag at the location."
+    },
+    "FigureHeroSpawnToEntity": {
+        "prefix": "SF2.Action.FigureHeroSpawnToEntity",
+        "body": [
+            "FigureHeroSpawnToEntity",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tTag = \"${2:scriptTag}\", -- A script tag.",
+            "\tTargetTag = \"${3:targetTag}\" -- The script tag of the target.",
+            "\tDirection = ${4:50} -- A direction in degrees (0-360°). 0° is south, 90° is east.",
+            "}"
+        ],
+        "description": "Spawns the hero with the specified HeroTag at the entity."
+    },
+    "FigureHoldPosition": {
+        "prefix": "SF2.Action.FigureHoldPosition",
+        "body": [
+            "FigureHoldPosition",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": [
+            "The character should maintain its current position even when attacked.",
+            "\nCauses a character to hold their position and not run towards opponents.",
+            "\nThis is useful for ranged fighters who you want to position tactically using scripts",
+            "so that they cannot be lured away from their position.",
+            "Conversely, the command makes little sense for melee fighters,",
+            "because they would then be defenseless against ranged fighters and could be slaughtered."
+        ]
+    },
+    "FigureKill": {
+        "prefix": "SF2.Action.FigureKill",
+        "body": [
+            "FigureKill",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": [
+            "Kills the character instantly.",
+            "\nKills a character. The character will fall down dead, play the death animation,",
+            "and remain lying there as a corpse until it rots away. If the character has loot, the player can loot it."
+        ]
+    },
+    "FigureLevelSet": {
+        "prefix": "SF2.Action.FigureLevelSet",
+        "body": [
+            "FigureLevelSet",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "\tLevel = ${2:50} -- The level of a character",
+            "}"
+        ],
+        "description": "Changes the level of a character. Do NOT use for avatars/heroes!"
+    },
+    "FigureLookAtDirection": {
+        "prefix": "SF2.Action.FigureLookAtDirection",
+        "body": [
+            "FigureLookAtDirection",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "\tDirection = ${2:50} -- A direction in degrees (0-360°). 0° is south, 90° is east.",
+            "}"
+        ],
+        "description": [
+            "Makes the character look in the specified direction.",
+            "\nMakes a character look in a specific direction.",
+            "Please note that, unlike Spellforce 1, the 0° alignment causes the character to face south."
+        ]
+    },
+    "FigureLookAtEntity": {
+        "prefix": "SF2.Action.FigureLookAtEntity",
+        "body": [
+            "FigureLookAtEntity",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "\tTargetTag = \"${2:targetTag}\" -- The script tag of the target.",
+            "}"
+        ],
+        "description": [
+            "Makes the character look toward the other ScriptTag Entity.",
+            "\nMakes a character look in the direction of the specified entity."
+        ]
+    },
+    "FigureLootItemEquipmentAdd": {
+        "prefix": "SF2.Action.FigureLootItemEquipmentAdd",
+        "body": [
+            "FigureLootItemEquipmentAdd",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tDropChance = ${2:50}, -- The probability in percent that this item will drop (default: 100%).",
+            "\tItemId = ${3:50} -- The Item ID from the Database.",
+            "}"
+        ],
+        "description": [
+            "Gives the character a miscellaneous item as loot.",
+            "\nATTENTION: the loot remains until the character dies! When the character respawns,",
+            "it no longer has the loot with it, so you may have to add it again!"
+        ]
+    },
 }
