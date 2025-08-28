@@ -220,4 +220,1031 @@
         ],
         "description": "Disables an AI player — it stops producing, building, repairing, and gathering."
     },
+    "AITechTreeAddBuilding": {
+        "prefix": "SF2.Action.AITechTreeAddBuilding",
+        "body": [
+            "AITechTreeAddBuilding",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name of an AI player.",
+            "\tBuildingId = ${2:50} -- The Building ID from the Database.",
+            "}"
+        ],
+        "description": "Allows the AI player to construct a new building."
+    },
+    "AITechTreeAddBuildingUpgrade": {
+        "prefix": "SF2.Action.AITechTreeAddBuildingUpgrade",
+        "body": [
+            "AITechTreeAddBuildingUpgrade",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name of an AI player.",
+            "\tUpgradeId = ${2:50} -- The Building Upgrade ID from the Database.",
+            "}"
+        ],
+        "description": "Allows the AI player to construct a new building upgrade."
+    },
+    "AITechTreeGiveAll": {
+        "prefix": "SF2.Action.AITechTreeGiveAll",
+        "body": [
+            "AITechTreeGiveAll",
+            "{",
+            "\tPlayer = \"${1:playerName}\" -- The player name of an AI player.",
+            "}"
+        ],
+        "description": "Allows the AI player to build everything from the tech tree."
+    },
+    "AITroupSizeSet": {
+        "prefix": "SF2.Action.AITroupSizeSet",
+        "body": [
+            "AITroupSizeSet",
+            "{",
+            "\tPlayer = \"${1:playerName}\" -- The player name of an AI player.",
+            "\tSize = ${2:50} -- The size of an Attacking force.",
+            "}"
+        ],
+        "description": [
+            "Changes the parameter for the Attack force size for an AI player.",
+            "\nSets the size of the AI player's attack forces.",
+            "The Size parameter is the number of units in an attack force.",
+            "\nConstruction AI: Approximate number of troops",
+            "Military AI: The exact troop size,",
+            "with the attack frequency parameter (AIAttackFrequencySet) currently taking priority.",
+            "\nIf there are not enough troops available at the time of the attack,",
+            "the attack will be launched with the available troop size."
+        ]
+    },
+    "AIUnitTimerSet": {
+        "prefix": "SF2.Action.AIUnitTimerSet",
+        "body": [
+            "AIUnitTimerSet",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name of an AI player.",
+            "\tValue = ${2:50} -- Value of a variable",
+            "}"
+        ],
+        "description": "Sets the AI unit timer."
+    },
+    "AtmoZoneChange": {
+        "prefix": "SF2.Action.AtmoZoneChange",
+        "body": [
+            "AtmoZoneChange",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tAtmoDay = \"${2:filePath}\", -- A file including the path relative to the ‘redist/base/sound/00_atmoset_’ file without the .XML extension.",
+            "\tAtmoNight = \"${3:filePath}\" -- A file including the path relative to the ‘redist/base/sound/00_atmoset_’ file without the .XML extension.",
+            "}"
+        ],
+        "description": "Changes the parameters of an Atmo Zone."
+    },
+    "AvatarFlagRandomize": {
+        "prefix": "SF2.Action.AvatarFlagRandomize",
+        "body": [
+            "AvatarFlagRandomize",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:name}\" -- The name of the avatar variable.",
+            "}"
+        ],
+        "description": "NEED TEST!\nMinValue, MaxValue not implemented? Sets the avatar variable to a random value in the min-max range."
+    },
+    "AvatarFlagSetFalse": {
+        "prefix": "SF2.Action.AvatarFlagSetFalse",
+        "body": [
+            "AvatarFlagSetFalse",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:name}\" -- The name of the avatar variable.",
+            "}"
+        ],
+        "description": "Sets the avatar flag to false."
+    },
+    "AvatarFlagSetTrue": {
+        "prefix": "SF2.Action.AvatarFlagSetTrue",
+        "body": [
+            "AvatarFlagSetTrue",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:name}\" -- The name of the avatar variable.",
+            "}"
+        ],
+        "description": "Sets the avatar flag to true."
+    },
+    "AvatarFlagToggle": {
+        "prefix": "SF2.Action.AvatarFlagToggle",
+        "body": [
+            "AvatarFlagToggle",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:name}\" -- The name of the avatar variable.",
+            "}"
+        ],
+        "description": "Negates the truth value of the Avatar flag."
+    },
+    "AvatarFollowCameraDirectionUpdate": {
+        "prefix": "SF2.Action.AvatarFollowCameraDirectionUpdate",
+        "body": [
+            "AvatarFollowCameraDirectionUpdate",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag.",
+            "}"
+        ],
+        "description": "Changes the viewing direction of the tracking camera so that it is positioned directly behind the avatar."
+    },
+    "AvatarGoldGive": {
+        "prefix": "SF2.Action.AvatarGoldGive",
+        "body": [
+            "AvatarGoldGive",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tAmount = ${2:50} -- Gold amount.",
+            "}"
+        ],
+        "description": "Gives the avatar a certain amount of gold."
+    },
+    "AvatarGoldTake": {
+        "prefix": "SF2.Action.AvatarGoldTake",
+        "body": [
+            "AvatarGoldTake",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tAmount = ${2:50} -- Gold amount.",
+            "}"
+        ],
+        "description": "Takes a certain amount of gold from the avatar."
+    },
+    "AvatarItemEquipmentGive": {
+        "prefix": "SF2.Action.AvatarItemEquipmentGive",
+        "body": [
+            "AvatarItemEquipmentGive",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tItemId = ${2:50}, -- The Item ID from the Database",
+            "\tAmount = ${3:50} -- Item amount",
+            "}"
+        ],
+        "description": [
+            "Gives the avatar a certain number of equipment items.",
+            "\nGives a specific player's avatar a specific amount of a specific equipment item."
+        ]
+    },
+    "AvatarItemEquipmentTake": {
+        "prefix": "SF2.Action.AvatarItemEquipmentTake",
+        "body": [
+            "AvatarItemEquipmentTake",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tItemId = ${2:50}, -- The Item ID from the Database",
+            "\tAmount = ${3:50} -- Any amount",
+            "}"
+        ],
+        "description": [
+            "Takes a certain number of equipment items from the avatar.",
+            "\nTakes a certain amount of a certain equipment item from a specific player's avatar."
+        ]
+    },
+    "AvatarItemGenericGive": {
+        "prefix": "SF2.Action.AvatarItemGenericGive",
+        "body": [
+            "AvatarItemGenericGive",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tPrefixId = ${2:50}, -- The Item ID from the Database.",
+            "\tItemId = ${3:50}, -- The Item ID from the Database.",
+            "\tSuffixId = ${4:50}, -- The Item ID from the Database.",
+            "\tLevel = ${5:50}, -- The level of a unit, item, or spell.",
+            "\tAmount = ${6:50} -- Any amount.",
+            "}"
+        ],
+        "description": "Gives the avatar a certain number of randomly assembled generic items."
+    },   
+    "AvatarItemGenericVariableGive": {
+        "prefix": "SF2.Action.AvatarItemGenericVariableGive",
+        "body": [
+            "AvatarItemGenericVariableGive",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tVarPrefixId = \"${2:var}\", -- The Item ID from the Database, stored in a MapValue.",
+            "\tVarItemId = \"${3:var}\", -- The Item ID from the Database, stored in a MapValue.",
+            "\tVarSuffixId = \"${4:var}\", -- The Item ID from the Database, stored in a MapValue.",
+            "\tVarLevel = \"${5:var}\", -- The level of a unit, item, or spell, stored in a MapValue.",
+            "\tAmount = ${6:50} -- Any amount.",
+            "}"
+        ],
+        "description": "Gives the avatar a certain number of randomly assembled generic items (values comes from MapValue variables)."
+    },
+    "AvatarItemMiscGive": {
+        "prefix": "SF2.Action.AvatarItemMiscGive",
+        "body": [
+            "AvatarItemMiscGive",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tItemId = ${2:50}, -- The Item ID from the Database.",
+            "\tAmount = ${3:50} -- Any amount.",
+            "}"
+        ],
+        "description": [
+            "Gives the avatar a certain number of misc items.",
+            "\nGives the avatar of a specific player a certain amount of a specific misc (quest) item."
+        ]
+    },
+    "AvatarItemMiscTake": {
+        "prefix": "SF2.Action.AvatarItemMiscTake",
+        "body": [
+            "AvatarItemMiscTake",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tItemId = ${2:50}, -- The Item ID from the Database.",
+            "\tAmount = ${3:50} -- Any amount.",
+            "}"
+        ],
+        "description": [
+            "Takes a certain number of misc items from the avatar.",
+            "\nTakes a certain amount of a certain misc (quest) item from a specific player's avatar."
+        ]
+    },
+    "AvatarSpawn": {
+        "prefix": "SF2.Action.AvatarSpawn",
+        "body": [
+            "AvatarSpawn",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tX = ${2:50}, -- The X coordinate in world coordinates.",
+            "\tY = ${3:50}, -- The Y coordinate in world coordinates.",
+            "\tDirection = ${4:50} -- A direction in degrees (0-360°). 0° is south, 90° is east.",
+            "}"
+        ],
+        "description": [
+            "Spawns the player's avatar at the specified location.",
+            "\nRevive the avatar at this position. The command is only intended for cutscenes to ensure",
+            "that the avatar participates in the cutscene, even if they died shortly before."
+        ]
+    },
+    "AvatarSpawnToEntity": {
+        "prefix": "SF2.Action.AvatarSpawnToEntity",
+        "body": [
+            "AvatarSpawnToEntity",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tTargetTag = \"${2:targetTag}\", -- The script tag of the target.",
+            "\tDirection = ${3:50} -- A direction in degrees (0-360°). 0° is south, 90° is east.",
+            "}"
+        ],
+        "description": [
+            "Spawns the player's avatar at the script tag.",
+            "\nRevive the avatar at this position. The command is only intended for cutscenes to ensure",
+            "that the avatar participates in the cutscene, even if they died shortly before."
+        ]
+    },
+    "AvatarTimerStart": {
+        "prefix": "SF2.Action.AvatarTimerStart",
+        "body": [
+            "AvatarTimerStart",
+            "{",
+            "\tName = \"${1:timerName}\", -- The name of the avatar timer.",
+            "\tPlayer = \"${2:playerName}\" -- The player name as set in Teamsetup.",
+            "}"
+        ],
+        "description": "Starts an avatar timer."
+    },
+    "AvatarTimerStop": {
+        "prefix": "SF2.Action.AvatarTimerStop",
+        "body": [
+            "AvatarTimerStop",
+            "{",
+            "\tName = \"${1:timerName}\", -- The name of the avatar timer.",
+            "\tPlayer = \"${2:playerName}\" -- The player name as set in Teamsetup.",
+            "}"
+        ],
+        "description": "Stops (deletes) an avatar timer."
+    },
+    "AvatarValueAdd": {
+        "prefix": "SF2.Action.AvatarValueAdd",
+        "body": [
+            "AvatarValueAdd",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tValue = ${3:50} -- Value of a variable.",
+            "}"
+        ],
+        "description": "Adds the value to the avatar variable."
+    },
+    "AvatarValueAddVariable": {
+        "prefix": "SF2.Action.AvatarValueAddVariable",
+        "body": [
+            "AvatarValueAddVariable",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tPlayer = \"${3:playerName}\", -- The player name as set in Teamsetup.",
+            "\tVariable = \"${4:var}\" -- The name of the avatar variable.",
+            "}"
+        ],
+        "description": [
+            "Adds the variable to the avatar variables.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Name + Variable"
+        ]
+    },
+    "AvatarValueDecrease": {
+        "prefix": "SF2.Action.AvatarValueDecrease",
+        "body": [
+            "AvatarValueDecrease",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\" -- The name of the avatar variable.",
+            "}"
+        ],
+        "description": [
+            "Decrements (reduces) the value by 1.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Name - 1"
+        ]
+    },
+    "AvatarValueDivide": {
+        "prefix": "SF2.Action.AvatarValueDivide",
+        "body": [
+            "AvatarValueDivide",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tValue = ${3:50} -- Value of a variable.",
+            "}"
+        ],
+        "description": "Divides the value by the avatar variable."
+    },
+    "AvatarValueDivideVariable": {
+        "prefix": "SF2.Action.AvatarValueDivideVariable",
+        "body": [
+            "AvatarValueDivideVariable",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tPlayer = \"${3:playerName}\", -- The player name as set in Teamsetup.",
+            "\tVariable = \"${4:var}\" -- The name of the avatar variable.",
+            "}"
+        ],
+        "description": [
+            "Divides the variable by the avatar variable.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Name / Variable"
+        ]
+    },
+    "AvatarValueExchangeVariable": {
+        "prefix": "SF2.Action.AvatarValueExchangeVariable",
+        "body": [
+            "AvatarValueExchangeVariable",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tPlayer = \"${3:playerName}\", -- The player name as set in Teamsetup.",
+            "\tVariable = \"${4:var}\" -- The name of the avatar variable.",
+            "}"
+        ],
+        "description": [
+            "Replaces the variable with the avatar variable.",
+            "\nPerforms the following arithmetic operation:",
+            "Temp = Name",
+            "Name = Variable",
+            "Variable = Temp",
+            "\nIn other words: the values of the two variables are swapped. If Name was previously 5 and Variable was 20,",
+            "then after execution, Name is 20 and Variable has the value 5."
+        ]
+    },
+    "AvatarValueIncrease": {
+        "prefix": "SF2.Action.AvatarValueIncrease",
+        "body": [
+            "AvatarValueIncrease",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\" -- The name of the avatar variable.",
+            "}",
+        ],
+        "description": [
+            "Increments (increases) the value by 1.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Name + 1"
+        ]
+    },
+    "AvatarValueMultiply": {
+        "prefix": "SF2.Action.AvatarValueMultiply",
+        "body": [
+            "AvatarValueMultiply",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tValue = ${3:50} -- Value of a variable.",
+            "}"
+        ],
+        "description": "Multiplies the value by the avatar variable."
+    },
+    "AvatarValueMultiplyVariable": {
+        "prefix": "SF2.Action.AvatarValueMultiplyVariable",
+        "body": [
+            "AvatarValueMultiplyVariable",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tPlayer = \"${3:playerName}\", -- The player name as set in Teamsetup.",
+            "\tVariable = \"${4:var}\" -- The name of the avatar variable.",
+            "}"
+        ],
+        "description": [
+            "Multiplies the variable by the avatar variable.",
+            "\nPerforms the following calculation:",
+            "Name = Name * Variable"
+        ]
+    },
+    "AvatarValueRandomize": {
+        "prefix": "SF2.Action.AvatarValueRandomize",
+        "body": [
+            "AvatarValueRandomize",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tMinValue = ${3:50}, -- The smallest value that the random function should return.",
+            "\tMaxValue = ${4:50} -- The largest value that the random function should return.",
+            "}"
+        ],
+        "description": "Sets the Avatar variable to a random value in the Min-Max range."
+    },
+    "AvatarValueSet": {
+        "prefix": "SF2.Action.AvatarValueSet",
+        "body": [
+            "AvatarValueSet",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tValue = ${3:50} -- Value of a variable.\",",
+            "}"
+        ],
+        "description": "Sets the avatar variable to a specific value."
+    },
+    "AvatarValueSetVariable": {
+        "prefix": "SF2.Action.AvatarValueSetVariable",
+        "body": [
+            "AvatarValueSetVariable",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tPlayer = \"${3:playerName}\", -- The player name as set in Teamsetup.",
+            "\tVariable = \"${4:var}\" -- The name of the avatar variable.",
+            "}"
+        ],
+        "description": [
+            "Assigns the value of the avatar variable to the variable.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Variable"
+        ]
+    },
+    "AvatarValueSubtract": {
+        "prefix": "SF2.Action.AvatarValueSubtract",
+        "body": [
+            "AvatarValueSubtract",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tValue = ${3:50} -- Value of a variable.",
+            "}"
+        ],
+        "description": "Subtracts the value from the avatar variable."
+    },
+    "AvatarValueSubtractVariable": {
+        "prefix": "SF2.Action.AvatarValueSubtractVariable",
+        "body": [
+            "AvatarValueSubtractVariable",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tName = \"${2:var}\", -- The name of the avatar variable.",
+            "\tPlayer = \"${3:playerName}\", -- The player name as set in Teamsetup.",
+            "\tVariable = \"${4:var}\" -- The name of the avatar variable.",
+            "}"
+        ],
+        "description": [
+            "Subtracts the variable from the avatar variable.",
+            "\nPerforms the following arithmetic operation:",
+            "Name = Name - Variable"
+        ]
+    },
+    "AvatarXPGive": {
+        "prefix": "SF2.Action.AvatarXPGive",
+        "body": [
+            "AvatarXPGive",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tAmount = ${2:50} -- Any amount.",
+            "}"
+        ],
+        "description": [
+            "Gives XP to the avatar.",
+            "\nGives a specific player's avatar a certain amount of XP (experience)."
+        ]
+    },
+    "BuildingAbilityAdd": {
+        "prefix": "SF2.Action.BuildingAbilityAdd",
+        "body": [
+            "BuildingAbilityAdd",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tAbilityId = ${2:50} -- The Ability ID from the Database.",
+            "}"
+        ],
+        "description": "Gives the building the specified ability."
+    },
+    "BuildingAbilityRemove": {
+        "prefix": "SF2.Action.BuildingAbilityRemove",
+        "body": [
+            "BuildingAbilityRemove",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tAbilityId = ${2:50} -- The Ability ID from the Database.",
+            "}"
+        ],
+        "description": "Removes the specified ability from the building."
+    },
+    "BuildingDestroy": {
+        "prefix": "SF2.Action.BuildingDestroy",
+        "body": [
+            "BuildingDestroy",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": [
+            "Destroy the building immediately.",
+            "\nThe building collapses into the ground along with the smoke and everything else,",
+            "as if it had been destroyed by game units."
+        ]
+    },
+    "BuildingHealthAdd": {
+        "prefix": "SF2.Action.BuildingHealthAdd",
+        "body": [
+            "BuildingHealthAdd",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tPercent = ${2:50} -- A percentage (value between 0 and 100).",
+            "}"
+        ],
+        "description": [
+            "Adds percent of max health points to Building Health.",
+            "\nAdds a certain percentage of the building's maximum hit points",
+            "to the current value of the hit points.",
+            "\nIf you enter 100 percent, you can be sure that the building will have maximum health points afterwards."
+        ]
+    },
+    "BuildingHealthSet": {
+        "prefix": "SF2.Action.BuildingHealthSet",
+        "body": [
+            "BuildingHealthSet",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tPercent = ${2:50} -- A percentage (value between 0 and 100).",
+            "}"
+        ],
+        "description": [
+            "Sets Building Health to percent of maximum health points.",
+            "\nSets the hit points of a building to a certain percentage of the maximum hit points.",
+            "\nIf you enter 100 percent, you can be sure that the building will have maximum health points afterwards."
+        ]
+    },
+    "BuildingHealthSubtract": {
+        "prefix": "SF2.Action.BuildingHealthSubtract",
+        "body": [
+            "BuildingHealthSubtract",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tPercent = ${2:50} -- A percentage (value between 0 and 100).",
+            "}"
+        ],
+        "description": [
+            "Subtracts percent of maximum health points from Building Health.",
+            "\nSubtracts a specified percentage of the building's maximum hit points from the current hit point value.",
+            "\nIf you enter 100 Percent, it is guaranteed that the building will then only have 0 hit points left.",
+            "It will then be on the edge of destruction. If you want to destroy the building, you should use the BuildingDestroy command instead."
+        ]
+    },
+    "BuildingTeamTransfer": {
+        "prefix": "SF2.Action.BuildingTeamTransfer",
+        "body": [
+            "BuildingTeamTransfer",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tTeam = \"${2:teamName}\" -- The team name from the editor.",
+            "}"
+        ],
+        "description": "Transfers a building to a team."
+    },
+    "CameraSet": {
+        "prefix": "SF2.Action.CameraSet",
+        "body": [
+            "CameraSet",
+            "{",
+            "\tX = ${1:50}, -- The X coordinate in world coordinates.",
+            "\tY = ${2:50}, -- The Y coordinate in world coordinates.",
+            "\tZ = ${3:50}, -- The Z coordinate in world coordinates.",
+            "\tLookAtX = ${4:50}, -- The LookAtX coordinate in world coordinates.",
+            "\tLookAtY = ${5:50}, -- The LookAtY coordinate in world coordinates.",
+            "\tLookAtZ = ${6:50} -- The LookAtZ coordinate in world coordinates.",
+            "}"
+        ],
+        "description": "Sets a stationary camera and makes it look at the LookAt coordinates."
+    },
+    "CameraStop": {
+        "prefix": "SF2.Action.CameraStop",
+        "body": [
+            "CameraStop{}"
+        ],
+        "description": "Stops a camera set with CameraSet."
+    },
+    "CameraTakeAddToTrack": {
+        "prefix": "SF2.Action.CameraTakeAddToTrack",
+        "body": [
+            "CameraTakeAddToTrack",
+            "{",
+            "\tFile = \"${1:file}\", -- A .TAK file from the ‘camera’ folder of a card, without the .tak extension.",
+            "\tTag = \"${2:scriptTag}\", -- A script tag",
+            "\tTargetTag = \"${3:targetTag}\" -- The script tag of the target can also be an empty string.",
+            "}"
+        ],
+        "description": "Adds a camera take. Must be called before CameraTrackPlay."
+    },
+    "CameraTakePlay": {
+        "prefix": "SF2.Action.CameraTakePlay",
+        "body": [
+            "CameraTakePlay",
+            "{",
+            "\tFile = \"${1:file}\" -- A .TAK file from the ‘camera’ folder of a card, without the .tak extension.",
+            "}"
+        ],
+        "description": "Adds a camera take. Must be called before CameraTrackPlay."
+    },
+    "CameraTrackClear": {
+        "prefix": "SF2.Action.CameraTrackClear",
+        "body": [
+            "CameraTrackClear{}"
+        ],
+        "description": "Deletes all takes from the track."
+    },
+    "CameraTrackPlay": {
+        "prefix": "SF2.Action.CameraTrackPlay",
+        "body": [
+            "CameraTrackPlay{}"
+        ],
+        "description": "Plays all takes recorded so far one after the other (multiple takes = track)."
+    },
+    "CutsceneBegin": {
+        "prefix": "SF2.Action.CutsceneBegin",
+        "body": [
+            "CutsceneBegin",
+            "{",
+            "\tFile = \"${1:file}\" -- A file including the path relative to the ‘/base/sound/00_music/cutscene_music/’ folder without the .MP3 extension.",
+            "}"
+        ],
+        "description": "Starts a cutscene."
+    },
+    "CutsceneBeginWithMusic": {
+        "prefix": "SF2.Action.CutsceneBeginWithMusic",
+        "body": [
+            "CutsceneBeginWithMusic",
+            "{",
+            "\tFile = \"${1:file}\" -- A file including the path relative to the ‘redist/base/sound/00_music’ folder without the .MP3 extension.",
+            "}"
+        ],
+        "description": "A cutscene starts with music."
+    },
+    "CutsceneCombatDisable": {
+        "prefix": "SF2.Action.CutsceneCombatDisable",
+        "body": [
+            "CutsceneCombatDisable",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Disables the combat system for cutscenes."
+    },
+    "CutsceneCombatEnable": {
+        "prefix": "SF2.Action.CutsceneCombatEnable",
+        "body": [
+            "CutsceneCombatEnable",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Enables the combat system for cutscenes."
+    },
+    "CutsceneCombatOff": {
+        "prefix": "SF2.Action.CutsceneCombatOff",
+        "body": [
+            "CutsceneCombatOff{}"
+        ],
+        "description": "Disables the combat system for cutscenes."
+    },
+    "CutsceneCombatOn": {
+        "prefix": "SF2.Action.CutsceneCombatOn",
+        "body": [
+            "CutsceneCombatOn{}"
+        ],
+        "description": "Enables the combat system for cutscenes."
+    },
+    "CutsceneEnd": {
+        "prefix": "SF2.Action.CutsceneEnd",
+        "body": [
+            "CutsceneEnd{}"
+        ],
+        "description": "Ends a cutscene."
+    },
+    "CutsceneFigureFreeze": {
+        "prefix": "SF2.Action.CutsceneFigureFreeze",
+        "body": [
+            "CutsceneFigureFreeze",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Freezes the animation of a character."
+    },
+    "CutsceneFigureRenderAll": {
+        "prefix": "SF2.Action.CutsceneFigureRenderAll",
+        "body": [
+            "CutsceneFigureRenderAll{}"
+        ],
+        "description": "Renders all figures again."
+    },
+    "CutsceneFigureRenderList": {
+        "prefix": "SF2.Action.CutsceneFigureRenderList",
+        "body": [
+            "CutsceneFigureRenderList",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Creates a list of figures to be rendered."
+    },
+    "CutsceneFigureTeleport": {
+        "prefix": "SF2.Action.CutsceneFigureTeleport",
+        "body": [
+            "CutsceneFigureTeleport",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tX = ${1:50}, -- The X coordinate in world coordinates.",
+            "\tY = ${2:50} -- The Y coordinate in world coordinates.",
+            "}"
+        ],
+        "description": "Instantly moves the character to the specified point."
+    },
+    "CutsceneFigureTeleportBack": {
+        "prefix": "SF2.Action.CutsceneFigureTeleportBack",
+        "body": [
+            "CutsceneFigureTeleportBack",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Returns the character to the point where they stood before the last teleport command."
+    },
+    "CutsceneFigureTeleportToEntity": {
+        "prefix": "SF2.Action.CutsceneFigureTeleportToEntity",
+        "body": [
+            "CutsceneFigureTeleportToEntity",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tTargetTag = \"${2:targetTag}\" -- The script tag of the target.",
+            "}"
+        ],
+        "description": "Instantly moves the character to the position of the target entity."
+    },
+    "CutsceneFigureWeaponsHide": {
+        "prefix": "SF2.Action.CutsceneFigureWeaponsHide",
+        "body": [
+            "CutsceneFigureWeaponsHide",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Turns off the display of this character's weapons."
+    },    
+    "CutsceneFigureWeaponsShow": {
+        "prefix": "SF2.Action.CutsceneFigureWeaponsShow",
+        "body": [
+            "CutsceneFigureWeaponsShow",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Turns on the display of this character's weapons."
+    },
+    "CutsceneSay": {
+        "prefix": "SF2.Action.CutsceneSay",
+        "body": [
+            "CutsceneSay",
+            "{",
+            "\tTextTag = \"${1:textTag}\", -- Text tag for the Loka(?).",
+            "\tTag = \"${2:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Text output in a cutscene."
+    },
+    "DebugMessage": {
+        "prefix": "SF2.Action.DebugMessage",
+        "body": [
+            "DebugMessage",
+            "{",
+            "\tCaption = \"${1:debugTitle}\", -- The title bar above a DebugMessage/QuestionBox.",
+            "\tMessage = \"${2:debugMessage}\" -- The message in a DebugMessageBox.",
+            "}"
+        ],
+        "description": "Displays a Windows MessageBox that can be used to output debug messages."
+    },
+    "DialogBegin": {
+        "prefix": "SF2.Action.DialogBegin",
+        "body": [
+            "DialogBegin",
+            "{",
+            "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
+            "\tTag = \"${2:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": "Starts a dialog from the script."
+    },
+    "DialogCameraTakeAddToTrack": {
+        "prefix": "SF2.Action.DialogCameraTakeAddToTrack",
+        "body": [
+            "DialogCameraTakeAddToTrack",
+            "{",
+            "\tFile = \"${1:file}\", -- A .TAK file from the DialogCamera folder, without the .tak extension.",
+            "\tTag = \"${2:scriptTag}\", -- A script tag.",
+            "\tTargetTag = \"${3:targetTag}\" -- The script tag of the target can also be an empty string.",
+            "}"
+        ],
+        "description": "Adds a Camera Take dialog. FOR INTERNAL USE ONLY!"
+    },
+    "DialogSetDisabled": {
+        "prefix": "SF2.Action.DialogSetDisabled",
+        "body": [
+            "DialogSetDisabled",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": [
+            "Disables the dialog for this entity.",
+            "\nDisables an NPC's ability to interact (the symbol above its head disappears)."
+        ]
+    },
+    "DialogSetEnabled": {
+        "prefix": "SF2.Action.DialogSetEnabled",
+        "body": [
+            "DialogSetEnabled",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": [
+            "Enables the dialog for this entity.",
+            "\nEnables an NPC's ability to interact (the symbol above its head appears)."
+        ]
+    },
+    "DialogTypeSetMainQuest": {
+        "prefix": "SF2.Action.DialogTypeSetMainQuest",
+        "body": [
+            "DialogTypeSetMainQuest",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": [
+            "Sets the dialog flag and character of an entity to ‘Mainquest’.",
+            "\nSets the dialogue symbol of an NPC to the “MainQuest” type. This is the exclamation mark.",
+            "\nSwitching is also possible when the dialog is currently disabled."
+        ]
+    },
+    "DialogTypeSetSideQuest": {
+        "prefix": "SF2.Action.DialogTypeSetSideQuest",
+        "body": [
+            "DialogTypeSetSideQuest",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": [
+            "Sets the dialog flag and character of an entity to ‘SideQuest’.",
+            "\nSets the dialogue symbol of an NPC to the “SideQuest” type. This is the question mark.",
+            "\nSwitching is also possible when the dialog is currently disabled."
+        ]
+    },
+    "EffectStart": {
+        "prefix": "SF2.Action.EffectStart",
+        "body": [
+            "EffectStart",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tFile = \"${2:file}\" -- An effect file from the redist/base/gfx/effects/ folder without the .XML extension.",
+            "}"
+        ],
+        "description": [
+            "Starts a visual effect.",
+            "\nStarts an effect on an entity.",
+            "The effect files are located in the folder:/redist/base/gfx/effects/ as XML files.",
+            "\nAn effect file is specified as follows:",
+            "File = “Effect_Building_Fire”",
+            "\nThis loads the effect file “base/gfx/effects/Effect_Building_Fire.xml.”",
+            "\nYou no longer need to specify the entire path to the effect file as you did before.",
+            "The file name without the .XML extension is now sufficient."
+        ]
+    },
+    "EffectStartAddon1": {
+        "prefix": "SF2.Action.EffectStartAddon1",
+        "body": [
+            "EffectStartAddon1",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tFile = \"${2:file}\" -- An effect file from the redist/base/gfx/effects/ folder without the .XML extension.",
+            "}"
+        ],
+        "description": "Starts a visual effect."
+    },
+    "EffectStartAtEntityPosition": {
+        "prefix": "SF2.Action.EffectStartAtEntityPosition",
+        "body": [
+            "EffectStartAtEntityPosition",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tFile = \"${2:file}\" -- An effect file from the redist/base/gfx/effects/ folder without the .XML extension.",
+            "}"
+        ],
+        "description": [
+            "Starts a visual effect at the position of an entity.",
+            "\nStarts an effect at the position of an entity. The effect is not attached to the entity,",
+            "but is only placed where the entity is currently located. If the entity disappears or the character moves elsewhere,",
+            "the effect does NOT move with it.",
+            "\nImportant: looped effects cannot be played with this command!"
+        ]
+            
+    },
+    "EffectStartAtEntityPositionAddon1": {
+        "prefix": "SF2.Action.EffectStartAtEntityPositionAddon1",
+        "body": [
+            "EffectStartAtEntityPositionAddon1",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tFile = \"${2:file}\" -- An effect file from the redist/base/gfx/effects/ folder without the .XML extension.",
+            "}"
+        ],
+        "description": "Starts a visual effect at the position of an entity."
+    },
+    "EffectStop": {
+        "prefix": "SF2.Action.EffectStop",
+        "body": [
+            "EffectStop",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": [
+            "Stops a visual effect.",
+            "\nStops all effects currently active on the target.",
+            "\nYou can only stop effects that do not have a specified length (i.e., that last indefinitely or loop).",
+            "If you want to shorten an effect that stops automatically after a certain amount of time,",
+            "you must request a new effect that runs for a correspondingly shorter time."
+        ]
+    },
+    "EntityFlagRandomize": {
+        "prefix": "SF2.Action.EntityFlagRandomize",
+        "body": [
+            "EntityFlagRandomize",
+            "{",
+            "\tName = \"${1:var}\" -- The name of the entity variable.",
+            "}"
+        ],
+        "description": "NEED TEST!\nMinValue, MaxValue not implemented? Sets the entity variable to a random value in the min-max range."
+    },
+    "EntityFlagSetFalse": {
+        "prefix": "SF2.Action.EntityFlagSetFalse",
+        "body": [
+            "EntityFlagSetFalse",
+            "{",
+            "\tName = \"${1:var}\" -- The name of the entity variable.",
+            "}"
+        ],
+        "description": "Sets the entity flag to false."
+    },
+    "EntityFlagSetTrue": {
+        "prefix": "SF2.Action.EntityFlagSetTrue",
+        "body": [
+            "EntityFlagSetTrue",
+            "{",
+            "\tName = \"${1:var}\" -- The name of the entity variable.",
+            "}"
+        ],
+        "description": "Sets the entity flag to true."
+    },
+    "EntityFlagToggle": {
+        "prefix": "SF2.Action.EntityFlagToggle",
+        "body": [
+            "EntityFlagToggle",
+            "{",
+            "\tName = \"${1:var}\" -- The name of the entity variable.",
+            "}"
+        ],
+        "description": "Negates the truth value of the entity flag."
+    },
 }
