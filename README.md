@@ -2,6 +2,6 @@
 
 **Preffix - SF2**
 
-**Events tab trigger - SF2.Event**
+**Keywords: Event, Action, Condition. State function goes w/o Keywords**
 
-**Actions tab trigger - SF2.Action**
+**e.g. SF2.State, SF2.Event.OnOneTimeEvent, SF2.Action.FigureHealthSet, SF2.Condition.**
