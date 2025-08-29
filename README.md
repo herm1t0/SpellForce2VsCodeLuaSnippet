@@ -1,5 +1,4 @@
-# SpellForce2 VSCode Lua Snippet (WIP)
-Simple VS Code snippet for SpellForce 2 Lua functions
+# SpellForce2 VSCode Lua Functions Snippet (WIP)
 
 **Preffix - SF2**
 
