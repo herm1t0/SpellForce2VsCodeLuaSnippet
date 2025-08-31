@@ -4,4 +4,4 @@
 
 **Keywords: Event, Action, Condition. State function goes w/o Keywords**
 
-**e.g. SF2.State, SF2.Event.OnOneTimeEvent, SF2.Action.FigureHealthSet, SF2.Condition.**
+**e.g. SF2.State, SF2.Event.OnOneTimeEvent, SF2.Action.FigureHealthSet, SF2.Condition.BuildingIsInRange**
