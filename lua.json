@@ -1871,7 +1871,7 @@
             "{",
             "\tPlayer = \"${1:playerName}\", -- The player name as set in Teamsetup.",
             "\tTag = \"${2:scriptTag}\", -- A script tag.",
-            "\tTargetTag = \"${3:targetTag}\" -- The script tag of the target.",
+            "\tTargetTag = \"${3:targetTag}\", -- The script tag of the target.",
             "\tDirection = ${4:50} -- A direction in degrees (0-360°). 0° is south, 90° is east.",
             "}"
         ],
@@ -1913,7 +1913,7 @@
         "body": [
             "FigureLevelSet",
             "{",
-            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
             "\tLevel = ${2:50} -- The level of a character",
             "}"
         ],
@@ -1924,7 +1924,7 @@
         "body": [
             "FigureLookAtDirection",
             "{",
-            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
             "\tDirection = ${2:50} -- A direction in degrees (0-360°). 0° is south, 90° is east.",
             "}"
         ],
@@ -1959,9 +1959,3312 @@
             "}"
         ],
         "description": [
-            "Gives the character a miscellaneous item as loot.",
-            "\nATTENTION: the loot remains until the character dies! When the character respawns,",
-            "it no longer has the loot with it, so you may have to add it again!"
+            "Gives the unit a miscellaneous item as loot.",
+            "\nATTENTION: the loot remains until the unit dies! If the unit respawns,",
+            "it has no longer loot with it, it would have to be re-added it if necessary!"
         ]
     },
+    "FigureLootItemEquipmentRemove": {
+        "prefix": "SF2.Action.FigureLootItemEquipmentRemove",
+        "body": [
+            "FigureLootItemEquipmentRemove",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tItemId = ${2:50} -- The Item ID from the Database.",
+            "}"
+        ],
+        "description": "Removes an equipment item from the loot of the unit."
+    },
+    "FigureLootItemGenericAdd": {
+        "prefix": "SF2.Action.FigureLootItemGenericAdd",
+        "body": [
+            "FigureLootItemGenericAdd",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tDropChance = ${2:50}, -- The probability in percent that this item will drop (default: 100%).",
+            "\tLevel = ${3:50}, -- The level of a unit, item, or spell.",
+            "\tSkill = ${4:50} -- The Skill ID from the Database.",
+            "}"
+        ],
+        "description": [
+            "Gives the unit a generic Item as loot.",
+            "\nATTENTION: the loot remains until the unit dies! If the unit respawns,",
+            "it has no longer loot with it, it would have to be re-added it if necessary!"
+        ]
+    },
+    "FigureLootItemGenericRemove": {
+        "prefix": "SF2.Action.FigureLootItemGenericRemove",
+        "body": [
+            "FigureLootItemGenericRemove",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "}"
+        ],
+        "description": "Removes a generic item from the loot of the unit."
+    },
+    "FigureLootItemMiscAdd": {
+        "prefix": "SF2.Action.FigureLootItemMiscAdd",
+        "body": [
+            "FigureLootItemMiscAdd",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tDropChance = ${2:50}, -- The probability in percent that this item will drop (default: 100%).",
+            "\tItemId = ${3:50} -- The Item ID from the Database.",
+            "}"
+        ],
+        "description": [
+            "Gives the unit a miscellaneous item as loot.",
+            "\nATTENTION: the loot remains until the unit dies! If the unit respawns,",
+            "it has no longer loot with it, it would have to be re-added it if necessary!"
+        ]
+    },
+    "FigureLootItemMiscRemove": {
+        "prefix": "SF2.Action.FigureLootItemMiscRemove",
+        "body": [
+            "FigureLootItemMiscRemove",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag.",
+            "\tItemId = ${2:50} -- The Item ID from the Database.",
+            "}"
+        ],
+        "description": "Removes a misc. Item from the loot of the unit."
+    },
+    "FigureLootRemoveAll": {
+        "prefix": "SF2.Action.FigureLootRemoveAll",
+        "body": [
+            "FigureLootRemoveAll",
+            "{",
+            "\tTag = \"${1:scriptTag}\" -- A script tag",
+            "}"
+        ],
+        "description": [
+            "Removes all loot from the unit.",
+            "\nRemoves the entire loot, no matter what's inside."
+        ]
+    },
+    "FigureManaAdd": {
+        "prefix": "SF2.Action.FigureManaAdd",
+        "body": [
+            "FigureManaAdd",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tPercent = ${2:50} -- A percentage (value between 0 and 100).",
+            "}"
+        ],
+        "description": [
+            "Adds to the unit mana x percent of max. Mana Points.",
+            "\nAdds a certain percentage of maximum mana of the unit to the current mana value.",
+            "Each time you pass 100 Percent, ensures that the unit has maximum mana."
+        ]
+    },
+    "FigureManaSet": {
+        "prefix": "SF2.Action.FigureManaSet",
+        "body": [
+            "FigureManaSet",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tPercent = ${2:50} -- A percentage (value between 0 and 100).",
+            "}"
+        ],
+        "description": [
+            "Sets the unit mana to x percent of max. Mana Points.",
+            "\nSets the mana of a unit to a specified percentage of the maximum mana value.",
+            "Each time you pass 100 Percent, ensures that the unit has maximum mana."
+        ]
+    },
+    "FigureManaSubtract": {
+        "prefix": "SF2.Action.FigureManaSubtract",
+        "body": [
+            "FigureManaSubtract",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tPercent = ${2:50} -- A percentage (value between 0 and 100).",
+            "}"
+        ],
+        "description": [
+            "Subtracts from the unit mana x percent of max. Mana Points.",
+            "\nSubtracts a specified percentage of maximum mana of the unit from the current mana value.",
+            "Each time you pass 100 Percent, it is ensured that the unit no longer has mana."
+        ]
+    },
+    "FigureNpcSpawn": {
+        "prefix": "SF2.Action.FigureNpcSpawn",
+        "body": [
+            "FigureNpcSpawn",
+            "{",
+            "\tTag = \"${1:scriptTag}\", -- A script tag",
+            "\tLevel = ${2:50}, -- The level of a unit, item, or spell.",
+            "\tUnitId = ${3:50}, -- The Unit ID from the Database.",
+            "\tX = ${4:50}, -- The X coordinate in world coordinates.",
+            "\tY = ${5:50}, -- The Y coordinate in world coordinates.",
+            "\tTeam = \"${6:teamName}\" -- The team name from the editor.",
+            "}"
+        ],
+        "description": [
+            "Spawns a new NPC character at a specific point.",
+            "\nSpawned an NPC character with a specific UnitId and level to a team and at the specified coordinates.",
+            "The character then has the ScriptTag specified with Tag and can be queried or controlled accordingly via this Tag."
+        ]
+    },
+	"FigureNpcSpawnLRTA": {
+		"prefix": "SF2.Action.FigureNpcSpawnLRTA",
+		"body": [
+			"FigureNpcSpawnLRTA",
+			"{",
+			"\tTag = \"${1:Tag}\",             -- A script tag.",
+			"\tPlayer = \"${2:Player}\",       -- The player name as set up in the team setup.",
+			"\tLevel = ${3:50},                -- The level of a unit, an item or a spell.",
+			"\tUnitId = ${4:50},               -- The unit ID as from the database.",
+			"\tX = ${5:50},                    -- The X coordinate in world coordinates.",
+			"\tY = ${6:50},                    -- The Y coordinate in world coordinates.",
+			"\tTeam = \"${7:Team}\"            -- The team name from the editor.",
+			"}"
+		],
+		"description": [
+			"Spawns a new NPC figure at a specific point",
+			"(level relative to avatar level)."
+		]
+	},
+	"FigureNpcSpawnLRTAToEntity": {
+		"prefix": "SF2.Action.FigureNpcSpawnLRTAToEntity",
+		"body": [
+			"FigureNpcSpawnLRTAToEntity",
+			"{",
+			"\tTag = \"${1:Tag}\",             -- A script tag.",
+			"\tPlayer = \"${2:Player}\",       -- The player name as set up in the team setup.",
+			"\tLevel = ${3:50},                -- The level of a unit, an item or a spell.",
+			"\tUnitId = ${4:50},               -- The unit ID as from the database.",
+			"\tTargetTag = \"${5:TargetTag}\", -- The script tag of the target.",
+			"\tTeam = \"${6:Team}\"            -- The team name from the editor.",
+			"}"
+		],
+		"description": [
+			"Spawns a new figure at a specific point",
+			"(level relative to avatar level)."
+		]
+	},
+	"FigureNpcSpawnToEntity": {
+		"prefix": "SF2.Action.FigureNpcSpawnToEntity",
+		"body": [
+			"FigureNpcSpawnToEntity",
+			"{",
+			"\tTag = \"${1:Tag}\",             -- A script tag.",
+			"\tLevel = ${2:50},                -- The level of a unit, an item or a spell.",
+			"\tUnitId = ${3:50},               -- The unit ID as from the database.",
+			"\tTargetTag = \"${4:TargetTag}\", -- The script tag of the target.",
+			"\tTeam = \"${5:Team}\"            -- The team name from the editor.",
+			"}"
+		],
+		"description": [
+			"Spawns a new figure at a specific point.",
+			"",
+			"Spawns an NPC figure with a specific UnitId and level into a team at the given target entity.",
+			"",
+			"The figure then has the ScriptTag specified by Tag,",
+			"and can be queried or controlled via this tag."
+		]
+	},
+	"FigureOutcry": {
+		"prefix": "SF2.Action.FigureOutcry",
+		"body": [
+			"FigureOutcry",
+			"{",
+			"\tTextTag = \"${1:TextTag}\",  -- Text tag for the localization.",
+			"\tTag = \"${2:Tag}\"           -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Creates an outcry with voice output and on-screen text.",
+			"",
+			"Makes a figure perform an outcry. This outcry will be shown as text in the game,",
+			"and if available, the matching voice sample will be played.",
+			"",
+			"The texts for this command are stored in the following file (parallel to the 'script' folder):",
+			"\\<mapname>\\dialog\\OutcryText.lua",
+			"",
+			"The format of this script is as follows:",
+			"return",
+			"{",
+			"\ttexttag1 = { Text = \"Reinforcements are coming!\" },",
+			"\ttexttag2 = { Text = \"Very good!\", Color = {255, 0, 0} },",
+			"}",
+			"",
+			"The 'texttag1' is a TextTag that must be specified in the parameter with the same name.",
+			"Make sure each TextTag is unique, otherwise the last one will overwrite a previous one.",
+			"",
+			"The values in Color represent the Red, Green, and Blue components.",
+			"Color is optional and should be omitted if white text color is desired."
+		]
+	},
+	"FigureOutcryAlert": {
+		"prefix": "SF2.Action.FigureOutcryAlert",
+		"body": [
+			"FigureOutcryAlert",
+			"{",
+			"\tTextTag = \"${1:TextTag}\",    -- Text tag for the localization.",
+			"\tTag = \"${2:Tag}\",            -- A script tag.",
+			"\tTargetTag = \"${3:TargetTag}\" -- The script tag of the target, default = script's tag.",
+			"}"
+		],
+		"description": [
+			"Creates an outcry with voice output and on-screen text."
+		]
+	},
+	"FigureOutcryImmediate": {
+		"prefix": "SF2.Action.FigureOutcryImmediate",
+		"body": [
+			"FigureOutcryImmediate",
+			"{",
+			"\tTextTag = \"${1:TextTag}\",  -- Text tag for the localization.",
+			"\tTag = \"${2:Tag}\"           -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Creates an outcry with voice output and on-screen text.",
+			"The text is displayed immediately."
+		]
+	},
+	"FigurePathGoto": {
+		"prefix": "SF2.Action.FigurePathGoto",
+		"body": [
+			"FigurePathGoto",
+			"{",
+			"\tGoto = ${1:{}},    -- Here, any figure 'goto' action must be specified.",
+			"\tPoints = ${2:{}},  -- Path points specified as strings in the format: \"X, Y\".",
+			"\tTags = ${3:{}}     -- Path points specified as script tag strings: \"MyExampleTag\".",
+			"}"
+		],
+		"description": [
+			"Makes a figure move to a point via the specified waypoints.",
+			"",
+			"A path point system (from code) can be used to move figures over multiple points to a target.",
+			"The integration is done via the PathGoto action.",
+			"",
+			"The 'Goto' parameter must be set to any Walk/Run function, which is then also the first path point.",
+			"All additional 'Points' are defined as strings in the format \"X, Y\".",
+			"",
+			"Example using coordinates:",
+			"FigurePathGoto",
+			"{",
+			"\tGoto = FigurePatrolWalk {Tag = \"pl_HumanHeroLya\", X = 35, Y = 300},",
+			"\tPoints =",
+			"\t{",
+			"\t\t\"40, 300\",",
+			"\t\t\"50, 295\",",
+			"\t\t\"25, 310\",",
+			"\t\t\"30, 305\",",
+			"\t\t\"35, 295\",",
+			"\t\t\"45, 315\",",
+			"\t},",
+			"}",
+			"",
+			"OR (alternatively) with script tags:",
+			"FigurePathGoto",
+			"{",
+			"\tGoto = FigurePatrolWalkToEntity {Tag = \"pl_HumanHeroLya\", TargetTag = \"Pathpoint01\"},",
+			"\tTags =",
+			"\t{",
+			"\t\t\"pl_HumanAvatar\",",
+			"\t\t\"Lantern\",",
+			"\t\t\"FencePost\",",
+			"\t\t\"LastMeal\",",
+			"\t\t\"PathEndPoint\",",
+			"\t},",
+			"}",
+			"",
+			"Note: only with FigurePatrolWalk will the figure endlessly patrol back and forth (loop).",
+			"With all other Walk/Run commands, the figure moves only to the endpoint and stays there."
+		]
+	},
+	"FigurePatrolWalk": {
+		"prefix": "SF2.Action.FigurePatrolWalk",
+		"body": [
+			"FigurePatrolWalk",
+			"{",
+			"\tTag = \"${1:Tag}\",  -- A script tag.",
+			"\tX = ${2:50},        -- The X coordinate in world coordinates.",
+			"\tY = ${3:50}         -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Makes a figure walk back and forth between points.",
+			"",
+			"This really only makes sense in combination with FigurePathGoto, for example:",
+			"FigurePathGoto",
+			"{",
+			"\tGoto = FigurePatrolWalk{X = 50, Y = 80},",
+			"\tPoints =",
+			"\t{",
+			"\t\t\"80, 25\",",
+			"\t\t\"10, 10\",",
+			"\t},",
+			"}"
+		]
+	},
+	"FigurePatrolWalkToEntity": {
+		"prefix": "SF2.Action.FigurePatrolWalkToEntity",
+		"body": [
+			"FigurePatrolWalkToEntity",
+			"{",
+			"\tTag = \"${1:Tag}\",        -- A script tag.",
+			"\tTargetTag = \"${2:TargetTag}\"  -- The script tag of the target.",
+			"}"
+		],
+		"description": [
+			"Makes a figure walk back and forth between points.",
+			"",
+			"This really only makes sense in combination with FigurePathGoto, for example:",
+			"FigurePathGoto",
+			"{",
+			"\tGoto = FigurePatrolWalkToEntity {Tag = \"myname\", TargetTag = \"WP1\"},",
+			"\tTags =",
+			"\t{",
+			"\t\t\"WP2\",",
+			"\t\t\"WP3\",",
+			"\t\t\"WP4\",",
+			"\t\t\"WP5\",",
+			"\t\t\"WP6\",",
+			"\t\t\"WP7\",",
+			"\t},",
+			"}"
+		]
+	},
+	"FigurePlayerTransfer": {
+		"prefix": "SF2.Action.FigurePlayerTransfer",
+		"body": [
+			"FigurePlayerTransfer",
+			"{",
+			"\tTag = \"${1:Tag}\",             -- A script tag.",
+			"\tPlayer = \"${2:pl_Human}\"     -- The player name as set in the team setup.",
+			"}"
+		],
+		"description": [
+			"Transfers a figure to a player.",
+			"",
+			"Transfers the figure into the control of the player or removes control of the figure from the player.",
+			"The command behaves like the earlier ChangeOwner command, but now figures can also be taken away from the player."
+		]
+	},
+	"FigureRespawn": {
+		"prefix": "SF2.Action.FigureRespawn",
+		"body": [
+			"FigureRespawn",
+			"{",
+			"\tTag = \"${1:Tag}\",    -- A script tag.",
+			"\tX = ${2:50},          -- The X coordinate in world coordinates.",
+			"\tY = ${3:50}           -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Respawns a dead NPC figure at a specific point."
+		]
+	},
+	"FigureRespawnToEntity": {
+		"prefix": "SF2.Action.FigureRespawnToEntity",
+		"body": [
+			"FigureRespawnToEntity",
+			"{",
+			"\tTag = \"${1:Tag}\",          -- A script tag.",
+			"\tTargetTag = \"${2:TargetTag}\"  -- The script tag of the target.",
+			"}"
+		],
+		"description": [
+			"Respawns a dead NPC figure at a script tag entity."
+		]
+	},
+	"FigureRoamingDisable": {
+		"prefix": "SF2.Action.FigureRoamingDisable",
+		"body": [
+			"FigureRoamingDisable",
+			"{",
+			"\tTag = \"${1:Tag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Makes the figure stay at its point and not move."
+		]
+	},
+	"FigureRoamingEnable": {
+		"prefix": "SF2.Action.FigureRoamingEnable",
+		"body": [
+			"FigureRoamingEnable",
+			"{",
+			"\tTag = \"${1:Tag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Makes the figure occasionally take a few steps."
+		]
+	},
+	"FigureRtsKitSpawn": {
+		"prefix": "SF2.Action.FigureRtsKitSpawn",
+		"body": [
+			"FigureRtsKitSpawn",
+			"{",
+			"\tUnitId = ${1:50},         -- The UnitId as in the database.",
+			"\tLevel = ${2:50},          -- Ignored, RTS units are always relative to avatar level!",
+			"\tX = ${3:50},              -- The X coordinate in world coordinates.",
+			"\tY = ${4:50},              -- The Y coordinate in world coordinates.",
+			"\tPlayerKit = \"${5:PlayerKit}\"  -- Player kit from the editor.",
+			"}"
+		],
+		"description": [
+			"Spawns a new RTS figure for a player kit at a specific point.",
+            "",
+			"An RTS figure with the given UnitId and Level is spawned into an existing PlayerKit at the specified coordinates.",
+            "",
+			"The PlayerKit must exist at the time of execution, otherwise an assert occurs.",
+			"Important: The PlayerKit must NOT be marked as 'active' in the editor. If marked active, it will already be assigned at game start.",
+			"PlayerKits only exist until they are assigned — afterwards, they are considered non-existent."
+		]
+	},
+	"FigureRtsKitSpawnToEntity": {
+		"prefix": "SF2.Action.FigureRtsKitSpawnToEntity",
+		"body": [
+			"FigureRtsKitSpawnToEntity",
+			"{",
+			"\tLevel = ${1:50},          -- Ignored, RTS units are always relative to avatar level!",
+			"\tTargetTag = \"${2:TargetTag}\",  -- The Script Tag of the target entity.",
+			"\tUnitId = ${3:50},         -- The UnitId as in the database.",
+			"\tPlayerKit = \"${4:PlayerKit}\"  -- Player kit from the editor.",
+			"}"
+		],
+		"description": [
+			"Spawns a new RTS figure for a player kit at a specific entity.",
+            "",
+			"An RTS figure with the given UnitId and Level is spawned into an existing PlayerKit at the specified entity.",
+            "",
+			"The PlayerKit must exist at the time of execution, otherwise an assert occurs.",
+			"[!] The PlayerKit must NOT be marked as 'active' in the editor. If marked active, it will already be assigned at game start.",
+			"PlayerKits only exist until they are assigned — afterwards, they are considered non-existent."
+		]
+	},
+	"SF2.Action.FigureRtsPlayerSpawn": {
+		"prefix": "SF2.Action.FigureRtsPlayerSpawn",
+		"body": [
+			"FigureRtsPlayerSpawn",
+			"{",
+			"\tUnitId = ${1:50},             -- The UnitId from the database.",
+			"\tPlayer = \"${2:pl_Human}\",  -- The player name as defined in the team setup.",
+			"\tX = ${3:50},                  -- The X coordinate in world coordinates.",
+			"\tY = ${4:50},                  -- The Y coordinate in world coordinates.",
+			"\tAmount = ${5:50}              -- Any number of units to spawn.",
+			"}"
+		],
+		"description": [
+			"Spawns a new RTS figure for a player at a specific point.",
+			"",
+			"Any number of RTS units can be spawned into a temporary PlayerKit, which is then assigned to the player.",
+			"",
+			"This makes newly spawned RTS units immediately controllable by the player.",
+			"Previously, one had to create a PlayerKit in the editor, spawn the units into it, and then transfer the kit to the player.",
+			"This was not only cumbersome, but also made permanent spawning impossible, since only a limited number of PlayerKits can be created."
+		]
+	},
+	"SF2.Action.FigureRtsPlayerSpawnToEntity": {
+		"prefix": "SF2.Action.FigureRtsPlayerSpawnToEntity",
+		"body": [
+			"FigureRtsPlayerSpawnToEntity",
+			"{",
+			"\tUnitId = ${1:50},             -- The UnitId from the database.",
+			"\tPlayer = \"${2:pl_Human}\",  -- The player name as defined in the team setup.",
+			"\tTargetTag = \"${3:Target}\", -- The ScriptTag of the target entity.",
+			"\tAmount = ${4:50}             -- Any number of units to spawn.",
+			"}"
+		],
+		"description": [
+			"Spawns a new RTS figure for a player at a specific entity.",
+			"",
+			"Any number of RTS units can be spawned into a temporary PlayerKit, which is then assigned to the player.",
+			"",
+			"This makes newly spawned RTS units immediately controllable by the player.",
+			"Previously, one had to create a PlayerKit in the editor, spawn the units into it, and then transfer the kit to the player.",
+			"This was not only cumbersome, but also made permanent spawning impossible, since only a limited number of PlayerKits can be created."
+		]
+	},
+	"SF2.Action.FigureRtsSpawn": {
+		"prefix": "SF2.Action.FigureRtsSpawn",
+		"body": [
+			"FigureRtsSpawn",
+			"{",
+			"\tUnitId = ${1:50},             -- The UnitId from the database.",
+			"\tLevel = ${2:0},              -- Ignored, RTS units are always relative to the avatar level.",
+			"\tPlayer = \"${3:pl_Human}\",  -- The player name as defined in the team setup.",
+			"\tX = ${4:100},                -- The X coordinate in world space.",
+			"\tY = ${5:200}                 -- The Y coordinate in world space.",
+			"}"
+		],
+		"description": [
+			"Spawns a new RTS figure for a player at a specific point.",
+			"",
+			"An RTS figure with the given UnitId and Level is spawned for the specified player at the provided coordinates."
+		]
+	},
+	"SF2.Action.FigureRtsSpawnToEntity": {
+		"prefix": "SF2.Action.FigureRtsSpawnToEntity",
+		"body": [
+			"FigureRtsSpawnToEntity",
+			"{",
+			"\tUnitId = ${1:50},             -- The UnitId from the database.",
+			"\tLevel = ${2:0},              -- Ignored, RTS units are always relative to the avatar level.",
+			"\tPlayer = \"${3:pl_Human}\",  -- The player name as defined in the team setup.",
+			"\tTargetTag = \"${4:Target}\"  -- The ScriptTag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Spawns a new RTS figure for a player at a specific entity.",
+			"",
+			"An RTS figure with the given UnitId and Level is spawned for the specified player at the target entity."
+		]
+	},
+	"SF2.Action.FigureRun": {
+		"prefix": "SF2.Action.FigureRun",
+		"body": [
+			"FigureRun",
+			"{",
+			"\tTag = \"${1:MyFigure}\",  -- A ScriptTag.",
+			"\tX = ${2:100},           -- The X coordinate in world space.",
+			"\tY = ${3:200}            -- The Y coordinate in world space.",
+			"}"
+		],
+		"description": [
+			"Makes a figure run to the specified coordinates.",
+			"",
+			"The figure will attack enemies it encounters on the way. After fighting or being otherwise distracted, it will continue running until it reaches the destination for the first time.",
+			"",
+			"This behavior corresponds to the old 'ContinuousGoto'.",
+			"",
+			"[!] If you want the figure to always return to the destination point repeatedly, use the IdleGoHome event (or eventually the appropriate action)."
+		]
+	},
+	"SF2.Action.FigureRunToEntity": {
+		"prefix": "SF2.Action.FigureRunToEntity",
+		"body": [
+			"FigureRunToEntity",
+			"{",
+			"\tTag = \"${1:MyFigure}\",       -- A ScriptTag.",
+			"\tTargetTag = \"${2:Target}\"   -- The ScriptTag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Makes a figure run to the current position of the target entity.",
+			"",
+			"The figure will not follow the entity dynamically, but instead run to the coordinates where the entity was located at the time of execution.",
+			"",
+			"On the way, the figure will attack enemies it encounters. After fighting or being otherwise distracted, it will continue running until it reaches the destination for the first time.",
+			"",
+			"This behavior corresponds to the old 'ContinuousGoto'.",
+			"",
+			"[!] If you want the figure to always pursue the target entity, use the Follow command instead."
+		]
+	},
+	"SF2.Action.FigureSimpleRun": {
+		"prefix": "SF2.Action.FigureSimpleRun",
+		"body": [
+			"FigureSimpleRun",
+			"{",
+			"\tTag = \"${1:MyFigure}\",  -- A ScriptTag.",
+			"\tX = ${2:50},             -- X coordinate in world space.",
+			"\tY = ${3:50},             -- Y coordinate in world space.",
+			"}"
+		],
+		"description": [
+			"Makes a figure run to the given coordinates. Ensures that the figure arrives (continuous goto).",
+			"",
+			"Similar to the standard FigureRun/FigureWalk command, but with simplified pathfinding:",
+			"- The figure chooses a straight-line path (direct air-line) to the target.",
+			"- It continues forward until it either arrives or is blocked by terrain.",
+			"- Other figures in the way are ignored — the runner passes through them without collision handling.",
+			"",
+			"[!] This command is intended only for controlled environments such as cutscenes.",
+			"If used outside such contexts, behavior can be unrealistic or game-breaking.",
+			"Use with caution and only if you fully understand the implications."
+		]
+	},
+	"SF2.Action.FigureSimpleRunToEntity": {
+		"prefix": "SF2.Action.FigureSimpleRunToEntity",
+		"body": [
+			"FigureSimpleRunToEntity",
+			"{",
+			"\tTag = \"${1:MyFigure}\",       -- A ScriptTag.",
+			"\tTargetTag = \"${2:Target}\",  -- The ScriptTag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Makes a figure run to the current position of the target entity. Ensures that the figure arrives (continuous goto).",
+			"",
+			"Similar to the standard FigureRunToEntity/FigureWalkToEntity command, but with simplified pathfinding:",
+			"- The figure chooses a straight-line path (direct air-line) to the target position.",
+			"- It continues forward until it either arrives or is blocked by terrain.",
+			"- Other figures in the way are ignored — the runner passes through them without collision handling.",
+			"",
+			"[!] This command is intended only for controlled environments such as cutscenes.",
+			"If used outside such contexts, behavior can be unrealistic or game-breaking.",
+			"Use with caution and only if you fully understand the implications."
+		]
+	},
+	"SF2.Action.FigureSimpleWalk": {
+		"prefix": "SF2.Action.FigureSimpleWalk",
+		"body": [
+			"FigureSimpleWalk",
+			"{",
+			"\tTag = \"${1:MyFigure}\",  -- A ScriptTag.",
+			"\tX = ${2:100},            -- X coordinate in world space.",
+			"\tY = ${3:200},            -- Y coordinate in world space.",
+			"}"
+		],
+		"description": [
+			"Makes a figure walk to the specified coordinates. Ensures that the figure arrives (continuous goto).",
+			"",
+			"Similar to the standard FigureRun/FigureWalk command, but with simplified pathfinding:",
+			"- The figure chooses a straight-line path (direct air-line) to the target position.",
+			"- It continues forward until it either arrives or is blocked by terrain.",
+			"- Other figures in the way are ignored — the walker passes through them without collision handling.",
+			"",
+			"[!] This command is intended only for controlled environments such as cutscenes.",
+			"If used outside such contexts, behavior can be unrealistic or game-breaking.",
+			"Use with caution and only if you fully understand the implications."
+		]
+	},
+	"SF2.Action.FigureSimpleWalkToEntity": {
+		"prefix": "SF2.Action.FigureSimpleWalkToEntity",
+		"body": [
+			"FigureSimpleWalkToEntity",
+			"{",
+			"\tTag = \"${1:MyFigure}\",       -- A ScriptTag.",
+			"\tTargetTag = \"${2:Target}\",  -- The ScriptTag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Makes a figure walk to the current position of the specified target entity. Ensures that the figure arrives (continuous goto).",
+			"",
+			"Similar to the standard FigureRun/FigureWalk commands, but with simplified pathfinding:",
+			"- The figure chooses a straight-line path (direct air-line) to the target position.",
+			"- It continues forward until it either arrives or is blocked by terrain.",
+			"- Other figures in the way are ignored — the walker passes through them without collision handling.",
+			"",
+			"[!] This command is intended only for controlled environments such as cutscenes.",
+			"If used outside such contexts, behavior can be unrealistic or game-breaking.",
+			"Use with caution and only if you fully understand the implications."
+		]
+	},
+	"SF2.Action.FigureStop": {
+		"prefix": "SF2.Action.FigureStop",
+		"body": [
+			"FigureStop",
+			"{",
+			"\tTag = \"${1:MyFigure}\",  -- A ScriptTag.",
+			"}"
+		],
+		"description": [
+			"Stops a figure immediately and cancels any active jobs.",
+			"",
+			"The figure will cease all current actions, including:",
+			"- Movement",
+			"- Combat or enemy pursuit",
+			"- Follow mode",
+			"",
+			"This ensures the figure remains idle until given a new command."
+		]
+	},
+	"SF2.Action.FigureSwappingDisable": {
+		"prefix": "SF2.Action.FigureSwappingDisable",
+		"body": [
+			"FigureSwappingDisable",
+			"{",
+			"\tTag = \"${1:MyFigure}\",  -- A ScriptTag.",
+			"}"
+		],
+		"description": [
+			"Prevents the figure from swapping positions with other figures.",
+			"",
+			"Normally, figures may swap places to avoid blocking each other.",
+			"With this action enabled, the specified figure will no longer swap."
+		]
+	},
+	"SF2.Action.FigureSwappingEnable": {
+		"prefix": "SF2.Action.FigureSwappingEnable",
+		"body": [
+			"FigureSwappingEnable",
+			"{",
+			"\tTag = \"${1:MyFigure}\",  -- A ScriptTag.",
+			"}"
+		],
+		"description": [
+			"Allows the figure to swap positions with other figures.",
+			"",
+			"Normally, figures may swap places to avoid blocking each other.",
+			"With this action enabled, the specified figure can swap again."
+		]
+	},
+	"SF2.Action.FigureTeamTransfer": {
+		"prefix": "SF2.Action.FigureTeamTransfer",
+		"body": [
+			"FigureTeamTransfer",
+			"{",
+			"\tTag = \"${1:MyFigure}\",   -- A ScriptTag.",
+			"\tTeam = \"${2:MyTeam}\",   -- The team name as defined in the editor.",
+			"}"
+		],
+		"description": [
+			"Transfers a figure to a specified team.",
+			"",
+			"The figure is reassigned to another team, which changes its behavior regarding allies and enemies.",
+			"",
+			"This action behaves like the earlier ChangeFaction command."
+		]
+	},
+	"SF2.Action.FigureTeleport": {
+		"prefix": "SF2.Action.FigureTeleport",
+		"body": [
+			"FigureTeleport",
+			"{",
+			"\tTag = \"${1:MyFigure}\",  -- A ScriptTag.",
+			"\tX = ${2:100},            -- The X coordinate in world space.",
+			"\tY = ${3:200},            -- The Y coordinate in world space.",
+			"}"
+		],
+		"description": [
+			"Instantly moves a figure to the specified point.",
+			"",
+			"The figure is teleported immediately to the given world coordinates."
+		]
+	},
+	"SF2.Action.FigureTeleportToEntity": {
+		"prefix": "SF2.Action.FigureTeleportToEntity",
+		"body": [
+			"FigureTeleportToEntity",
+			"{",
+			"\tTag = \"${1:MyFigure}\",      -- A ScriptTag.",
+			"\tTargetTag = \"${2:Target}\", -- The ScriptTag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Instantly moves a figure to the position of a target entity.",
+			"",
+			"The figure is teleported immediately to the current position of the target entity.",
+			"",
+			"Works even under heavy interference and atmospheric storms.",
+			"Teleported figures do not automatically trigger an outcry like 'Beam me up, Scotty!'"
+		]
+	},
+	"SF2.Action.FigureUnitChange": {
+		"prefix": "SF2.Action.FigureUnitChange",
+		"body": [
+			"FigureUnitChange",
+			"{",
+			"\tTag = \"${1:MyFigure}\",  -- A ScriptTag.",
+			"\tUnitId = ${2:1234},      -- The UnitId from the database.",
+			"\tLevel = ${3:1},          -- The level of the unit, item, or spell.",
+			"}"
+		],
+		"description": [
+			"Changes the UnitId of a figure.",
+			"",
+			"The figure is assigned a new unit, giving it a different appearance and new stats.",
+			"",
+			"[!] IMPORTANT: If the figure has a dialog, it will lose any currently displayed dialog icon.",
+			"You must reassign the dialog icon and re-enable the dialog if the figure should remain interactive.",
+			"",
+			"Additionally, the figure will interrupt all current actions when changed.",
+			"This includes aborting any ongoing movement (Goto) or combat."
+		]
+	},
+	"SF2.Action.FigureVanish": {
+		"prefix": "SF2.Action.FigureVanish",
+		"body": [
+			"FigureVanish",
+			"{",
+			"\tTag = \"${1:MyFigure}\",  -- A ScriptTag.",
+			"}"
+		],
+		"description": [
+			"Makes the figure vanish, treating it as 'dead'.",
+			"",
+			"The figure disappears instantly without playing a death animation or leaving behind a corpse.",
+			"If the figure had loot, it will not be obtainable by the player.",
+			"",
+			"This is essentially a silent removal of the figure from the map."
+		]
+	},
+	"SF2.Action.FigureWalk": {
+		"prefix": "SF2.Action.FigureWalk",
+		"body": [
+			"FigureWalk",
+			"{",
+			"\tTag = \"${1:MyFigure}\",  -- A ScriptTag.",
+			"\tX = ${2:100},            -- X coordinate in world space.",
+			"\tY = ${3:200},            -- Y coordinate in world space.",
+			"}"
+		],
+		"description": [
+			"Makes the figure walk to the specified coordinates.",
+			"",
+			"If the figure encounters enemies on the way, it will attack them.",
+			"After fighting or being distracted, it will continue walking until it reaches the target for the first time.",
+			"This matches the old ContinuousGoto behavior.",
+			"",
+			"[!] If the figure should repeatedly attempt to reach the destination, use the IdleGoHome event (or the appropriate future action)."
+		]
+	},
+	"SF2.Action.FigureWalkToEntity": {
+		"prefix": "SF2.Action.FigureWalkToEntity",
+		"body": [
+			"FigureWalkToEntity",
+			"{",
+			"\tTag = \"${1:MyFigure}\",       -- A ScriptTag.",
+			"\tTargetTag = \"${2:Target}\",  -- The ScriptTag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Makes the figure walk to the position of the specified target entity.",
+			"",
+			"The figure will not follow the entity, but instead walk to the coordinates where the target entity was located when the command was executed.",
+			"",
+			"If the figure encounters enemies on the way, it will attack them.",
+			"After fighting or being distracted, it will continue walking until it reaches the target position for the first time.",
+			"This matches the old ContinuousGoto behavior.",
+			"",
+			"[!] If the figure should repeatedly attempt to reach the target entity, use the Follow command instead."
+		]
+	},
+	"SF2.Action.FogOfWarCloak": {
+		"prefix": "SF2.Action.FogOfWarCloak",
+		"body": [
+			"FogOfWarCloak",
+			"{",
+			"\tFogOfWarId = ${1:0},  -- The ID of a Fog of War reveal position (default = 0).",
+			"}"
+		],
+		"description": [
+			"Covers the Fog of War again at the specified reveal position.",
+			"",
+			"This allows you to re-cover an area of the Fog of War:",
+			"  FogOfWarCloak { FogOfWarId = 1 },",
+			"",
+			"The ID must first be defined when using a FogOfWarReveal with a unique ID:",
+			"  FogOfWarReveal { FogOfWarId = 1, X = 99, Y = 99, Range = 9, Height = 9 },",
+			"",
+			"[!] Warning: If multiple reveals share the same ID, only one position will be revealed and cloaked.",
+			"",
+			"The parameter `FogOfWarId` is optional (default = 0).",
+			"When omitted, it avoids the above issue and behaves like previous scripts.",
+			"Use a unique ID only when you want to cover the same spot again later."
+		]
+	},
+	"SF2.Action.FogOfWarReveal": {
+		"prefix": "SF2.Action.FogOfWarReveal",
+		"body": [
+			"FogOfWarReveal",
+			"{",
+			"\tFogOfWarId = ${1:0},  -- The ID of a Fog of War reveal position (default = 0).",
+			"\tX = ${2:50},             -- The X coordinate in world coordinates.",
+			"\tY = ${3:50},             -- The Y coordinate in world coordinates.",
+			"\tRange = ${4:50},         -- The reveal radius in grid points.",
+			"\tHeight = ${5:3}       -- The reveal height above ground (default = 3).",
+			"}"
+		],
+		"description": [
+			"Reveals the Fog of War at a given position, based on the specified height.",
+			"",
+			"This permanently reveals an area of the map. Once revealed by script,",
+			"the player will always see enemy units and buildings in that area.",
+			"",
+			"- Range defines the reveal radius in meters.",
+			"- Height allows controlling line of sight over obstacles.",
+			"",
+			"For example, when revealing a point in a lake, a low Height may only",
+			"show the water area. Increasing Height allows revealing terrain and",
+			"structures beyond the obstacle.",
+			"",
+			"[!] Use unique FogOfWarId values if you plan to later re-cover an area",
+			"with FogOfWarCloak. Default 0 behaves like legacy scripts."
+		]
+	},
+	"SF2.Action.FogOfWarRevealAtEntity": {
+		"prefix": "SF2.Action.FogOfWarRevealAtEntity",
+		"body": [
+			"FogOfWarRevealAtEntity",
+			"{",
+			"\tFogOfWarId = ${1:0},  -- The ID of a Fog of War reveal position (default = 0).",
+			"\tTag = \"${2:Tag}\",   -- The script tag of the entity.",
+			"\tRange = ${3:50},     -- The reveal radius in grid points.",
+			"\tHeight = ${4:3}      -- The reveal height above ground (default = 3).",
+			"}"
+		],
+		"description": [
+			"Reveals the Fog of War at the position of a target entity.",
+			"",
+			"Once revealed by script, this area will never be covered again.",
+			"The player will always see enemy units and buildings in the area.",
+			"",
+			"- Range defines the reveal radius in meters.",
+			"- Height controls how much terrain and obstacles are visible.",
+			"",
+			"For example: placing the reveal in a lake with low Height may only",
+			"show the water area. Increasing Height allows visibility over terrain",
+			"and buildings around it.",
+			"",
+			"[!] Use unique FogOfWarId values if you plan to later hide the area",
+			"again with FogOfWarCloak. Default 0 behaves like legacy scripts."
+		]
+	},
+	"SF2.Action.FogOfWarTeamAdd": {
+		"prefix": "SF2.Action.FogOfWarTeamAdd",
+		"body": [
+			"FogOfWarTeamAdd",
+			"{",
+			"\tTeam = \"${1:TeamName}\"  -- The team name from the editor.",
+			"}"
+		],
+		"description": [
+			"Adds Fog of War visibility for the specified team.",
+			"",
+			"The given team will additionally reveal the Fog of War in areas it explores.",
+			"This is useful for granting allied or neutral factions shared vision."
+		]
+	},
+	"SF2.Action.MapTimerStart": {
+		"prefix": "SF2.Action.MapTimerStart",
+		"body": [
+			"MapTimerStart",
+			"{",
+			"\tName = \"${1:TimerName}\"  -- The name of the map timer.",
+			"}"
+		],
+		"description": [
+			"Starts a map timer.",
+			"",
+			"A map timer can be used to track time-based events within the scenario.",
+			"It will begin counting once started and can later be checked, stopped, or reset."
+		]
+	},
+	"SF2.Action.MapTimerStop": {
+		"prefix": "SF2.Action.MapTimerStop",
+		"body": [
+			"MapTimerStop",
+			"{",
+			"\tName = \"${1:TimerName}\"  -- The name of the map timer.",
+			"}"
+		],
+		"description": [
+			"Stops (deletes) a map timer.",
+			"",
+			"Once stopped, the timer is removed and can no longer be queried or continued.",
+			"If needed again, it must be restarted with MapTimerStart."
+		]
+	},
+	"SF2.Action.MapValueAdd": {
+		"prefix": "SF2.Action.MapValueAdd",
+		"body": [
+			"MapValueAdd",
+			"{",
+			"\tName = \"${1:VariableName}\"  -- The name of the map variable.",
+			"\tValue = ${2:1}                -- Value to be added.",
+			"}"
+		],
+		"description": [
+			"Adds the given value to the map variable."
+		]
+	},
+	"SF2.Action.MapValueAddVariable": {
+		"prefix": "SF2.Action.MapValueAddVariable",
+		"body": [
+			"MapValueAddVariable",
+			"{",
+			"\tName = \"${1:TargetVariable}\"    -- The name of the map variable to modify.",
+			"\tVariable = \"${2:SourceVariable}\" -- The name of the map variable to add from.",
+			"}"
+		],
+		"description": [
+			"Adds the value of one map variable to another.",
+			"",
+			"Performs the operation:",
+			"TargetVariable = TargetVariable + SourceVariable"
+		]
+	},
+	"SF2.Action.MapValueDecrease": {
+		"prefix": "SF2.Action.MapValueDecrease",
+		"body": [
+			"MapValueDecrease",
+			"{",
+			"\tName = \"${1:VariableName}\" -- The name of the map variable.",
+			"}"
+		],
+		"description": [
+			"Decrements the value of a map variable by 1.",
+			"",
+			"Performs the operation:",
+			"VariableName = VariableName - 1"
+		]
+	},
+	"SF2.Action.MapValueDivide": {
+		"prefix": "SF2.Action.MapValueDivide",
+		"body": [
+			"MapValueDivide",
+			"{",
+			"\tName = \"${1:VariableName}\", -- The name of the map variable.",
+			"\tValue = ${2:1}               -- The value to divide by.",
+			"}"
+		],
+		"description": [
+			"Divides the value of a map variable by the given value.",
+			"",
+			"Performs the operation:",
+			"VariableName = VariableName / Value"
+		]
+	},
+	"SF2.Action.MapValueDivideVariable": {
+		"prefix": "SF2.Action.MapValueDivideVariable",
+		"body": [
+			"MapValueDivideVariable",
+			"{",
+			"\tName = \"${1:VariableName}\",     -- The name of the map variable to divide.",
+			"\tVariable = \"${2:OtherVariable}\" -- The name of the divisor map variable.",
+			"}"
+		],
+		"description": [
+			"Divides one map variable by another.",
+			"",
+			"Performs the operation:",
+			"Name = Name / Variable"
+		]
+	},
+	"SF2.Action.MapValueExchangeVariable": {
+		"prefix": "SF2.Action.MapValueExchangeVariable",
+		"body": [
+			"MapValueExchangeVariable",
+			"{",
+			"\tName = \"${1:VariableName}\",     -- The name of the first map variable.",
+			"\tVariable = \"${2:OtherVariable}\" -- The name of the second map variable to swap with.",
+			"}"
+		],
+		"description": [
+			"Swaps the values of two map variables.",
+			"",
+			"Performs the operation:",
+			"Temp = Name",
+			"Name = Variable",
+			"Variable = Temp",
+			"",
+			"If PlayerScore = 5 and EnemyScore = 20 before execution,",
+			"then PlayerScore = 20 and EnemyScore = 5 afterwards."
+		]
+	},
+	"SF2.Action.MapValueIncrease": {
+		"prefix": "SF2.Action.MapValueIncrease",
+		"body": [
+			"MapValueIncrease",
+			"{",
+			"\tName = \"${1:VariableName}\" -- The name of the map variable to increase.",
+			"}"
+		],
+		"description": [
+			"Increments (increases) the value of a map variable by 1.",
+			"",
+			"Performs the operation:",
+			"Name = Name + 1"
+		]
+	},
+	"SF2.Action.MapValueMultiply": {
+		"prefix": "SF2.Action.MapValueMultiply",
+		"body": [
+			"MapValueMultiply",
+			"{",
+			"\tName = \"${1:VariableName}\", -- The name of the map variable to multiply.",
+			"\tValue = ${2:2}              -- The value to multiply the variable with.",
+			"}"
+		],
+		"description": [
+			"Multiplies the map variable with the given value.",
+			"",
+			"Performs the operation:",
+			"Name = Name * Value"
+		]
+	},
+	"SF2.Action.MapValueMultiplyVariable": {
+		"prefix": "SF2.Action.MapValueMultiplyVariable",
+		"body": [
+			"MapValueMultiplyVariable",
+			"{",
+			"\tName = \"${1:VariableName}\",   -- The name of the map variable to multiply.",
+			"\tVariable = \"${2:OtherVar}\"  -- The name of the second map variable.",
+			"}"
+		],
+		"description": [
+			"Multiplies a map variable with another map variable.",
+			"",
+			"Performs the operation:",
+			"Name = Name * Variable"
+		]
+	},
+	"SF2.Action.MapValueRandomize": {
+		"prefix": "SF2.Action.MapValueRandomize",
+		"body": [
+			"MapValueRandomize",
+			"{",
+			"\tName = \"${1:VariableName}\",   -- The name of the map variable.",
+			"\tMinValue = ${2:0},             -- Minimum random value (default = 0).",
+			"\tMaxValue = ${3:1}              -- Maximum random value (default = 1).",
+			"}"
+		],
+		"description": [
+			"Sets a map variable to a random value within the given range."
+		]
+	},
+	"SF2.Action.MapValueSet": {
+		"prefix": "SF2.Action.MapValueSet",
+		"body": [
+			"MapValueSet",
+			"{",
+			"\tName = \"${1:VariableName}\",  -- The name of the map variable.",
+			"\tValue = ${2:0}                 -- The value to assign (default = 0).",
+			"}"
+		],
+		"description": [
+			"Sets the map variable to a specific value."
+		]
+	},
+	"SF2.Action.MapValueSetVariable": {
+		"prefix": "SF2.Action.MapValueSetVariable",
+		"body": [
+			"MapValueSetVariable",
+			"{",
+			"\tName = \"${1:VariableName}\",      -- The name of the map variable to set.",
+			"\tVariable = \"${2:OtherVariable}\"  -- The source map variable (default = \"OtherVariable\").",
+			"}"
+		],
+		"description": [
+			"Assigns the value of one map variable to another."
+		]
+	},
+	"SF2.Action.MapValueSubtract": {
+		"prefix": "SF2.Action.MapValueSubtract",
+		"body": [
+			"MapValueSubtract",
+			"{",
+			"\tName = \"${1:VariableName}\",  -- The name of the map variable.",
+			"\tValue = ${2:1}                -- The value to subtract (default = 1).",
+			"}"
+		],
+		"description": [
+			"Subtracts a given value from a map variable.",
+			"",
+			"Performs:",
+			"Name = Name - Value"
+		]
+	},
+	"SF2.Action.MapValueSubtractVariable": {
+		"prefix": "SF2.Action.MapValueSubtractVariable",
+		"body": [
+			"MapValueSubtractVariable",
+			"{",
+			"\tName = \"${1:VariableName}\",      -- The name of the map variable.",
+			"\tVariable = \"${2:OtherVariable}\"  -- The variable whose value will be subtracted (default = 0).",
+			"}"
+		],
+		"description": [
+			"Subtracts the value of one map variable from another.",
+			"",
+			"Performs:",
+			"Name = Name - Variable"
+		]
+	},
+	"SF2.Action.MinimapAlertSet": {
+		"prefix": "SF2.Action.MinimapAlertSet",
+		"body": [
+			"MinimapAlertSet",
+			"{",
+			"\tX = ${1:0},        -- X coordinate in world coordinates (default = 0).",
+			"\tY = ${2:0},        -- Y coordinate in world coordinates (default = 0).",
+			"\tType = ${3:1}      -- Alert type (default = 1).",
+			"}"
+		],
+		"description": [
+			"Places an alert (visual marker) on the minimap at the given position.",
+			"",
+			"Alert types:",
+			"1 = Default",
+			"2 = Attack",
+			"3 = Quest",
+			"4 = Outcry",
+			"5 = QuickSelect",
+			"6 = Dead"
+		]
+	},
+	"SF2.Action.MinimapAlertSetToEntity": {
+		"prefix": "SF2.Action.MinimapAlertSetToEntity",
+		"body": [
+			"MinimapAlertSetToEntity",
+			"{",
+			"\tTag = \"${1:}\",    -- Script tag of the target entity (default = empty).",
+			"\tType = ${2:1}      -- Alert type (default = 1).",
+			"}"
+		],
+		"description": [
+			"Places an alert (visual marker) on the minimap at the position of a target entity.",
+			"",
+			"Alert types:",
+			"1 = Default",
+			"2 = Attack",
+			"3 = Quest",
+			"4 = Outcry",
+			"5 = QuickSelect",
+			"6 = Dead"
+		]
+	},
+	"SF2.Action.NoSpawnEffect": {
+		"prefix": "SF2.Action.NoSpawnEffect",
+		"body": [
+			"NoSpawnEffect",
+			"{",
+			"\tSpawn = ${1:FigureNpcSpawn{ Tag = \"NPC1\", X = 100, Y = 100, UnitId = 50, Level = 1 }}  -- A spawn action to execute (required).",
+			"}"
+		],
+		"description": [
+			"Spawns a dead NPC at a specific location, without playing the default spawn effect.",
+			"",
+			"Parameter:",
+			"- Spawn: Any valid 'spawn' action (e.g., FigureNpcSpawn).",
+			"",
+			"Example:",
+			"NoSpawnEffect { Spawn = FigureNpcSpawn{ Tag = \"Enemy1\", X = 120, Y = 90, UnitId = 200, Level = 2 } }",
+			"→ Spawns the NPC at the given coordinates without showing a spawn effect."
+		]
+	},
+	"SF2.Action.ObjectChange": {
+		"prefix": "SF2.Action.ObjectChange",
+		"body": [
+			"ObjectChange",
+			"{",
+			"\tTag = \"${1:MyObject}\"            -- Script tag of the object to be changed (required).",
+			"\tObjectId = ${2:1001}               -- New ObjectId from the database (optional).",
+			"\tX = ${3:[self]}                   -- X coordinate in world space (optional, default = current position).",
+			"\tY = ${4:[self]}                   -- Y coordinate in world space (optional, default = current position).",
+			"\tDirection = ${5:[self]}           -- Facing direction in degrees (0-360, optional, default = current direction).",
+			"}"
+		],
+		"description": [
+			"Changes an existing object into another object, moves it to a new position, or changes its facing direction.",
+			"",
+			"Parameters:",
+			"- Tag: Script tag of the target object (required).",
+			"- ObjectId: ID of the new object type (from DB).",
+			"- X, Y: New world coordinates. If omitted, the object stays at its current location.",
+			"- Direction: New facing direction (0° = south, 90° = east).",
+			"",
+			"Notes:",
+			"- You can specify just one, several, or all parameters.",
+			"- The object must already exist and have a ScriptTag."
+		]
+	},
+	"SF2.Action.ObjectLootItemEquipmentAdd": {
+		"prefix": "SF2.Action.ObjectLootItemEquipmentAdd",
+		"body": [
+			"ObjectLootItemEquipmentAdd",
+			"{",
+			"\tTag = \"${1:MyObject}\"       -- Script tag of the object (required).",
+			"\tDropChance = ${2:100}        -- Drop chance in %, default = 100%.",
+			"\tItemId = ${3:2001}           -- ItemId from the database (required).",
+			"}"
+		],
+		"description": [
+			"Adds an equipment item as loot to an object (e.g., NPC, chest, etc.).",
+			"",
+			"Parameters:",
+			"- Tag: Script tag of the target object (required).",
+			"- DropChance: Probability that the item will drop (default = 100%).",
+			"- ItemId: The ID of the equipment item from the database (required).",
+			"",
+			"Important Notes:",
+			"- Loot remains assigned until the figure dies.",
+			"- If the figure respawns, it will **not** automatically regain the loot —",
+			"  it must be added again via script."
+		]
+	},
+	"SF2.Action.ObjectLootItemEquipmentRemove": {
+		"prefix": "SF2.Action.ObjectLootItemEquipmentRemove",
+		"body": [
+			"ObjectLootItemEquipmentRemove",
+			"{",
+			"\tTag = \"${1:MyObject}\"   -- Script tag of the object (required).",
+			"\tItemId = ${2:2001}        -- ItemId from the database (required).",
+			"}"
+		],
+		"description": [
+			"Removes an equipment item from an object's loot.",
+			"",
+			"Parameters:",
+			"- Tag: Script tag of the target object (required).",
+			"- ItemId: The ID of the equipment item from the database (required).",
+			"",
+			"Important Notes:",
+			"- Only the **first matching ItemId** will be removed.",
+			"- If there are multiple identical items in the loot,",
+			"  you must call this action multiple times (up to 5,",
+			"  since objects can hold max 5 loot slots).",
+			"",
+			"Example:",
+			"ObjectLootItemEquipmentRemove { Tag = \"OrcBoss\", ItemId = 3010 }",
+			"→ Removes one occurrence of the equipment with ID 3010 from the OrcBoss' loot."
+		]
+	},
+	"SF2.Action.ObjectLootItemGenericAdd": {
+		"prefix": "SF2.Action.ObjectLootItemGenericAdd",
+		"body": [
+			"ObjectLootItemGenericAdd",
+			"{",
+			"\tTag = \"${1:MyObject}\"          -- Script tag of the object (required).",
+			"\tDropChance = ${2:100}            -- Drop chance in percent (default: 100%).",
+			"\tLevel = ${3:1}                   -- Level of the unit, item, or spell (required).",
+			"\tSkill = ${4:5001}                -- Skill ID from the database (required).",
+			"}"
+		],
+		"description": [
+			"Adds a generic item as loot to the specified object.",
+			"",
+			"Parameters:",
+			"- Tag: Script tag of the target object (required).",
+			"- DropChance: Probability in % that the item drops (default: 100).",
+			"- Level: The level of the unit, item, or spell (required).",
+			"- Skill: Skill ID from the database (required).",
+			"",
+			"Important Notes:",
+			"- Loot persists until the figure dies.",
+			"- Respawned figures **do not retain loot** automatically —",
+			"  you must re-add it after respawn if needed.",
+			"",
+			"Example:",
+			"ObjectLootItemGenericAdd { Tag = \"OrcBoss\", DropChance = 50, Level = 3, Skill = 7010 }",
+			"→ OrcBoss has a 50% chance to drop a level 3 item/spell with Skill ID 7010."
+		]
+	},
+	"SF2.Action.ObjectLootItemGenericRemove": {
+		"prefix": "SF2.Action.ObjectLootItemGenericRemove",
+		"body": [
+			"ObjectLootItemGenericRemove",
+			"{",
+			"\tTag = \"${1:MyObject}\"  -- Script tag of the object (required).",
+			"}"
+		],
+		"description": [
+			"Removes a generic item from the loot of the specified object.",
+			"",
+			"Parameters:",
+			"- Tag: Script tag of the target object (required).",
+			"",
+			"Behavior:",
+			"- Removes the **first generic item** found in the loot.",
+			"- If multiple generic items exist, call this action multiple times (up to 5 — the max loot slots).",
+			"",
+			"Limitations:",
+			"- You cannot target a specific generic item for removal.",
+			"- Only sequential removal is possible (first found, then next, etc.).",
+			"",
+			"Example:",
+			"ObjectLootItemGenericRemove { Tag = \"OrcBoss\" }",
+			"→ Removes the first generic loot item from OrcBoss."
+		]
+	},
+	"SF2.Action.ObjectLootItemMiscAdd": {
+		"prefix": "SF2.Action.ObjectLootItemMiscAdd",
+		"body": [
+			"ObjectLootItemMiscAdd",
+			"{",
+			"\tTag = \"${1:MyObject}\"          -- Script tag of the object (required).",
+			"\tDropChance = ${2:100}            -- Drop chance in percent (default: 100%).",
+			"\tItemId = ${3:12345}              -- Item ID from the database (required).",
+			"}"
+		],
+		"description": [
+			"Adds a misc item as loot to the specified object.",
+			"",
+			"Parameters:",
+			"- Tag: Script tag of the target object (required).",
+			"- DropChance: Chance in % that the item drops (default = 100).",
+			"- ItemId: Database ID of the misc item (required).",
+			"",
+			"Behavior:",
+			"- The item will remain in the objects loot until the unit dies.",
+			"- If the unit respawns, the loot will NOT persist — it must be added again via script.",
+			"",
+			"Example:",
+			"ObjectLootItemMiscAdd { Tag = \"TreasureChest\", DropChance = 75, ItemId = 9012 }",
+			"→ Adds an item with ID 9012 to the loot of TreasureChest with 75% drop chance."
+		]
+	},
+	"SF2.Action.ObjectLootItemMiscRemove": {
+		"prefix": "SF2.Action.ObjectLootItemMiscRemove",
+		"body": [
+			"ObjectLootItemMiscRemove",
+			"{",
+			"\tTag = \"${1:MyObject}\"   -- Script tag of the object (required).",
+			"\tItemId = ${2:12345}      -- Item ID from the database (required).",
+			"}"
+		],
+		"description": [
+			"Removes a misc item from the specified object’s loot.",
+			"",
+			"Parameters:",
+			"- Tag: Script tag of the target object (required).",
+			"- ItemId: Database ID of the misc item to remove (required).",
+			"",
+			"Behavior:",
+			"- Removes the first item with the given ItemId found in the loot.",
+			"- If multiple items with the same ItemId exist, this must be called multiple times (up to 5 max loot slots).",
+			"",
+			"Example:",
+			"ObjectLootItemMiscRemove { Tag = \"TreasureChest\", ItemId = 9012 }",
+			"→ Removes one instance of item ID 9012 from TreasureChest’s loot."
+		]
+	},
+	"SF2.Action.ObjectLootRemoveAll": {
+		"prefix": "SF2.Action.ObjectLootRemoveAll",
+		"body": [
+			"ObjectLootRemoveAll",
+			"{",
+			"\tTag = \"${1:MyObject}\"  -- Script tag of the object (required).",
+			"}"
+		],
+		"description": [
+			"Removes all loot from the specified object.",
+			"",
+			"Parameters:",
+			"- Tag: Script tag of the target object (required).",
+			"",
+			"Behavior:",
+			"- Clears all loot slots (up to 5).",
+			"- After execution, the object will drop no items upon death.",
+			"",
+			"Example:",
+			"ObjectLootRemoveAll { Tag = \"TreasureChest\" }",
+			"→ Removes all loot from the chest so it drops nothing."
+		]
+	},
+	"SF2.Action.ObjectSpawn": {
+		"prefix": "SF2.Action.ObjectSpawn",
+		"body": [
+			"ObjectSpawn",
+			"{",
+			"\tObjectId = ${1:12345},     -- ObjectId from the database (required).",
+			"\tX = ${2:1000},             -- X world coordinate (required).",
+			"\tY = ${3:1000},             -- Y world coordinate (required).",
+			"\tDirection = ${4:0},        -- Facing direction in degrees (0-360). 0 = South, 90 = East. Default: 0.",
+			"\tTag = \"${5:MyObject}\"    -- Optional script tag for referencing the spawned object.",
+			"}"
+		],
+		"description": [
+			"Spawns a new object at the specified position and direction.",
+			"",
+			"Parameters:",
+			"- ObjectId: Database Object ID of the object to spawn (required).",
+			"- X, Y: World coordinates where the object should appear (required).",
+			"- Direction: Facing direction in degrees (0°=South, 90°=East). Default is 0.",
+			"- Tag: Optional script tag for referencing the spawned object later.",
+			"",
+			"Behavior:",
+			"- Creates a new instance of the object at the given location.",
+			"- If Tag is provided, the object can be manipulated by other actions.",
+			"",
+			"Example:",
+			"ObjectSpawn { ObjectId = 101, X = 200, Y = 400, Direction = 90, Tag = \"Gate01\" }",
+			"→ Spawns a gate object facing east at coordinates (200,400) with tag 'Gate01'."
+		]
+	},
+	"SF2.Action.ObjectSpawnToEntity": {
+		"prefix": "SF2.Action.ObjectSpawnToEntity",
+		"body": [
+			"ObjectSpawnToEntity",
+			"{",
+			"\tObjectId = ${1:12345},     -- ObjectId from the database (required).",
+			"\tTargetTag = \"${2:Target}\", -- Script tag of the target entity (required).",
+			"\tDirection = ${3:0},        -- Facing direction in degrees (0-360). 0 = South, 90 = East. Default: 0.",
+			"\tTag = \"${4:MyObject}\"    -- Optional script tag for referencing the spawned object.",
+			"}"
+		],
+		"description": [
+			"Spawns a new object at the position of a target entity with the specified direction.",
+			"",
+			"Parameters:",
+			"- ObjectId: Database Object ID of the object to spawn (required).",
+			"- TargetTag: Script tag of the target entity that determines the spawn location (required).",
+			"- Direction: Facing direction in degrees (0°=South, 90°=East). Default is 0.",
+			"- Tag: Optional script tag for referencing the spawned object later.",
+			"",
+			"Behavior:",
+			"- Creates a new instance of the object at the location of the specified entity.",
+			"- If Tag is provided, the object can be manipulated by other actions.",
+			"",
+			"Example:",
+			"ObjectSpawnToEntity { ObjectId = 202, TargetTag = \"EnemyBase\", Direction = 180, Tag = \"Turret01\" }",
+			"→ Spawns a turret object facing north at the position of entity 'EnemyBase', tagged as 'Turret01'."
+		]
+	},
+	"SF2.Action.ObjectVanish": {
+		"prefix": "SF2.Action.ObjectVanish",
+		"body": [
+			"ObjectVanish",
+			"{",
+			"\tTag = \"${1:MyObject}\"  -- Script tag of the object to remove (required).",
+			"}"
+		],
+		"description": [
+			"Removes an object from the map.",
+			"",
+			"Parameters:",
+			"- Tag: Script tag of the object that should be removed (required).",
+			"",
+			"Behavior:",
+			"- Immediately makes the specified object disappear from the map.",
+			"- The object is fully removed and cannot be interacted with afterwards.",
+			"",
+			"Example:",
+			"ObjectVanish { Tag = \"Bridge01\" }",
+			"→ Removes the object with the script tag 'Bridge01' from the map."
+		]
+	},
+	"SF2.Action.PlayerActivate": {
+		"prefix": "SF2.Action.PlayerActivate",
+		"body": [
+			"PlayerActivate",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as defined in the Team Setup (required).",
+			"}"
+		],
+		"description": [
+			"Activates an AI-controlled player.",
+			"",
+			"Parameters:",
+			"- Player: The player name as defined in the Team Setup (required).",
+			"",
+			"Behavior:",
+			"- Activates the specified AI player.",
+			"- If the AI is a builder type: it immediately starts building its economy and base.",
+			"- If the AI is a military-only type: it immediately starts offensive actions.",
+			"",
+			"Example:",
+			"PlayerActivate { Player = \"pl_Orcs\" }",
+			"→ Activates the Orc AI and lets it start its configured behavior."
+		]
+	},
+	"SF2.Action.PlayerBuildingAdd": {
+		"prefix": "SF2.Action.PlayerBuildingAdd",
+		"body": [
+			"PlayerBuildingAdd",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as defined in the Team Setup (required).",
+			"\tBuildingId = ${2:50}           -- The Building ID from the database / Editor (required).",
+			"}"
+		],
+		"description": [
+			"Adds a building type to the player's tech tree.",
+			"",
+			"Parameters:",
+			"- Player: The player name as defined in the Team Setup (required).",
+			"- BuildingId: The type ID from the SQL database or Editor (required).",
+			"",
+			"Behavior:",
+			"- Grants the specified building to the player's tech tree.",
+			"- Once added, the player can construct this building.",
+			"- If the player already has the building in the tech tree, this action will assert (error).",
+			"",
+			"Example:",
+			"PlayerBuildingAdd { Player = \"pl_Orcs\", BuildingId = 1024 }",
+			"→ Grants the Orc player the ability to construct the building with ID 1024."
+		]
+	},
+	"SF2.Action.PlayerBuildingTeamTransfer": {
+		"prefix": "SF2.Action.PlayerBuildingTeamTransfer",
+		"body": [
+			"PlayerBuildingTeamTransfer",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as defined in the Team Setup (required).",
+			"\tTeam = \"${2:50}\"             -- The team name from the Editor (required).",
+			"}"
+		],
+		"description": [
+			"Transfers all buildings of a player to another team and deletes the player's RTS units.",
+			"",
+			"Parameters:",
+			"- Player: The player name as defined in the Team Setup (required).",
+			"- Team: The team name from the Editor (required).",
+			"",
+			"Behavior:",
+			"- Removes all RTS units belonging to the specified player.",
+			"- Transfers all buildings owned by that player to the specified team.",
+			"",
+			"Example:",
+			"PlayerBuildingTeamTransfer { Player = \"pl_Human\", Team = \"Team_Enemy\" }",
+			"→ Deletes all units of the human player and gives all their buildings to 'Team_Enemy'."
+		]
+	},
+	"SF2.Action.PlayerBuildingUpgradeAdd": {
+		"prefix": "SF2.Action.PlayerBuildingUpgradeAdd",
+		"body": [
+			"PlayerBuildingUpgradeAdd",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as defined in the Team Setup (required).",
+			"\tUpgradeId = ${2:50}            -- The Building Upgrade ID from the database (required).",
+			"}"
+		],
+		"description": [
+			"Adds a building upgrade to the player's Tech Tree.",
+			"",
+			"Parameters:",
+			"- Player: The player name as defined in the Team Setup (required).",
+			"- UpgradeId: The Building Upgrade ID from the database/SQL client (required).",
+			"",
+			"Behavior:",
+			"- The player gains access to the specified building upgrade in their Tech Tree.",
+			"- Will assert (error) if the player already has this upgrade in their Tech Tree.",
+			"",
+			"Example:",
+			"PlayerBuildingUpgradeAdd { Player = \"pl_Human\", UpgradeId = 301 }",
+			"→ Adds the building upgrade with ID 301 to the human player's Tech Tree."
+		]
+	},
+	"SF2.Action.PlayerGameEnds": {
+		"prefix": "SF2.Action.PlayerGameEnds",
+		"body": [
+			"PlayerGameEnds",
+			"{",
+			"}"
+		],
+		"description": [
+			"Ends the game for the player once the victory condition is fulfilled.",
+			"",
+			"Behavior:",
+			"- Typically triggered when the player defeats the final boss or completes the main quest objective.",
+			"- This action will end the match and declare the player victorious.",
+			"",
+			"Example:",
+			"PlayerGameEnds { }",
+			"→ Ends the game when the script conditions (e.g., defeating the final boss) are met."
+		]
+	},
+	"SF2.Action.PlayerGameOver": {
+		"prefix": "SF2.Action.PlayerGameOver",
+		"body": [
+			"PlayerGameOver",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",     -- The player name as set in the Team Setup.",
+			"\tTag = \"${2:pl_HumanAvatar}\",  -- A script tag (e.g. the players avatar).",
+			"\tLocaTag = \"${3:50}\"             -- A UI Loca Tag for the text shown on Game Over.",
+			"}"
+		],
+		"description": [
+			"Ends the game for the specified player with a Game Over.",
+			"",
+			"Parameters:",
+			"- Player: The player name as set in the Team Setup.",
+			"- Tag: A script tag (commonly the player’s avatar).",
+			"- LocaTag: Optional UI Loca Tag for the text displayed on Game Over.",
+			"",
+			"Example:",
+			"PlayerGameOver { Player = \"pl_Human\", Tag = \"pl_HumanAvatar\", LocaTag = \"GameOverText\" }",
+			"→ Triggers a Game Over for the player and shows the specified text in the UI."
+		]
+	},
+	"SF2.Action.PlayerHeroAdd": {
+		"prefix": "SF2.Action.PlayerHeroAdd",
+		"body": [
+			"PlayerHeroAdd",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the Team Setup.",
+			"\tHeroId = \"${2:50}\"           -- The ID of a hero (script tag from the DB, e.g. \"HeroMordecay\").",
+			"}"
+		],
+		"description": [
+			"Adds a hero to the player’s roster.",
+			"",
+			"The player can then recruit/build this hero in the Hero Hall.",
+			"",
+			"Parameters:",
+			"- Player: The player name as set in the Team Setup.",
+			"- HeroId: The hero’s script tag as defined in the database (without prefix like 'pl_Human').",
+			"",
+			"Example:",
+			"PlayerHeroAdd { Player = \"pl_Human\", HeroId = \"HeroMordecay\" }",
+			"→ The player gains access to Mordecay in the Hero Hall."
+		]
+	},
+	"SF2.Action.PlayerHeroRemove": {
+		"prefix": "SF2.Action.PlayerHeroRemove",
+		"body": [
+			"PlayerHeroRemove",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the Team Setup.",
+			"\tTag = \"${2:Tag}\"              -- The script tag of the hero (from DB, e.g. \"HeroMordecay\").",
+			"}"
+		],
+		"description": [
+			"Removes a hero from the player.",
+			"",
+			"The player can no longer recruit/build this hero.",
+			"If the hero is still alive, they will vanish.",
+			"",
+			"Parameters:",
+			"- Player: The player name as set in the Team Setup.",
+			"- Tag: The script tag of the hero as defined in the database (without prefix like 'pl_Human').",
+			"",
+			"Example:",
+			"PlayerHeroRemove { Player = \"pl_Human\", Tag = \"HeroMordecay\" }",
+			"→ The player loses access to Mordecay, and if he is alive, he vanishes."
+		]
+	},
+	"SF2.Action.PlayerKitCreate": {
+		"prefix": "SF2.Action.PlayerKitCreate",
+		"body": [
+			"PlayerKitCreate",
+			"{",
+			"\tPlayerKit = \"${1:playerKit}\"  -- The PlayerKit",
+			"}"
+		],
+		"description": [
+			"Creates a new PlayerKit so that it does not need to be set up in the editor.",
+			"",
+			"Allows you to create a PlayerKit via script. If removed later, it behaves as usual,",
+			"but it can always be recreated on demand.",
+			"",
+			"If the PlayerKit already exists, the command will simply be ignored."
+		]
+	},
+	"SF2.Action.PlayerKitTransfer": {
+		"prefix": "SF2.Action.PlayerKitTransfer",
+		"body": [
+			"PlayerKitTransfer",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tPlayerKit = \"${2:}\"       -- The PlayerKit as defined in the Editor.",
+			"}"
+		],
+		"description": [
+			"Transfers a PlayerKit to a player.",
+			"",
+			"After the transfer, the PlayerKit no longer exists.",
+			"The PlayerKit must still exist, otherwise the command asserts!",
+			"",
+			"Only PlayerKits that are not marked as 'active' in the editor setup can be transferred,",
+			"because active PlayerKits are already assigned at the start and no longer exist afterwards."
+		]
+	},
+	"SF2.Action.PlayerMapTravel": {
+		"prefix": "SF2.Action.PlayerMapTravel",
+		"body": [
+			"PlayerMapTravel",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tMap = \"${2:}\"             -- The target map name, relative to base/map/, without .MAP extension.",
+			"\tTargetTag = \"${3:}\"       -- The ScriptTag of the PortalEndPoint on the target map.",
+			"}"
+		],
+		"description": [
+			"Transfers the player to the target map at the PortalEndPoint with the given TargetTag.",
+			"",
+			"Example:",
+			"PlayerMapTravel { Map = \"Campaign/P316_Shal\", TargetTag = \"EndPoint\", Player = \"default\" }",
+			"",
+			"The TargetTag must be the tag of a 'PortalEndPoint' entity on the target map,",
+			"which defines where the player spawns after traveling."
+		]
+	},
+	"SF2.Action.PlayerMapTravelAddon1": {
+		"prefix": "SF2.Action.PlayerMapTravelAddon1",
+		"body": [
+			"PlayerMapTravelAddon1",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tMap = \"${2:}\"             -- The target map name, relative to addon1/map/, without .MAP extension.",
+			"\tTargetTag = \"${3:}\"       -- The ScriptTag of the PortalEndPoint on the target map.",
+			"}"
+		],
+		"description": [
+			"Transfers the player to the target map (from addon1/map/) at the PortalEndPoint with the given TargetTag.",
+			"",
+			"The TargetTag must be the tag of a 'PortalEndPoint' entity on the target map,",
+			"which defines where the player spawns after traveling."
+		]
+	},
+	"SF2.Action.PlayerNPCKillCountIncrease": {
+		"prefix": "SF2.Action.PlayerNPCKillCountIncrease",
+		"body": [
+			"PlayerNPCKillCountIncrease",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tUnitId = ${2:}              -- The UnitId from the database.",
+			"}"
+		],
+		"description": [
+			"Increases the kill counter for this unit, useful when a quest checks for specific kill counts."
+		]
+	},
+	"SF2.Action.PlayerResourceLenyaGive": {
+		"prefix": "SF2.Action.PlayerResourceLenyaGive",
+		"body": [
+			"PlayerResourceLenyaGive",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set up in the Team Setup.",
+			"\tAmount = ${2:50}              -- Any amount of Lenya to give.",
+			"}"
+		],
+		"description": [
+			"Gives the player a specified amount of Lenya."
+		]
+	},
+	"SF2.Action.PlayerResourceLenyaTake": {
+		"prefix": "SF2.Action.PlayerResourceLenyaTake",
+		"body": [
+			"PlayerResourceLenyaTake",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tAmount = ${2:}              -- Any amount of Lenya to take.",
+			"}"
+		],
+		"description": [
+			"Removes a specified amount of Lenya from the player. If the resource would drop below 0, it is set to 0 (no negative resources)."
+		]
+	},
+	"SF2.Action.PlayerResourceSilverGive": {
+		"prefix": "SF2.Action.PlayerResourceSilverGive",
+		"body": [
+			"PlayerResourceSilverGive",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tAmount = ${2:}              -- Any amount of Silver to give.",
+			"}"
+		],
+		"description": [
+			"Gives the player a specified amount of Silver."
+		]
+	},
+	"SF2.Action.PlayerResourceSilverTake": {
+		"prefix": "SF2.Action.PlayerResourceSilverTake",
+		"body": [
+			"PlayerResourceSilverTake",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tAmount = ${2:}              -- Any amount of Silver to take.",
+			"}"
+		],
+		"description": [
+			"Removes a specified amount of Silver from the player. If the resource would drop below 0, it is set to 0 (no negative resources)."
+		]
+	},
+	"SF2.Action.PlayerResourceStoneGive": {
+		"prefix": "SF2.Action.PlayerResourceStoneGive",
+		"body": [
+			"PlayerResourceStoneGive",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tAmount = ${2:}              -- Any amount of Stone to give.",
+			"}"
+		],
+		"description": [
+			"Gives the player a specified amount of Stone."
+		]
+	},
+	"SF2.Action.PlayerResourceStoneTake": {
+		"prefix": "SF2.Action.PlayerResourceStoneTake",
+		"body": [
+			"PlayerResourceStoneTake",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tAmount = ${2:}              -- Any amount of Stone to take.",
+			"}"
+		],
+		"description": [
+			"Removes a specified amount of Stone from the player. If the resource would drop below 0, it is set to 0 (no negative resources)."
+		]
+	},
+	"SF2.Action.PlayerRTSKillCountIncrease": {
+		"prefix": "SF2.Action.PlayerRTSKillCountIncrease",
+		"body": [
+			"PlayerRTSKillCountIncrease",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tUnitId = ${2:}              -- The UnitId as defined in the database.",
+			"}"
+		],
+		"description": [
+			"Increases the kill counter for this unit, in case a quest checks for it."
+		]
+	},
+	"SF2.Action.PlayerRtsUnitKillInRange": {
+		"prefix": "SF2.Action.PlayerRtsUnitKillInRange",
+		"body": [
+			"PlayerRtsUnitKillInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tX = ${2:}                  -- The X coordinate in world coordinates.",
+			"\tY = ${3:}                  -- The Y coordinate in world coordinates.",
+			"\tRange = ${4:}              -- The radius of the query in grid points.",
+			"}"
+		],
+		"description": [
+			"Kills all RTS units of the given player within the specified range.",
+			"Does not affect the Avatar, heroes, or NPC units."
+		]
+	},
+	"SF2.Action.PlayerRtsUnitKillInRangeToEntity": {
+		"prefix": "SF2.Action.PlayerRtsUnitKillInRangeToEntity",
+		"body": [
+			"PlayerRtsUnitKillInRangeToEntity",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tTag = \"${2:}\"             -- A Script Tag.",
+			"\tRange = ${3:}              -- The radius of the query in grid points.",
+			"}"
+		],
+		"description": [
+			"Kills all RTS units of the given player within the specified range of the entity with the given ScriptTag.",
+			"Does not affect the Avatar, heroes, or NPC units."
+		]
+	},
+	"SF2.Action.PlayerTeamTransfer": {
+		"prefix": "SF2.Action.PlayerTeamTransfer",
+		"body": [
+			"PlayerTeamTransfer",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set up in the Team Setup.",
+			"\tTeam = \"${2:}\"            -- The team name from the editor.",
+			"}"
+		],
+		"description": [
+			"Assigns a player to another team.",
+			"All units of the player will change their friend/foe behavior based on the new team."
+		]
+	},
+	"SF2.Action.PlayerTravelDisable": {
+		"prefix": "SF2.Action.PlayerTravelDisable",
+		"body": [
+			"PlayerTravelDisable",
+			"{",
+			"}"
+		],
+		"description": [
+			"Prevents the player from leaving the map using travel stones or portals."
+		]
+	},
+	"SF2.Action.PlayerTravelEnable": {
+		"prefix": "SF2.Action.PlayerTravelEnable",
+		"body": [
+			"PlayerTravelEnable",
+			"{",
+			"}"
+		],
+		"description": [
+			"Allows the player to leave the map using travel stones or portals."
+		]
+	},
+	"SF2.Action.PlayerTravelStoneAdd": {
+		"prefix": "SF2.Action.PlayerTravelStoneAdd",
+		"body": [
+			"PlayerTravelStoneAdd",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the Team Setup.",
+			"\tTag = \"${2:TravelStoneTag}\"  -- Script Tag of the travel stone.",
+			"}"
+		],
+		"description": [
+			"Grants the player access to this travel stone."
+		]
+	},
+	"SF2.Action.PortalDisable": {
+		"prefix": "SF2.Action.PortalDisable",
+		"body": [
+			"PortalDisable",
+			"{",
+			"\tTag = \"${1:PortalTag}\"  -- Script Tag of the portal.",
+			"}"
+		],
+		"description": [
+			"Disables the specified portal."
+		]
+	},
+	"SF2.Action.PortalEnable": {
+		"prefix": "SF2.Action.PortalEnable",
+		"body": [
+			"PortalEnable",
+			"{",
+			"\tTag = \"${1:PortalTag}\"  -- Script Tag of the portal.",
+			"}"
+		],
+		"description": [
+			"Enables the specified portal."
+		]
+	},
+	"SF2.Action.QuestSetActive": {
+		"prefix": "SF2.Action.QuestSetActive",
+		"body": [
+			"QuestSetActive",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the Team Setup.",
+			"\tQuest = \"${2:QuestTag}\"   -- The name or tag of a quest.",
+			"}"
+		],
+		"description": [
+			"Activates the specified quest.",
+			"Sets a quest to active, meaning the player now has the task to solve this quest."
+		]
+	},
+	"SF2.Action.QuestSetActiveAgain": {
+		"prefix": "SF2.Action.QuestSetActiveAgain",
+		"body": [
+			"QuestSetActiveAgain",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the Team Setup.",
+			"\tQuest = \"${2:QuestTag}\"   -- The name or tag of a quest.",
+			"}"
+		],
+		"description": [
+			"Re-activates the specified quest.",
+			"Sets a quest back to active, even if it was previously solved or marked unsolvable.",
+			"Useful for quests that can repeat at fixed intervals."
+		]
+	},
+	"SF2.Action.QuestSetInactive": {
+		"prefix": "SF2.Action.QuestSetInactive",
+		"body": [
+			"QuestSetInactive",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the Team Setup.",
+			"\tQuest = \"${2:QuestTag}\"   -- The name or tag of a quest.",
+			"}"
+		],
+		"description": [
+			"Removes the specified quest from the quest log.",
+			"The quest is considered inactive again."
+		]
+	},
+	"SF2.Action.QuestSetSolved": {
+		"prefix": "SF2.Action.QuestSetSolved",
+		"body": [
+			"QuestSetSolved",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the Team Setup.",
+			"\tQuest = \"${2:QuestTag}\"   -- The name or tag of a quest.",
+			"}"
+		],
+		"description": [
+			"Marks the specified quest as solved.",
+			"The quest will only appear under solved quests."
+		]
+	},
+	"SF2.Action.QuestSetUnsolvable": {
+		"prefix": "SF2.Action.QuestSetUnsolvable",
+		"body": [
+			"QuestSetUnsolvable",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the Team Setup.",
+			"\tQuest = \"${2:QuestTag}\"   -- The name or tag of a quest.",
+			"}"
+		],
+		"description": [
+			"Sets the specified quest as unsolvable.",
+			"Marks a quest as unsolvable because the player can no longer complete it.",
+			"In the quest log it appears under solved quests, but highlighted differently."
+		]
+	},
+	"SF2.Action.SoundAmbientPlayLooped": {
+		"prefix": "SF2.Action.SoundAmbientPlayLooped",
+		"body": [
+			"SoundAmbientPlayLooped",
+			"{",
+			"\tFile = \"${1:music/sf2_battle_evermore}\"  -- File path relative to 'redist/base/sound', without .WAV extension. Can be .wav or .mp3.",
+			"\tX = ${2:0}                                -- The X world coordinate.",
+			"\tY = ${3:0}                                -- The Y world coordinate (height in this case!).",
+			"\tZ = ${4:0}                                -- The Z world coordinate.",
+			"\tMaxRange = ${5:15}                        -- Maximum distance at which the sound is audible.",
+			"\tFallOffRange = ${6:5}                     -- Distance where volume starts decreasing linearly until MaxRange.",
+			"}"
+		],
+		"description": [
+			"Plays an ambient (positioned) sound looped.",
+			"Ambient sounds are tied to world coordinates and only audible nearby.",
+			"FallOffRange defines where volume starts to drop, MaxRange defines the maximum audible radius.",
+			"Example: File = \"music/sf2_battle_evermore.mp3\" or File = \"speech/male/malakay.mp3\""
+		]
+	},
+	"SF2.Action.SoundAmbientPlayOnce": {
+		"prefix": "SF2.Action.SoundAmbientPlayOnce",
+		"body": [
+			"SoundAmbientPlayOnce",
+			"{",
+			"\tFile = \"${1:music/sf2_battle_evermore}\"  -- File path relative to 'redist/base/sound', without .WAV extension. Can be .wav or .mp3.",
+			"\tX = ${2:0}                                -- The X world coordinate.",
+			"\tY = ${3:0}                                -- The Y world coordinate (height in this case!).",
+			"\tZ = ${4:0}                                -- The Z world coordinate.",
+			"\tMaxRange = ${5:15}                        -- Maximum distance at which the sound is audible.",
+			"\tFallOffRange = ${6:5}                     -- Distance where volume starts decreasing linearly until MaxRange.",
+			"}"
+		],
+		"description": [
+			"Plays an ambient (positioned) sound once.",
+			"Ambient sounds are tied to world coordinates and only audible nearby.",
+			"FallOffRange defines where volume starts to drop, MaxRange defines the maximum audible radius.",
+			"Example: File = \"music/sf2_battle_evermore.mp3\" or File = \"speech/male/malakay.mp3\""
+		]
+	},
+	"SF2.Action.SoundGlobalPlayLooped": {
+		"prefix": "SF2.Action.SoundGlobalPlayLooped",
+		"body": [
+			"SoundGlobalPlayLooped",
+			"{",
+			"\tFile = \"${1:music/sf2_battle_evermore}\"  -- File path relative to 'redist/base/sound', without .WAV extension. Can be .wav or .mp3.",
+			"}"
+		],
+		"description": [
+			"Plays a global sound in a loop.",
+			"Global sounds are heard everywhere on the map at the same volume.",
+			"Example: File = \"music/sf2_battle_evermore.mp3\" or File = \"speech/male/malakay.mp3\""
+		]
+	},
+	"SF2.Action.SoundGlobalPlayOnce": {
+		"prefix": "SF2.Action.SoundGlobalPlayOnce",
+		"body": [
+			"SoundGlobalPlayOnce",
+			"{",
+			"\tFile = \"${1:music/sf2_battle_evermore}\"  -- File path relative to 'redist/base/sound', without .WAV extension. Can be .wav or .mp3.",
+			"}"
+		],
+		"description": [
+			"Plays a global sound once.",
+			"Global sounds are heard everywhere on the map at the same volume.",
+			"Example: File = \"music/sf2_battle_evermore.mp3\" or File = \"speech/male/malakay.mp3\""
+		]
+	},
+	"SF2.Action.SoundStop": {
+		"prefix": "SF2.Action.SoundStop",
+		"body": [
+			"SoundStop",
+			"{",
+			"\tFile = \"${1:music/sf2_battle_evermore}\"  -- File path relative to 'redist/base/sound', without .WAV extension. Can be .wav or .mp3.",
+			"}"
+		],
+		"description": [
+			"Stops a sound.",
+			"Stops a global or ambient sound by its file name.",
+			"Example: File = \"music/sf2_battle_evermore.mp3\" or File = \"speech/male/malakay.mp3\""
+		]
+	},
+	"SF2.Action.TeamCastSpell": {
+		"prefix": "SF2.Action.TeamCastSpell",
+		"body": [
+			"TeamCastSpell",
+			"{",
+			"\tSpell = ${1:SpellID}      -- The spell ID from the database.",
+			"\tPower = ${2:1}            -- The power/strength of the spell.",
+			"\tTeam = \"${3:TeamName}\"  -- The team name from the editor.",
+			"\tX = ${4:0}                -- The X coordinate in world space.",
+			"\tY = ${5:0}                -- The Y coordinate in world space.",
+			"}"
+		],
+		"description": [
+			"Casts a spell from a team at a given coordinate.",
+			"Allows casting a spell without an entity. A team must be specified, since many spells depend on team context.",
+			"For example, healing should not affect enemy units, and damaging spells should not hit friendly ones.",
+			"See also: FigureCastSpell."
+		]
+	},
+	"SF2.Action.TeamCastSpellToEntity": {
+		"prefix": "SF2.Action.TeamCastSpellToEntity",
+		"body": [
+			"TeamCastSpellToEntity",
+			"{",
+			"\tSpell = ${1:SpellID}          -- The spell ID from the database.",
+			"\tPower = ${2:1}                -- The power/strength of the spell.",
+			"\tTeam = \"${3:TeamName}\"      -- The team name from the editor.",
+			"\tTargetTag = \"${4:Target}\"   -- The Script Tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Casts a spell from a team on a target entity.",
+			"Allows casting a spell without an entity. A team must be specified, since many spells depend on team context.",
+			"For example, healing should not affect enemy units, and damaging spells should not hit friendly ones.",
+			"See also: FigureCastSpellToEntity."
+		]
+	},
+	"SF2.Action.TutorialCameraCenterOnEntity": {
+		"prefix": "SF2.Action.TutorialCameraCenterOnEntity",
+		"body": [
+			"TutorialCameraCenterOnEntity",
+			"{",
+			"\tTag = \"${1:EntityTag}\"  -- The Script Tag of the entity.",
+			"}"
+		],
+		"description": [
+			"Centers the camera on the given entity."
+		]
+	},
+	"SF2.Action.TutorialCameraSetZoom": {
+		"prefix": "SF2.Action.TutorialCameraSetZoom",
+		"body": [
+			"TutorialCameraSetZoom",
+			"{",
+			"\tZoom = ${1:1.0}  -- A zoom level (e.g., 0.5 = zoom out, 2.0 = zoom in).",
+			"}"
+		],
+		"description": [
+			"Changes the zoom level of the camera."
+		]
+	},
+	"SF2.Action.TutorialInfoTextShow": {
+		"prefix": "SF2.Action.TutorialInfoTextShow",
+		"body": [
+			"TutorialInfoTextShow",
+			"{",
+			"\tTextTag = \"${1:YourTextTag}\"  -- Text tag for the localization system.",
+			"}"
+		],
+		"description": [
+			"Shows a tutorial info text that specifies a task the player must fulfill."
+		]
+	},
+	"SF2.Action.TutorialItemDeleteButtonDisable": {
+		"prefix": "SF2.Action.TutorialItemDeleteButtonDisable",
+		"body": [
+			"TutorialItemDeleteButtonDisable",
+			"{",
+			"}"
+		],
+		"description": [
+			"Disables the item delete button."
+		]
+	},
+	"SF2.Action.TutorialItemDeleteButtonEnable": {
+		"prefix": "SF2.Action.TutorialItemDeleteButtonEnable",
+		"body": [
+			"TutorialItemDeleteButtonEnable",
+			"{",
+			"}"
+		],
+		"description": [
+			"Enables the item delete button."
+		]
+	},
+	"SF2.Action.TutorialStateClear": {
+		"prefix": "SF2.Action.TutorialStateClear",
+		"body": [
+			"TutorialStateClear",
+			"{",
+			"\tTutorialState = \"${1}\"  -- A Tutorial State constant.",
+			"}"
+		],
+		"description": [
+			"Clears a tutorial state.",
+			"Removes a specific Tutorial State constant."
+		]
+	},
+	"SF2.Action.TutorialStateSet": {
+		"prefix": "SF2.Action.TutorialStateSet",
+		"body": [
+			"TutorialStateSet",
+			"{",
+			"\tTutorialState = \"${1}\"  -- A Tutorial State constant.",
+			"}"
+		],
+		"description": [
+			"Sets a tutorial state.",
+			"Applies a specific Tutorial State constant."
+		]
+	},
+	"SF2.Action.TutorialTaskSetSolved": {
+		"prefix": "SF2.Action.TutorialTaskSetSolved",
+		"body": [
+			"TutorialTaskSetSolved",
+			"{",
+			"\tTake = ${1:tag}  -- Take number of a TutorialTask text.",
+			"}"
+		],
+		"description": [
+			"Marks a tutorial task as solved.",
+			"Allows the player to dismiss the TutorialTask text as completed."
+		]
+	},
+	"SF2.Action.TutorialTaskTextShow": {
+		"prefix": "SF2.Action.TutorialTaskTextShow",
+		"body": [
+			"TutorialTaskTextShow",
+			"{",
+			"\tTextTag = \"${1:tag}\"  -- Text tag for the localization.",
+			"}"
+		],
+		"description": [
+			"Displays a tutorial task text.",
+			"Shows a tutorial text that specifies a task to be completed."
+		]
+	},
+	"SF2.Action.TutorialUIPointerHide": {
+		"prefix": "SF2.Action.TutorialUIPointerHide",
+		"body": [
+			"TutorialUIPointerHide",
+			"{",
+			"}"
+		],
+		"description": [
+			"Removes a UI pointer for the tutorial.",
+			"Deletes an active UI pointer that was shown during the tutorial."
+		]
+	},
+	"SF2.Action.TutorialUIPointerShow": {
+		"prefix": "SF2.Action.TutorialUIPointerShow",
+		"body": [
+			"TutorialUIPointerShow",
+			"{",
+			"\tLeft = ${1:0},        -- The left coordinate of the rectangle.",
+			"\tTop = ${2:0},         -- The top coordinate of the rectangle.",
+			"\tWidth = ${3:100},     -- The width in pixels (scaled to 1024x768 resolution).",
+			"\tHeight = ${4:100},    -- The height in pixels (scaled to 1024x768 resolution).",
+			"\tFile = \"${5:example}\"  -- File path relative to 'base/gfx/ui/tutorial/' folder without .TGA extension.",
+			"}"
+		],
+		"description": [
+			"Sets a UI pointer for the tutorial.",
+			"Displays a UI pointer rectangle with an optional graphic overlay to highlight areas of the interface."
+		]
+	},
+	"SF2.Action.VisualTimerStart": {
+		"prefix": "SF2.Action.VisualTimerStart",
+		"body": [
+			"VisualTimerStart",
+			"{",
+			"\tSeconds = ${1:60}  -- Number of seconds (not converted into GD steps).",
+			"}"
+		],
+		"description": [
+			"Starts a countdown timer that is displayed on-screen.",
+			"The visual timer counts down to 0:00 and is meant to give players a clear indication of how much time remains for time-limited objectives."
+		]
+	},
+	"SF2.Action.VisualTimerStop": {
+		"prefix": "SF2.Action.VisualTimerStop",
+		"body": [
+			"VisualTimerStop",
+			"{",
+			"}"
+		],
+		"description": [
+			"Stops a running visual timer.",
+			"Stops the visual timer and removes it from the screen.",
+			"Visual timers are used to give the player a constant visible countdown for time-limited tasks."
+		]
+	},
+	"SF2.Action.WeatherChange": {
+		"prefix": "SF2.Action.WeatherChange",
+		"body": [
+			"WeatherChange",
+			"{",
+			"\tFile = \"${1}\"  -- A weather file from the folder /mapname/weather/ without .XML extension.",
+			"\tFadeDuration = ${2:3}  -- Weather fade duration in seconds.",
+			"}"
+		],
+		"description": [
+			"Temporarily changes the weather to a specific one.",
+			"The game fades into the specified weather and keeps it active for an undefined time,",
+			"until the next random weather change occurs (depending on the maps weather settings)."
+		]
+	},
+	"SF2.Action.WeatherSetForever": {
+		"prefix": "SF2.Action.WeatherSetForever",
+		"body": [
+			"WeatherSetForever",
+			"{",
+			"\tFile = \"${1:}\"  -- A weather file from the folder /mapname/weather/ without .XML extension.",
+			"\tFadeDuration = ${2:3}  -- Weather fade duration in seconds.",
+			"}"
+		],
+		"description": [
+			"Permanently changes the weather to a specific one.",
+			"The game fades into the specified weather and keeps it active, ignoring the maps weather settings.",
+			"You can change it again using this command.",
+			"Interaction with WeatherChange is unclear — might require testing."
+		]
+	},
+	"SF2.Condition.AND": {
+		"prefix": "SF2.Condition.AND",
+		"body": [
+			"AND",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": [
+			"Logical AND for two or more conditions.",
+			"You can combine as many conditions as you want, there is no script-side limit.",
+			"AND and OR can also be nested, e.g.:",
+			"AND",
+			"{",
+			"\tMapTimerIsElapsed   {Name = \"\", Seconds = },",
+			"\tPlayerValueIsEqual  {Name = \"\", Value = },",
+			"\tTeamIsInRange       {Team = , X = , Y = },",
+			"\tOR",
+			"\t{",
+			"\t\tAnyFigureIsInRange   {X = , Y = },",
+			"\t\tEntityFlagIsTrue     {Name = \"\"},",
+			"\t\tMapTimerIsElapsed    {Name = \"\", Seconds = },",
+			"\t},",
+			"}"
+		]
+	},
+	"AvatarFlagIsFalse": {
+		"prefix": "SF2.Condition.AvatarFlagIsFalse",
+		"body": [
+			"AvatarFlagIsFalse",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:AvatarVar}\",   -- The name of the avatar variable (default: AvatarVar).",
+			"}"
+		],
+		"description": [
+			"Negated: Is the avatar variable true?"
+		]
+	},
+	"AvatarFlagIsTrue": {
+		"prefix": "SF2.Condition.AvatarFlagIsTrue",
+		"body": [
+			"AvatarFlagIsTrue",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:AvatarVar}\",   -- The name of the avatar variable (default: AvatarVar).",
+			"}"
+		],
+		"description": [
+			"AvatarFlagIsTrue",
+			"Is the avatar variable true?"
+		]
+	},
+	"AvatarHasGold": {
+		"prefix": "SF2.Condition.AvatarHasGold",
+		"body": [
+			"AvatarHasGold",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tAmount = ${2:100},           -- Any number (default: 100).",
+			"}"
+		],
+		"description": [
+			"Checks whether the selected avatar owns at least the specified amount of gold."
+		]
+	},
+	"AvatarHasItemEquipment": {
+		"prefix": "SF2.Condition.AvatarHasItemEquipment",
+		"body": [
+			"AvatarHasItemEquipment",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tItemId = ${2:1000},          -- The item ID as listed in the Items SQL table (default: 1000).",
+			"\tAmount = ${3:1},             -- Quantity to check for (default: 1).",
+			"\tSearchEquipment = ${4:true},  -- Search the avatar's equipped items? (default: true).",
+			"\tSearchHeroEquipment = ${5:true} -- Search the heroes' equipped items? (default: true).",
+			"}"
+		],
+		"description": [
+			"Checks whether an avatar owns at least the specified amount of a particular equipment item.",
+			"Searches the avatar's inventory and — depending on flags — also the avatar's equipped items and the equipment of the avatar's heroes.",
+			"ItemId refers to the ID found in the Items table (use your SQL client to look it up).",
+			"Toggle SearchEquipment and SearchHeroEquipment to include or exclude equipped items and hero equipment. By default all locations are searched.",
+			"Note: this command is not fully implemented."
+		]
+	},
+	"AvatarHasItemEquipped": {
+		"prefix": "SF2.Condition.AvatarHasItemEquipped",
+		"body": [
+			"AvatarHasItemEquipped",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tItemId = ${2:1000}           -- The item ID as listed in the Items SQL table (default: 1000).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar currently has a specific equipment item equipped.",
+			"The target item must be of type 'equipment'.",
+			"Useful for verifying if an avatar is actively using a given item.",
+			"See also: PlayerHeroHasItemEquipped."
+		]
+	},
+	"AvatarHasItemMisc": {
+		"prefix": "SF2.Condition.AvatarHasItemMisc",
+		"body": [
+			"AvatarHasItemMisc",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tItemId = ${2:2000},          -- The item ID as listed in the Items SQL table (default: 2000).",
+			"\tAmount = ${3:1}              -- Quantity to check for (default: 1).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar owns at least the specified amount of a given misc (quest) item.",
+			"The search is limited to the avatar's inventory, since misc items cannot be equipped.",
+			"ItemId corresponds to the entry in the Items table of the database."
+		]
+	},
+	"AvatarHasLevel": {
+		"prefix": "SF2.Condition.AvatarHasLevel",
+		"body": [
+			"AvatarHasLevel",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tLevel = ${2:10}              -- The minimum level to check for (default: 10).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar's level is greater than or equal to the specified value.",
+			"Useful for gating quests, abilities, or content behind a level requirement."
+		]
+	},
+	"AvatarHasNotGold": {
+		"prefix": "SF2.Condition.AvatarHasNotGold",
+		"body": [
+			"AvatarHasNotGold",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tAmount = ${2:100}            -- Quantity to check for (default: 100).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar does not own the specified amount of gold.",
+			"Acts as the negated form of AvatarHasGold."
+		]
+	},
+	"AvatarHasNotItemEquipment": {
+		"prefix": "SF2.Condition.AvatarHasNotItemEquipment",
+		"body": [
+			"AvatarHasNotItemEquipment",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",   -- The player name as set in the team setup (default: pl_Human).",
+			"\tItemId = ${2:1000},           -- The item ID as listed in the Items SQL table (default: 1000).",
+			"\tAmount = ${3:1},              -- Quantity to check for (default: 1).",
+			"\tSearchEquipment = ${4:true},  -- Search the avatar's equipped items? (default: true).",
+			"\tSearchHeroEquipment = ${5:true} -- Search the heroes' equipped items? (default: true).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar does not own the specified amount of a particular equipment item.",
+			"Negated form of AvatarHasItemEquipment."
+		]
+	},
+	"AvatarHasNotItemEquipped": {
+		"prefix": "SF2.Condition.AvatarHasNotItemEquipped",
+		"body": [
+			"AvatarHasNotItemEquipped",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tItemId = ${2:1000}           -- The item ID as listed in the Items SQL table (default: 1000).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar does not currently have a specific equipment item equipped.",
+			"Negated form of AvatarHasItemEquipped."
+		]
+	},
+	"AvatarHasNotItemMisc": {
+		"prefix": "SF2.Condition.AvatarHasNotItemMisc",
+		"body": [
+			"AvatarHasNotItemMisc",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tItemId = ${2:2000},          -- The item ID as listed in the Items SQL table (default: 2000).",
+			"\tAmount = ${3:1}              -- Quantity to check for (default: 1).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar does not own the specified amount of a given misc (quest) item.",
+			"Negated form of AvatarHasItemMisc."
+		]
+	},
+	"AvatarHasNotLevel": {
+		"prefix": "SF2.Condition.AvatarHasNotLevel",
+		"body": [
+			"AvatarHasNotLevel",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tLevel = ${2:10}              -- The minimum level to check for (default: 10).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar's level is lower than the specified value.",
+			"Negated form of AvatarHasLevel."
+		]
+	},
+	"AvatarHasNotSilver": {
+		"prefix": "SF2.Condition.AvatarHasNotSilver",
+		"body": [
+			"AvatarHasNotSilver",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tAmount = ${2:100}            -- Quantity to check for (default: 100).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar does not own the specified amount of silver.",
+			"Negated form of AvatarHasSilver.",
+			"Note: silver is deprecated in favor of gold."
+		]
+	},
+	"AvatarHasNotSkill": {
+		"prefix": "SF2.Condition.AvatarHasNotSkill",
+		"body": [
+			"AvatarHasNotSkill",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tSkill = ${2:3000}            -- The skill ID as listed in the database (default: 3000).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar does not possess the specified skill.",
+			"Negated form of AvatarHasSkill.",
+			"Useful for quest conditions or restrictions where a skill should not yet be learned."
+		]
+	},
+	"AvatarHasSilver": {
+		"prefix": "SF2.Condition.AvatarHasSilver",
+		"body": [
+			"AvatarHasSilver",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tAmount = ${2:100}            -- Quantity to check for (default: 100).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar owns at least the specified amount of silver.",
+			"Deprecated: silver has been merged into gold as the only currency unit."
+		]
+	},
+	"AvatarHasSkill": {
+		"prefix": "SF2.Condition.AvatarHasSkill",
+		"body": [
+			"AvatarHasSkill",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tSkill = ${2:3000}            -- The skill ID as listed in the database (default: 3000).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar possesses the specified skill.",
+			"Currently, the condition cannot be restricted to a specific skill rank.",
+			"Rank-based checks may be added in the future if needed."
+		]
+	},
+	"AvatarIsCastingSpell": {
+		"prefix": "SF2.Condition.AvatarIsCastingSpell",
+		"body": [
+			"AvatarIsCastingSpell",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tSpell = ${2:0}               -- The spell ID from the database (0 = any spell, default: 0).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar is currently casting a spell.",
+			"If a specific spell ID is provided, the check is restricted to that spell.",
+			"Using Spell = 0 makes the condition true if the avatar is casting any spell at all."
+		]
+	},
+	"AvatarIsFemale": {
+		"prefix": "SF2.Condition.AvatarIsFemale",
+		"body": [
+			"AvatarIsFemale",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup (default: pl_Human).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar is female.",
+			"Primarily used for gender-specific behaviors, such as selecting the correct animation set during gameplay."
+		]
+	},
+	"AvatarIsMale": {
+		"prefix": "SF2.Condition.AvatarIsMale",
+		"body": [
+			"AvatarIsMale",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup (default: pl_Human).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar is male.",
+			"Negated form of AvatarIsFemale.",
+			"Useful for gender-specific logic such as branching animations or dialogue."
+		]
+	},
+	"AvatarIsNotCastingSpell": {
+		"prefix": "SF2.Condition.AvatarIsNotCastingSpell",
+		"body": [
+			"AvatarIsNotCastingSpell",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tSpell = ${2:0}               -- The spell ID from the database (0 = any spell, default: 0).",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar is not currently casting the specified spell.",
+			"Negated form of AvatarIsCastingSpell.",
+			"Using Spell = 0 makes the condition true if the avatar is not casting any spell at all."
+		]
+	},
+	"AvatarIsNotTalking": {
+		"prefix": "SF2.Condition.AvatarIsNotTalking",
+		"body": [
+			"AvatarIsNotTalking",
+			"{",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar is no longer in a dialogue sequence.",
+			"Negated form of AvatarIsTalking.",
+			"The condition becomes true once the dialogue ends and the cinematic black bars have fully disappeared.",
+			"Timing may vary depending on the transition speed of the dialogue UI."
+		]
+	},
+	"AvatarIsTalking": {
+		"prefix": "SF2.Condition.AvatarIsTalking",
+		"body": [
+			"AvatarIsTalking",
+			"{",
+			"}"
+		],
+		"description": [
+			"Checks whether the avatar is currently in a dialogue sequence.",
+			"The condition becomes true as soon as the last dialogue line disappears and the cinematic black bars begin to roll off the screen.",
+			"For reliable results, this condition should be combined with GameInterfaceIsVisible."
+		]
+	},
+	"AvatarTimerIsElapsed": {
+		"prefix": "SF2.Condition.AvatarTimerIsElapsed",
+		"body": [
+			"AvatarTimerIsElapsed",
+			"{",
+			"\tName = \"${1:TimerName}\",   -- The name of the avatar timer (default: TimerName).",
+			"\tSeconds = ${2:10},           -- Number of seconds to check for (default: 10).",
+			"\tPlayer = \"${3:pl_Human}\"   -- The player name as set in the team setup (default: pl_Human).",
+			"}"
+		],
+		"description": [
+			"Checks whether the specified avatar timer has elapsed for the given duration.",
+			"Useful for time-based conditions such as cooldowns, scripted delays, or quest triggers."
+		]
+	},
+	"AvatarTimerIsNotElapsed": {
+		"prefix": "SF2.Condition.AvatarTimerIsNotElapsed",
+		"body": [
+			"AvatarTimerIsNotElapsed",
+			"{",
+			"\tName = \"${1:TimerName}\",   -- The name of the avatar timer (default: TimerName).",
+			"\tSeconds = ${2:10},           -- Number of seconds to check for (default: 10).",
+			"\tPlayer = \"${3:pl_Human}\"   -- The player name as set in the team setup (default: pl_Human).",
+			"}"
+		],
+		"description": [
+			"Checks whether the specified avatar timer has not yet elapsed.",
+			"Negated form of AvatarTimerIsElapsed.",
+			"Useful for conditions that must hold until a cooldown, delay, or scripted timer has fully passed."
+		]
+	},
+	"AvatarValueIsEqual": {
+		"prefix": "SF2.Condition.AvatarValueIsEqual",
+		"body": [
+			"AvatarValueIsEqual",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:VariableName}\", -- The name of the avatar variable (default: VariableName).",
+			"\tValue = ${3:0}                -- The value to compare against (default: 0).",
+			"}"
+		],
+		"description": [
+			"Checks whether the specified avatar variable is equal to the given value.",
+			"Useful for state tracking, quest variables, or scripted conditions where exact values matter."
+		]
+	},
+	"AvatarValueIsEqualToVariable": {
+		"prefix": "SF2.Condition.AvatarValueIsEqualToVariable",
+		"body": [
+			"AvatarValueIsEqualToVariable",
+			"{",
+			"\tPlayer1 = \"${1:pl_Human}\",   -- The first player (default: pl_Human).",
+			"\tName = \"${2:VariableA}\",      -- The first avatar variable (default: VariableA).",
+			"\tPlayer2 = \"${3:pl_Human}\",   -- The second player (default: pl_Human).",
+			"\tVariable = \"${4:VariableB}\"   -- The second avatar variable (default: VariableB).",
+			"}"
+		],
+		"description": [
+			"Compares two avatar variables and checks whether they are equal.",
+			"Useful for synchronizing state between different players or validating mirrored conditions."
+		]
+	},
+	"AvatarValueIsGreater": {
+		"prefix": "SF2.Condition.AvatarValueIsGreater",
+		"body": [
+			"AvatarValueIsGreater",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",   -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:VariableName}\",  -- The name of the avatar variable (default: VariableName).",
+			"\tValue = ${3:0}                 -- The value to compare against (default: 0).",
+			"}"
+		],
+		"description": [
+			"Checks whether the specified avatar variable is greater than the given value.",
+			"Commonly used for thresholds such as level, resource count, quest progress, or other gameplay variables."
+		]
+	},
+	"AvatarValueIsGreaterOrEqual": {
+		"prefix": "SF2.Condition.AvatarValueIsGreaterOrEqual",
+		"body": [
+			"AvatarValueIsGreaterOrEqual",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",   -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:VariableName}\",  -- The name of the avatar variable (default: VariableName).",
+			"\tValue = ${3:0}                 -- The value to compare against (default: 0).",
+			"}"
+		],
+		"description": [
+			"Checks whether the specified avatar variable is greater than or equal to the given value.",
+			"Useful for thresholds where meeting or exceeding a requirement is acceptable (e.g. level caps, resource minimums, or progress markers)."
+		]
+	},
+	"AvatarValueIsGreaterOrEqualThanVariable": {
+		"prefix": "SF2.Condition.AvatarValueIsGreaterOrEqualThanVariable",
+		"body": [
+			"AvatarValueIsGreaterOrEqualThanVariable",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",   -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:VariableName}\",  -- The name of the avatar variable to compare (default: VariableName).",
+			"\tPlayer = \"${3:pl_Human}\",   -- The player name for the comparison variable (default: pl_Human).",
+			"\tVariable = \"${4:OtherVar}\"   -- The name of the comparison avatar variable (default: OtherVar).",
+			"}"
+		],
+		"description": [
+			"Checks whether one avatar variable is greater than or equal to another variable.",
+			"Useful for comparing dynamic values, such as resource counters, quest variables, or progression states."
+		]
+	},
+	"AvatarValueIsGreaterThanVariable": {
+		"prefix": "SF2.Condition.AvatarValueIsGreaterThanVariable",
+		"body": [
+			"AvatarValueIsGreaterThanVariable",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",   -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:VariableName}\",  -- The name of the avatar variable to compare (default: VariableName).",
+			"\tPlayer = \"${3:pl_Human}\",   -- The player name for the comparison variable (default: pl_Human).",
+			"\tVariable = \"${4:OtherVar}\"   -- The name of the comparison avatar variable (default: OtherVar).",
+			"}"
+		],
+		"description": [
+			"Checks if one avatar variable is strictly greater than another variable.",
+			"Useful when enforcing progress milestones, thresholds, or superiority between two tracked values."
+		]
+	},
+	"AvatarValueIsLess": {
+		"prefix": "SF2.Condition.AvatarValueIsLess",
+		"body": [
+			"AvatarValueIsLess",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",   -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:VariableName}\",  -- The name of the avatar variable to check (default: VariableName).",
+			"\tValue = ${3:0}                 -- The value to compare against (default: 0).",
+			"}"
+		],
+		"description": [
+			"Checks if the avatar variable is less than the given value.",
+			"Useful for detecting when a variable drops below a certain threshold, such as health, resources, or progress markers."
+		]
+	},
+	"AvatarValueIsLessOrEqual": {
+		"prefix": "SF2.Condition.AvatarValueIsLessOrEqual",
+		"body": [
+			"AvatarValueIsLessOrEqual",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",   -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:VariableName}\",  -- The name of the avatar variable to check (default: VariableName).",
+			"\tValue = ${3:0}                 -- The value to compare against (default: 0).",
+			"}"
+		],
+		"description": [
+			"Checks if the avatar variable is less than or equal to the given value.",
+			"Often used to validate caps, limits, or minimum thresholds where the variable should not exceed a certain value."
+		]
+	},
+	"AvatarValueIsLessOrEqualThanVariable": {
+		"prefix": "SF2.Condition.AvatarValueIsLessOrEqualThanVariable",
+		"body": [
+			"AvatarValueIsLessOrEqualThanVariable",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",   -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:VariableName}\",  -- The name of the avatar variable to check (default: VariableName).",
+			"\tVariable = \"${3:OtherVar}\"   -- The other avatar variable to compare against (default: OtherVar).",
+			"}"
+		],
+		"description": [
+			"Checks if the avatar variable is less than or equal to another avatar variable.",
+			"Useful when comparing dynamic values against each other instead of fixed numbers."
+		]
+	},
+	"AvatarValueIsLessThanVariable": {
+		"prefix": "SF2.Condition.AvatarValueIsLessThanVariable",
+		"body": [
+			"AvatarValueIsLessThanVariable",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",   -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:VariableName}\",  -- The name of the avatar variable to check (default: VariableName).",
+			"\tVariable = \"${3:OtherVar}\"   -- The other avatar variable to compare against (default: OtherVar).",
+			"}"
+		],
+		"description": [
+			"Checks if the avatar variable is less than another avatar variable.",
+			"Handy when comparing avatar stats or resources against each other."
+		]
+	},
+	"AvatarValueIsNotEqual": {
+		"prefix": "SF2.Condition.AvatarValueIsNotEqual",
+		"body": [
+			"AvatarValueIsNotEqual",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",   -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:VariableName}\",  -- The name of the avatar variable to check (default: VariableName).",
+			"\tValue = ${3:0}                 -- The value to compare against (default: 0).",
+			"}"
+		],
+		"description": [
+			"Checks if the avatar variable does NOT equal the given value.",
+			"Useful when you want to ensure a variable differs from a specific state."
+		]
+	},
+	"AvatarValueIsNotEqualToVariable": {
+		"prefix": "SF2.Condition.AvatarValueIsNotEqualToVariable",
+		"body": [
+			"AvatarValueIsNotEqualToVariable",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",    -- The player name as set in the team setup (default: pl_Human).",
+			"\tName = \"${2:VariableName}\",  -- The first avatar variable to check.",
+			"\tVariable = \"${3:OtherVar}\"   -- The other avatar variable to compare against.",
+			"}"
+		],
+		"description": [
+			"Checks if the avatar variable does NOT equal another avatar variable.",
+			"Useful when comparing two variables to ensure they are different."
+		]
+	},
+	"BuildingHasHealth": {
+		"prefix": "SF2.Condition.BuildingHasHealth",
+		"body": [
+			"BuildingHasHealth",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",      -- The script tag of the building.",
+			"\tPercent = ${2:50}             -- Health percentage (0–100) relative to max HP.",
+			"}"
+		],
+		"description": [
+			"Checks if the building has at least the given percentage of health.",
+			"Use BuildingIsAlive instead of setting Percent = 0 to check if it has been destroyed."
+		]
+	},
+	"BuildingHasNotHealth": {
+		"prefix": "SF2.Condition.BuildingHasNotHealth",
+		"body": [
+			"BuildingHasNotHealth",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",      -- The script tag of the building.",
+			"\tPercent = ${2:50}             -- Health percentage (0–100) relative to max HP.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the building does not have the specified percentage of health.",
+			"Use BuildingIsAlive instead of comparing with 0% when checking destruction state."
+		]
+	},
+	"BuildingIsAboutToBeBuilt": {
+		"prefix": "SF2.Condition.BuildingIsAboutToBeBuilt",
+		"body": [
+			"BuildingIsAboutToBeBuilt",
+			"{",
+			"\tBuildingId = ${1:0}    -- The building ID as defined in the database.",
+			"}"
+		],
+		"description": [
+			"Checks if a specific building is currently selected at the mouse cursor,",
+			"and the player is in the process of choosing a construction site."
+		]
+	},
+	"BuildingIsAlive": {
+		"prefix": "SF2.Condition.BuildingIsAlive",
+		"body": [
+			"BuildingIsAlive",
+			"{",
+			"\tTag = \"${1:MyBuilding}\"    -- Script tag of the building to check.",
+			"}"
+		],
+		"description": [
+			"Checks if the building with the given ScriptTag is still alive (i.e., not destroyed and still existing in the world)."
+		]
+	},
+	"BuildingIsDead": {
+		"prefix": "SF2.Condition.BuildingIsDead",
+		"body": [
+			"BuildingIsDead",
+			"{",
+			"\tTag = \"${1:MyBuilding}\"    -- Script tag of the building to check.",
+			"}"
+		],
+		"description": [
+			"Negated condition: checks if the building with the given ScriptTag is not alive (i.e., destroyed or no longer existing)."
+		]
+	},
+	"BuildingIsInEntityRange": {
+		"prefix": "SF2.Condition.BuildingIsInEntityRange",
+		"body": [
+			"BuildingIsInEntityRange",
+			"{",
+			"\tTag = \"${1:SourceBuilding}\"        -- Script tag of the building.",
+			"\tTargetTag = \"${2:TargetEntity}\"   -- Script tag of the target entity.",
+			"\tRange = ${3:10}                     -- Radius in grid units.",
+			"}"
+		],
+		"description": [
+			"Checks if a building with the given ScriptTag is within a certain range of another entity.",
+			"Useful for proximity checks such as detecting nearby allies, enemies, or interactive objects."
+		]
+	},
+	"BuildingIsInRange": {
+		"prefix": "SF2.Condition.BuildingIsInRange",
+		"body": [
+			"BuildingIsInRange",
+			"{",
+			"\tTag = \"${1:BuildingTag}\"    -- Script tag of the building.",
+			"\tRange = ${2:10}              -- Radius in grid units.",
+			"\tX = ${3:100}                 -- X coordinate (world coordinates).",
+			"\tY = ${4:100}                 -- Y coordinate (world coordinates).",
+			"}"
+		],
+		"description": [
+			"Checks whether a building is within a given radius of specified world coordinates.",
+			"Primarily useful for mechanics involving movable buildings or special cases like dynamic grids or wormholes."
+		]
+	},
+	"BuildingIsInRangeToEntity": {
+		"prefix": "SF2.Condition.BuildingIsInRangeToEntity",
+		"body": [
+			"BuildingIsInRangeToEntity",
+			"{",
+			"\tTag = \"${1:BuildingTag}\"        -- Script tag of the building.",
+			"\tTargetTag = \"${2:TargetTag}\"   -- Script tag of the target entity.",
+			"\tRange = ${3:10}                  -- Radius in grid units.",
+			"}"
+		],
+		"description": [
+			"Checks if a building is within a given range of another entity.",
+			"The condition is symmetrical: the building and the entity are both considered for proximity."
+		]
+	},
+	"BuildingIsInRect": {
+		"prefix": "SF2.Condition.BuildingIsInRect",
+		"body": [
+			"BuildingIsInRect",
+			"{",
+			"\tTag = \"${1:BuildingTag}\"   -- Script tag of the building.",
+			"\tTop = ${2:0}                 -- Top Y coordinate of the rectangle.",
+			"\tLeft = ${3:0}                -- Left X coordinate of the rectangle.",
+			"\tBottom = ${4:100}            -- Bottom Y coordinate of the rectangle.",
+			"\tRight = ${5:100}             -- Right X coordinate of the rectangle.",
+			"}"
+		],
+		"description": [
+			"Checks if a building is inside the specified rectangular area.",
+			"Requires movable buildings to be meaningful (or special mechanics like shifting coordinates or wormholes)."
+		]
+	},
+	"BuildingIsNotAboutToBeBuilt": {
+		"prefix": "SF2.Condition.BuildingIsNotAboutToBeBuilt",
+		"body": [
+			"BuildingIsNotAboutToBeBuilt",
+			"{",
+			"\tBuildingId = ${1:0}   -- Building ID from the database.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a specific building is *not* currently attached to the cursor while the player is trying to find a construction spot."
+		]
+	},
+	"BuildingIsNotInEntityRange": {
+		"prefix": "SF2.Condition.BuildingIsNotInEntityRange",
+		"body": [
+			"BuildingIsNotInEntityRange",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",        -- A script tag.",
+			"\tTargetTag = \"${2:TargetTag}\", -- The script tag of the target.",
+			"\tRange = ${3:0}                  -- The radius of the check in grid points.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a building is *not* within the specified range of another entity."
+		]
+	},
+	"BuildingIsNotInRange": {
+		"prefix": "SF2.Condition.BuildingIsNotInRange",
+		"body": [
+			"BuildingIsNotInRange",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",  -- A script tag.",
+			"\tRange = ${2:0},           -- The radius of the check in grid points.",
+			"\tX = ${3:0},               -- The X coordinate in world coordinates.",
+			"\tY = ${4:0}                -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a building is *not* within the given range of the specified coordinates."
+		]
+	},
+	"BuildingIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.BuildingIsNotInRangeToEntity",
+		"body": [
+			"BuildingIsNotInRangeToEntity",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",       -- A script tag.",
+			"\tTargetTag = \"${2:TargetTag}\", -- The script tag of the target entity.",
+			"\tRange = ${3:0}                  -- The radius of the check in grid points.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a building is *not* within the specified range of another entity."
+		]
+	},
+	"BuildingIsNotInRect": {
+		"prefix": "SF2.Condition.BuildingIsNotInRect",
+		"body": [
+			"BuildingIsNotInRect",
+			"{",
+			"\tTag = \"${1:ScriptTag}\", -- A script tag.",
+			"\tTop = ${2:0},            -- The top coordinate of the rectangle.",
+			"\tLeft = ${3:0},           -- The left coordinate of the rectangle.",
+			"\tBottom = ${4:0},         -- The bottom coordinate of the rectangle.",
+			"\tRight = ${5:0}           -- The right coordinate of the rectangle.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a building is NOT located inside the specified rectangle."
+		]
+	},
+	"BuildingIsNotSelected": {
+		"prefix": "SF2.Condition.BuildingIsNotSelected",
+		"body": [
+			"BuildingIsNotSelected",
+			"{",
+			"\tBuildingId = ${1:BuildingId} -- The building ID from the database.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a specific building is NOT selected."
+		]
+	},
+	"BuildingIsSelected": {
+		"prefix": "SF2.Condition.BuildingIsSelected",
+		"body": [
+			"BuildingIsSelected",
+			"{",
+			"\tBuildingId = ${1:BuildingId} -- The building ID from the database.",
+			"}"
+		],
+		"description": [
+			"Checks if a specific building is selected."
+		]
+	},
+	"BuildingRallyPointIsInRange": {
+		"prefix": "SF2.Condition.BuildingRallyPointIsInRange",
+		"body": [
+			"BuildingRallyPointIsInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\" -- The player name as set in the team setup.",
+			"\tBuildingId = ${2:BuildingId} -- The building ID from the database.",
+			"\tX = ${3:X} -- The X coordinate in world coordinates.",
+			"\tY = ${4:Y} -- The Y coordinate in world coordinates.",
+			"\tRange = ${5:Range} -- The radius of the query in grid points.",
+			"}"
+		],
+		"description": [
+			"Checks if the rally point of a building of the specified type is within range of the given coordinates."
+		]
+	},
+	"BuildingRallyPointIsNotInRange": {
+		"prefix": "SF2.Condition.BuildingRallyPointIsNotInRange",
+		"body": [
+			"BuildingRallyPointIsNotInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\" -- The player name as set in the team setup.",
+			"\tBuildingId = ${2:BuildingId} -- The building ID from the database.",
+			"\tX = ${3:X} -- The X coordinate in world coordinates.",
+			"\tY = ${4:Y} -- The Y coordinate in world coordinates.",
+			"\tRange = ${5:Range} -- The radius of the query in grid points.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the rally point of a building of the specified type is NOT within range of the given coordinates."
+		]
+	},
+	"CoopPlayerIsNotPlaying": {
+		"prefix": "SF2.Condition.CoopPlayerIsNotPlaying",
+		"body": [
+			"CoopPlayerIsNotPlaying",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\" -- The player name as set in the team setup.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the specified player is NOT connected (regarding multiplayer matches)."
+		]
+	},
+	"CoopPlayerIsPlaying": {
+		"prefix": "SF2.Condition.CoopPlayerIsPlaying",
+		"body": [
+			"CoopPlayerIsPlaying",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\" -- The player name as set in the team setup.",
+			"}"
+		],
+		"description": [
+			"Checks if the specified player is connected (regarding multiplayer matches)."
+		]
+	},
+	"CutsceneFiguresAreAlive": {
+		"prefix": "SF2.Condition.CutsceneFiguresAreAlive",
+		"body": [
+			"CutsceneFiguresAreAlive",
+			"{",
+			"}"
+		],
+		"description": [
+			"Are all cutscene figures registered in the render list alive?"
+		]
+	},
+	"CutsceneFiguresAreNotAlive": {
+		"prefix": "SF2.Condition.CutsceneFiguresAreNotAlive",
+		"body": [
+			"CutsceneFiguresAreNotAlive",
+			"{",
+			"}"
+		],
+		"description": [
+			"Negated: Are all cutscene figures registered in the render list alive?"
+		]
+	},
+	"CutsceneSayIsDone": {
+		"prefix": "SF2.Condition.CutsceneSayIsDone",
+		"body": [
+			"CutsceneSayIsDone",
+			"{",
+			"}"
+		],
+		"description": [
+			"Is the voice output of the last CutsceneSay finished?"
+		]
+	},
+	"CutsceneSayIsNotDone": {
+		"prefix": "SF2.Condition.CutsceneSayIsNotDone",
+		"body": [
+			"CutsceneSayIsNotDone",
+			"{",
+			"}"
+		],
+		"description": [
+			"Negated: Is the voice output of the last CutsceneSay finished?"
+		]
+	},
+
 }
