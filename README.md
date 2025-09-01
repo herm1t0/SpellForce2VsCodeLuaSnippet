@@ -1,5 +1,5 @@
 # SpellForce2 VSCode Lua Functions Snippet
-## Right now more than a half done with ChatGPT, manual refactoring incoming...
+## Right now more than a half done with ChatGPT 5, manual refactoring incoming...
 
 **Preffix - SF2**
 
