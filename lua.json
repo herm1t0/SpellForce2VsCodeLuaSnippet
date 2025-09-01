@@ -5187,11 +5187,11 @@
 		"body": [
 			"BuildingRallyPointIsNotInRange",
 			"{",
-			"\tPlayer = \"${1:pl_Human}\" -- The player name as set in the team setup.",
-			"\tBuildingId = ${2:BuildingId} -- The building ID from the database.",
-			"\tX = ${3:X} -- The X coordinate in world coordinates.",
-			"\tY = ${4:Y} -- The Y coordinate in world coordinates.",
-			"\tRange = ${5:Range} -- The radius of the query in grid points.",
+			"\tPlayer = \"${1:pl_Human}\", -- The player name as set in the team setup.",
+			"\tBuildingId = ${2:BuildingId}, -- The building ID from the database.",
+			"\tX = ${3:50}, -- The X coordinate in world coordinates.",
+			"\tY = ${4:50}, -- The Y coordinate in world coordinates.",
+			"\tRange = ${5:50} -- The radius of the query in grid points.",
 			"}"
 		],
 		"description": [
@@ -5266,5 +5266,3659 @@
 			"Negated: Is the voice output of the last CutsceneSay finished?"
 		]
 	},
-
+	"DebugQuestionNo": {
+		"prefix": "SF2.Condition.DebugQuestionNo",
+		"body": [
+			"DebugQuestionNo",
+			"{",
+			"\tCaption = \"${1:Script Debug Message}\", -- The title line above a DebugMessage/QuestionBox.",
+			"\tQuestion = \"${2:Your question here}\"    -- The question inside a DebugQuestionBox.",
+			"}"
+		],
+		"description": [
+			"Negated: Displays a Windows message box",
+			"Used to ask a Yes/No question"
+		]
+	},
+	"DebugQuestionYes": {
+		"prefix": "SF2.Condition.DebugQuestionYes",
+		"body": [
+			"DebugQuestionYes",
+			"{",
+			"\tCaption = \"${1:Script Debug Message}\", -- The title line above a DebugMessage/QuestionBox.",
+			"\tQuestion = \"${2:Your question here}\"    -- The question inside a DebugQuestionBox.",
+			"}"
+		],
+		"description": [
+			"Displays a Windows message box",
+			"Used to ask a Yes/No question"
+		]
+	},
+	"DialogEquipmentIsNotVisible": {
+		"prefix": "SF2.Condition.DialogEquipmentIsNotVisible",
+		"body": [
+			"DialogEquipmentIsNotVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the mentioned in-game equipment menu is visible"
+		]
+	},
+	"DialogEquipmentIsVisible": {
+		"prefix": "SF2.Condition.DialogEquipmentIsVisible",
+		"body": [
+			"DialogEquipmentIsVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Checks if the mentioned in-game equipment menu is visible"
+		]
+	},
+	"DialogHeroEquipmentIsNotSelected": {
+		"prefix": "SF2.Condition.DialogHeroEquipmentIsNotSelected",
+		"body": [
+			"DialogHeroEquipmentIsNotSelected",
+			"{",
+			"\tHero = ${1:0} -- The ID 1 to 5 of a hero, 0 for the avatar.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks which slot (Avatar + Heroes) is selected",
+			"Used in the equipment dialog"
+		]
+	},
+	"DialogHeroEquipmentIsSelected": {
+		"prefix": "SF2.Condition.DialogHeroEquipmentIsSelected",
+		"body": [
+			"DialogHeroEquipmentIsSelected",
+			"{",
+			"\tHero = ${1:0} -- The ID 1 to 5 of a hero, 0 for the avatar.",
+			"}"
+		],
+		"description": [
+			"Checks which slot (Avatar + Heroes) is selected",
+			"Used in the equipment dialog"
+		]
+	},
+	"DialogInventoryIsNotVisible": {
+		"prefix": "SF2.Condition.DialogInventoryIsNotVisible",
+		"body": [
+			"DialogInventoryIsNotVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the mentioned in-game inventory menu is visible"
+		]
+	},
+	"DialogInventoryIsVisible": {
+		"prefix": "SF2.Condition.DialogInventoryIsVisible",
+		"body": [
+			"DialogInventoryIsVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Checks if the mentioned in-game inventory menu is visible"
+		]
+	},
+	"DialogLootIsNotVisible": {
+		"prefix": "SF2.Condition.DialogLootIsNotVisible",
+		"body": [
+			"DialogLootIsNotVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the mentioned in-game loot menu is visible"
+		]
+	},
+	"DialogLootIsVisible": {
+		"prefix": "SF2.Condition.DialogLootIsVisible",
+		"body": [
+			"DialogLootIsVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Checks if the mentioned in-game loot menu is visible"
+		]
+	},
+	"DialogQuestBookDescriptionIsNotVisible": {
+		"prefix": "SF2.Condition.DialogQuestBookDescriptionIsNotVisible",
+		"body": [
+			"DialogQuestBookDescriptionIsNotVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the mentioned in-game quest book description menu is visible"
+		]
+	},
+	"DialogQuestBookDescriptionIsVisible": {
+		"prefix": "SF2.Condition.DialogQuestBookDescriptionIsVisible",
+		"body": [
+			"DialogQuestBookDescriptionIsVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Checks if the mentioned in-game quest book description menu is visible"
+		]
+	},
+	"DialogQuestBookIsNotVisible": {
+		"prefix": "SF2.Condition.DialogQuestBookIsNotVisible",
+		"body": [
+			"DialogQuestBookIsNotVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the mentioned in-game quest book menu is visible"
+		]
+	},
+	"DialogQuestBookIsVisible": {
+		"prefix": "SF2.Condition.DialogQuestBookIsVisible",
+		"body": [
+			"DialogQuestBookIsVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Checks if the mentioned in-game quest book menu is visible"
+		]
+	},
+	"DialogSkillTreeIsNotVisible": {
+		"prefix": "SF2.Condition.DialogSkillTreeIsNotVisible",
+		"body": [
+			"DialogSkillTreeIsNotVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the mentioned in-game skill tree menu is visible"
+		]
+	},
+	"DialogSkillTreeIsVisible": {
+		"prefix": "SF2.Condition.DialogSkillTreeIsVisible",
+		"body": [
+			"DialogSkillTreeIsVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Checks if the mentioned in-game skill tree menu is visible"
+		]
+	},
+	"DialogSpellBookIsNotVisible": {
+		"prefix": "SF2.Condition.DialogSpellBookIsNotVisible",
+		"body": [
+			"DialogSpellBookIsNotVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the mentioned in-game spell book menu is visible"
+		]
+	},
+	"DialogSpellBookIsVisible": {
+		"prefix": "SF2.Condition.DialogSpellBookIsVisible",
+		"body": [
+			"DialogSpellBookIsVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Checks if the mentioned in-game spell book menu is visible"
+		]
+	},
+	"EntityFlagIsFalse": {
+		"prefix": "SF2.Condition.EntityFlagIsFalse",
+		"body": [
+			"EntityFlagIsFalse",
+			"{",
+			"\tName = \"${1:EntityVariable}\" -- The name of the entity variable.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the entity variable is true"
+		]
+	},
+	"EntityFlagIsTrue": {
+		"prefix": "SF2.Condition.EntityFlagIsTrue",
+		"body": [
+			"EntityFlagIsTrue",
+			"{",
+			"\tName = \"${1:EntityVariable}\" -- The name of the entity variable.",
+			"}"
+		],
+		"description": [
+			"Checks if the entity variable is true"
+		]
+	},
+	"EntityIsExisting": {
+		"prefix": "SF2.Condition.EntityIsExisting",
+		"body": [
+			"EntityIsExisting",
+			"{",
+			"\tTag = \"${1:ScriptTag}\" -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Checks if an entity with this script tag exists",
+			"Works with objects too (e.g., a loot chest that disappears after being looted)",
+			"Useful to verify whether a ScriptTag is present on the map"
+		]
+	},
+	"EntityIsNotExisting": {
+		"prefix": "SF2.Condition.EntityIsNotExisting",
+		"body": [
+			"EntityIsNotExisting",
+			"{",
+			"\tTag = \"${1:ScriptTag}\" -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if an entity with this script tag does not exist",
+			"Useful to confirm the absence of a ScriptTag on the map"
+		]
+	},
+	"EntityTimerIsElapsed": {
+		"prefix": "SF2.Condition.EntityTimerIsElapsed",
+		"body": [
+			"EntityTimerIsElapsed",
+			"{",
+			"\tName = \"${1:EntityTimer}\" -- The name of the entity timer.",
+			"\tSeconds = ${2:10}          -- Number of seconds.",
+			"}"
+		],
+		"description": [
+			"Checks if the entity timer has elapsed"
+		]
+	},
+	"EntityTimerIsNotElapsed": {
+		"prefix": "SF2.Condition.EntityTimerIsNotElapsed",
+		"body": [
+			"EntityTimerIsNotElapsed",
+			"{",
+			"\tName = \"${1:EntityTimer}\" -- The name of the entity timer.",
+			"\tSeconds = ${2:10}          -- Number of seconds.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the entity timer has not yet elapsed"
+		]
+	},
+	"EntityValueIsEqual": {
+		"prefix": "SF2.Condition.EntityValueIsEqual",
+		"body": [
+			"EntityValueIsEqual",
+			"{",
+			"\tName = \"${1:EntityVariable}\" -- The name of the entity variable.",
+			"\tValue = ${2:0}                -- The value of the variable.",
+			"}"
+		],
+		"description": [
+			"Checks if the entity variable has the specified value"
+		]
+	},
+	"EntityValueIsEqualToVariable": {
+		"prefix": "SF2.Condition.EntityValueIsEqualToVariable",
+		"body": [
+			"EntityValueIsEqualToVariable",
+			"{",
+			"\tName = \"${1:EntityVariable}\"     -- The name of the entity variable.",
+			"\tVariable = \"${2:OtherVariable}\" -- The name of the entity variable to compare with.",
+			"}"
+		],
+		"description": [
+			"Checks if the entity variable is equal to another entity variable"
+		]
+	},
+	"EntityValueIsGreater": {
+		"prefix": "SF2.Condition.EntityValueIsGreater",
+		"body": [
+			"EntityValueIsGreater",
+			"{",
+			"\tName = \"${1:EntityVariable}\" -- The name of the entity variable.",
+			"\tValue = ${2:0}                -- The value to compare against.",
+			"}"
+		],
+		"description": [
+			"Checks if the entity variable is greater than the specified value"
+		]
+	},
+	"EntityValueIsGreaterOrEqual": {
+		"prefix": "SF2.Condition.EntityValueIsGreaterOrEqual",
+		"body": [
+			"EntityValueIsGreaterOrEqual",
+			"{",
+			"\tName = \"${1:EntityVariable}\" -- The name of the entity variable.",
+			"\tValue = ${2:0}                -- The value to compare against.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the entity variable is greater than or equal to the specified value"
+		]
+	},
+	"EntityValueIsGreaterOrEqualThanVariable": {
+		"prefix": "SF2.Condition.EntityValueIsGreaterOrEqualThanVariable",
+		"body": [
+			"EntityValueIsGreaterOrEqualThanVariable",
+			"{",
+			"\tName = \"${1:EntityVariable}\"     -- The name of the entity variable.",
+			"\tVariable = \"${2:OtherVariable}\" -- The name of the entity variable to compare with.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the entity variable is greater than or equal to another entity variable"
+		]
+	},
+	"EntityValueIsGreaterThanVariable": {
+		"prefix": "SF2.Condition.EntityValueIsGreaterThanVariable",
+		"body": [
+			"EntityValueIsGreaterThanVariable",
+			"{",
+			"\tName = \"${1:EntityVariable}\"     -- The name of the entity variable.",
+			"\tVariable = \"${2:OtherVariable}\" -- The name of the entity variable to compare with.",
+			"}"
+		],
+		"description": [
+			"Checks if the entity variable is greater than another entity variable"
+		]
+	},
+	"EntityValueIsLess": {
+		"prefix": "SF2.Condition.EntityValueIsLess",
+		"body": [
+			"EntityValueIsLess",
+			"{",
+			"\tName = \"${1:EntityVariable}\" -- The name of the entity variable.",
+			"\tValue = ${2:0}                -- The value to compare against.",
+			"}"
+		],
+		"description": [
+			"Checks if the entity variable is less than the specified value"
+		]
+	},
+	"EntityValueIsLessOrEqual": {
+		"prefix": "SF2.Condition.EntityValueIsLessOrEqual",
+		"body": [
+			"EntityValueIsLessOrEqual",
+			"{",
+			"\tName = \"${1:EntityVariable}\" -- The name of the entity variable.",
+			"\tValue = ${2:0}                -- The value to compare against.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the entity variable is less than or equal to the specified value"
+		]
+	},
+	"EntityValueIsLessOrEqualThanVariable": {
+		"prefix": "SF2.Condition.EntityValueIsLessOrEqualThanVariable",
+		"body": [
+			"EntityValueIsLessOrEqualThanVariable",
+			"{",
+			"\tName = \"${1:EntityVariable}\"     -- The name of the entity variable.",
+			"\tVariable = \"${2:OtherVariable}\" -- The name of the entity variable to compare with.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the entity variable is less than or equal to another entity variable"
+		]
+	},
+	"EntityValueIsLessThanVariable": {
+		"prefix": "SF2.Condition.EntityValueIsLessThanVariable",
+		"body": [
+			"EntityValueIsLessThanVariable",
+			"{",
+			"\tName = \"${1:EntityVariable}\"     -- The name of the entity variable.",
+			"\tVariable = \"${2:OtherVariable}\" -- The name of the entity variable to compare with.",
+			"}"
+		],
+		"description": [
+			"Checks if the entity variable is less than another entity variable"
+		]
+	},
+	"EntityValueIsNotEqual": {
+		"prefix": "SF2.Condition.EntityValueIsNotEqual",
+		"body": [
+			"EntityValueIsNotEqual",
+			"{",
+			"\tName = \"${1:EntityVariable}\" -- The name of the entity variable.",
+			"\tValue = ${2:0}                -- The value of the variable.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the entity variable is not equal to the specified value"
+		]
+	},
+	"EntityValueIsNotEqualToVariable": {
+		"prefix": "SF2.Condition.EntityValueIsNotEqualToVariable",
+		"body": [
+			"EntityValueIsNotEqualToVariable",
+			"{",
+			"\tName = \"${1:EntityVariable}\"     -- The name of the entity variable.",
+			"\tVariable = \"${2:OtherVariable}\" -- The name of the entity variable to compare with.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the entity variable is not equal to another entity variable"
+		]
+	},
+	"FigureHasHate": {
+		"prefix": "SF2.Condition.FigureHasHate",
+		"body": [
+			"FigureHasHate",
+			"{",
+			"\tTag = \"${1:ScriptTag}\" -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Checks if a figure has taken damage from an enemy",
+			"Returns true only if the figure actually suffered damage",
+			"Does not return true if the figure only destroys a building (unless it is a tower)",
+			"See also: FigureIsInCombat"
+		]
+	},
+	"FigureHasHealth": {
+		"prefix": "SF2.Condition.FigureHasHealth",
+		"body": [
+			"FigureHasHealth",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",  -- A script tag.",
+			"\tPercent = ${2:50}         -- A percentage value between 0 and 100.",
+			"}"
+		],
+		"description": [
+			"Checks if a figure has a certain amount of health",
+			"Evaluates whether the figure has the specified percentage of hitpoints based on the maximum value",
+			"Note: Do not use Percent = 0 to check if a figure is dead. Use FigureIsAlive instead."
+		]
+	},
+	"FigureHasMana": {
+		"prefix": "SF2.Condition.FigureHasMana",
+		"body": [
+			"FigureHasMana",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",  -- A script tag.",
+			"\tPercent = ${2:50}         -- A percentage value between 0 and 100.",
+			"}"
+		],
+		"description": [
+			"Checks if a figure has a certain amount of mana",
+			"Evaluates whether the figure has the specified percentage of mana based on the maximum value"
+		]
+	},
+	"FigureHasNotHate": {
+		"prefix": "SF2.Condition.FigureHasNotHate",
+		"body": [
+			"FigureHasNotHate",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a figure has not taken damage from an enemy"
+		]
+	},
+	"FigureHasNotHealth": {
+		"prefix": "SF2.Condition.FigureHasNotHealth",
+		"body": [
+			"FigureHasNotHealth",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",  -- A script tag.",
+			"\tPercent = ${2:50}         -- A percentage value between 0 and 100.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a figure does not have a certain amount of health",
+			"Evaluates whether the figure lacks the specified percentage of hitpoints based on the maximum value"
+		]
+	},
+	"FigureHasNotMana": {
+		"prefix": "SF2.Condition.FigureHasNotMana",
+		"body": [
+			"FigureHasNotMana",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",  -- A script tag.",
+			"\tPercent = ${2:50}         -- A percentage value between 0 and 100.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a figure does not have a certain amount of mana",
+			"Evaluates whether the figure lacks the specified percentage of mana based on the maximum value"
+		]
+	},
+	"FigureIsAlive": {
+		"prefix": "SF2.Condition.FigureIsAlive",
+		"body": [
+			"FigureIsAlive",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Checks if the entity with the given script tag is alive (exists).",
+			"Evaluates whether the figure is still alive.",
+			"A figure is considered dead if:",
+			"- it died in combat,",
+			"- it was killed via the FigureKill script command,",
+			"- it was removed from the map using the FigureVanish script command,",
+			"- it is still waiting to spawn because of a SpawnOnlyWhenEvent,",
+			"- or there is no entity with the given script tag on the map (e.g., a typo in the tag)."
+		]
+	},
+	"FigureIsDead": {
+		"prefix": "SF2.Condition.FigureIsDead",
+		"body": [
+			"FigureIsDead",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the entity with the given script tag is not alive (non-existent or dead).",
+			"A figure is considered dead if:",
+			"- it died in combat,",
+			"- it was killed via the FigureKill script command,",
+			"- it was removed from the map using the FigureVanish script command,",
+			"- it is still waiting to spawn because of a SpawnOnlyWhenEvent,",
+			"- or there is no entity with the given script tag on the map (e.g., a typo in the tag)."
+		]
+	},
+	"FigureIsFlying": {
+		"prefix": "SF2.Condition.FigureIsFlying",
+		"body": [
+			"FigureIsFlying",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Checks if the specified figure is a flying unit."
+		]
+	},
+	"FigureIsFollowing": {
+		"prefix": "SF2.Condition.FigureIsFollowing",
+		"body": [
+			"FigureIsFollowing",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",        -- A script tag.",
+			"\tTargetTag = \"${2:TargetTag}\"  -- The script tag of the target.",
+			"}"
+		],
+		"description": [
+			"Checks if this figure is following the specified target figure."
+		]
+	},
+	"FigureIsIdle": {
+		"prefix": "SF2.Condition.FigureIsIdle",
+		"body": [
+			"FigureIsIdle",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Checks if the figure is currently idle (standing still and doing nothing).",
+			"A figure is considered idle when it is not moving, fighting, or performing any job.",
+			"Likely idle during dialogue sequences, though this is not confirmed.",
+			"A figure is definitely not idle if:",
+			"- It is moving somewhere.",
+			"- It is fighting or on the way to combat.",
+			"- It is dead (contrary to the idea of 'eternal rest').",
+			"- It is performing a non-idle job."
+		]
+	},
+	"FigureIsInCombat": {
+		"prefix": "SF2.Condition.FigureIsInCombat",
+		"body": [
+			"FigureIsInCombat",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Checks if the figure is engaged in combat or moving towards an enemy.",
+			"Returns true once the figure has entered combat or has spotted an enemy.",
+			"This is equivalent to the old HasAggro query."
+		]
+	},
+	"FigureIsInEntityRange": {
+		"prefix": "SF2.Condition.FigureIsInEntityRange",
+		"body": [
+			"FigureIsInEntityRange",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"        -- A script tag for the figure.",
+			"\tTargetTag = \"${2:TargetTag}\"  -- The script tag of the target entity.",
+			"\tRange = ${3:10}                 -- The radius of the query in grid points.",
+			"}"
+		],
+		"description": [
+			"Checks if a figure is within a certain range of another entity.",
+			"Useful for detecting proximity or triggering interactions based on distance."
+		]
+	},
+	"FigureIsInRange": {
+		"prefix": "SF2.Condition.FigureIsInRange",
+		"body": [
+			"FigureIsInRange",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",        -- A script tag for the figure.",
+			"\tRange = ${2:10},                -- The radius of the query in grid points.",
+			"\tX = ${3:0},                     -- The X world coordinate.",
+			"\tY = ${4:0}                      -- The Y world coordinate.",
+			"}"
+		],
+		"description": [
+			"Checks if a figure is near the given coordinates.",
+			"Evaluates whether the figure is within the specified range around the provided X and Y world coordinates."
+		]
+	},
+	"FigureIsInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureIsInRangeToEntity",
+		"body": [
+			"FigureIsInRangeToEntity",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",        -- A script tag for the figure.",
+			"\tTargetTag = \"${2:TargetTag}\", -- The script tag of the target entity.",
+			"\tRange = ${3:10}                  -- The radius of the query in grid points.",
+			"}"
+		],
+		"description": [
+			"Checks if a figure is near another entity.",
+			"Evaluates whether the figure is within the given range of the target entity."
+		]
+	},
+	"FigureIsInRect": {
+		"prefix": "SF2.Condition.FigureIsInRect",
+		"body": [
+			"FigureIsInRect",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",  -- A script tag for the figure.",
+			"\tTop = ${2:0},              -- The top coordinate of the rectangle.",
+			"\tLeft = ${3:0},             -- The left coordinate of the rectangle.",
+			"\tBottom = ${4:100},         -- The bottom coordinate of the rectangle.",
+			"\tRight = ${5:100}           -- The right coordinate of the rectangle.",
+			"}"
+		],
+		"description": [
+			"Checks if a figure is inside a rectangle.",
+			"Evaluates whether the figure is located within the given rectangular area."
+		]
+	},
+	"FigureIsNotFlying": {
+		"prefix": "SF2.Condition.FigureIsNotFlying",
+		"body": [
+			"FigureIsNotFlying",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Negated: Is the specified figure a flying unit?"
+		]
+	},
+	"FigureIsNotFollowing": {
+		"prefix": "SF2.Condition.FigureIsNotFollowing",
+		"body": [
+			"FigureIsNotFollowing",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",        -- A script tag.",
+			"\tTargetTag = \"${2:TargetTag}\"  -- The script tag of the target.",
+			"}"
+		],
+		"description": [
+			"Negated: Is this figure following the other figure?"
+		]
+	},
+	"FigureIsNotIdle": {
+		"prefix": "SF2.Condition.FigureIsNotIdle",
+		"body": [
+			"FigureIsNotIdle",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Negated: Is the figure currently idle (= just standing around)?"
+		]
+	},
+	"FigureIsNotInCombat": {
+		"prefix": "SF2.Condition.FigureIsNotInCombat",
+		"body": [
+			"FigureIsNotInCombat",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Negated: Is the figure engaged in combat or running towards an enemy?"
+		]
+	},
+	"FigureIsNotInEntityRange": {
+		"prefix": "SF2.Condition.FigureIsNotInEntityRange",
+		"body": [
+			"FigureIsNotInEntityRange",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",        -- A script tag.",
+			"\tTargetTag = \"${2:TargetTag}\", -- The script tag of the target.",
+			"\tRange = ${3:0}                  -- The radius of the query in grid points.",
+			"}"
+		],
+		"description": [
+			"Negated: Is the figure near the other entity?"
+		]
+	},
+	"FigureIsNotInRange": {
+		"prefix": "SF2.Condition.FigureIsNotInRange",
+		"body": [
+			"FigureIsNotInRange",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",  -- A script tag.",
+			"\tRange = ${2:0},           -- The radius of the query in grid points.",
+			"\tX = ${3:0},               -- The X coordinate in world coordinates.",
+			"\tY = ${4:0}                -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Negated: Is the figure near these coordinates?"
+		]
+	},
+	"FigureIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureIsNotInRangeToEntity",
+		"body": [
+			"FigureIsNotInRangeToEntity",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",        -- A script tag.",
+			"\tTargetTag = \"${2:TargetTag}\", -- The script tag of the target.",
+			"\tRange = ${3:0}                   -- The radius of the query in grid points.",
+			"}"
+		],
+		"description": [
+			"Negated: Is the figure near the other entity?"
+		]
+	},
+	"FigureIsNotInRect": {
+		"prefix": "SF2.Condition.FigureIsNotInRect",
+		"body": [
+			"FigureIsNotInRect",
+			"{",
+			"\tTag = \"${1:ScriptTag}\",   -- A script tag.",
+			"\tTop = ${2:0},              -- The top coordinate of a rectangle.",
+			"\tLeft = ${3:0},             -- The left coordinate of a rectangle.",
+			"\tBottom = ${4:0},           -- The bottom coordinate of a rectangle.",
+			"\tRight = ${5:0}             -- The right coordinate of a rectangle.",
+			"}"
+		],
+		"description": [
+			"Negated: Is the figure inside this rectangle?"
+		]
+	},
+	"FigureIsNotSelected": {
+		"prefix": "SF2.Condition.FigureIsNotSelected",
+		"body": [
+			"FigureIsNotSelected",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a specific figure selected?"
+		]
+	},
+	"FigureIsSelected": {
+		"prefix": "SF2.Condition.FigureIsSelected",
+		"body": [
+			"FigureIsSelected",
+			"{",
+			"\tTag = \"${1:ScriptTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Is a specific figure selected?"
+		]
+	},
+	"FigureRaceIsInRange": {
+		"prefix": "SF2.Condition.FigureRaceIsInRange",
+		"body": [
+			"FigureRaceIsInRange",
+			"{",
+			"\tRace = ${1:RaceId},  -- The race ID of an entity.",
+			"\tRange = ${2:0},      -- The radius of the query in grid points.",
+			"\tX = ${3:0},          -- The X coordinate in world coordinates.",
+			"\tY = ${4:0}           -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Is a figure of a specific race near these coordinates?",
+			"",
+			"Checks whether any figure belonging to the specified race is near the given coordinates."
+		]
+	},
+	"FigureRaceIsInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureRaceIsInRangeToEntity",
+		"body": [
+			"FigureRaceIsInRangeToEntity",
+			"{",
+			"\tRace = ${1:RaceId},      -- The race ID of an entity.",
+			"\tRange = ${2:0},          -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Tag}\" -- The script tag of the target.",
+			"}"
+		],
+		"description": [
+			"Is a figure of a specific race near this entity tag?",
+			"",
+			"Checks whether any figure belonging to the specified race is near the given entity."
+		]
+	},
+	"FigureRaceIsNotInRange": {
+		"prefix": "SF2.Condition.FigureRaceIsNotInRange",
+		"body": [
+			"FigureRaceIsNotInRange",
+			"{",
+			"\tRace = ${1:RaceId}, -- The race ID of an entity.",
+			"\tRange = ${2:0},     -- The radius of the query in grid points.",
+			"\tX = ${3:0},         -- The X coordinate in world coordinates.",
+			"\tY = ${4:0}          -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a figure of a specific race near these coordinates?"
+		]
+	},
+	"FigureRaceIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureRaceIsNotInRangeToEntity",
+		"body": [
+			"FigureRaceIsNotInRangeToEntity",
+			"{",
+			"\tRace = ${1:RaceId},     -- The race ID of an entity.",
+			"\tRange = ${2:0},         -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Tag}\" -- The script tag of the target.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a figure of a specific race near this tag?"
+		]
+	},
+	"FigureSpellIsActive": {
+		"prefix": "SF2.Condition.FigureSpellIsActive",
+		"body": [
+			"FigureSpellIsActive",
+			"{",
+			"\tTag = \"${1:Tag}\",    -- A script tag.",
+			"\tSpell = ${2:SpellId}   -- The spell ID from the database.",
+			"}"
+		],
+		"description": [
+			"Is the figure under the effect of a specific spell?"
+		]
+	},
+	"FigureSpellIsNotActive": {
+		"prefix": "SF2.Condition.FigureSpellIsNotActive",
+		"body": [
+			"FigureSpellIsNotActive",
+			"{",
+			"\tTag = \"${1:Tag}\",    -- A script tag.",
+			"\tSpell = ${2:SpellId}   -- The spell ID from the database.",
+			"}"
+		],
+		"description": [
+			"Negated: Is the figure under the effect of a specific spell?"
+		]
+	},
+	"FigureTeamExludingAvatarIsInRange": {
+		"prefix": "SF2.Condition.FigureTeamExludingAvatarIsInRange",
+		"body": [
+			"FigureTeamExludingAvatarIsInRange",
+			"{",
+			"\tTeam = \"${1:Team}\",  -- The team name from the editor.",
+			"\tRange = ${2:Range},    -- The radius of the query in grid points.",
+			"\tX = ${3:X},            -- The X coordinate in world coordinates.",
+			"\tY = ${4:Y}             -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Is a figure of a team (excluding the avatar) near the given coordinates?",
+			"Like FigureTeamIsInRange, but ignores the avatar. Useful for checking if the avatar must be alone without any of their units nearby."
+		]
+	},
+	"FigureTeamExludingAvatarIsInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureTeamExludingAvatarIsInRangeToEntity",
+		"body": [
+			"FigureTeamExludingAvatarIsInRangeToEntity",
+			"{",
+			"\tTeam = \"${1:Team}\",       -- The team name from the editor.",
+			"\tRange = ${2:Range},        -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Tag}\"   -- The script tag of the target.",
+			"}"
+		],
+		"description": [
+			"Is a figure of a team (excluding the avatar) near the entity with the given tag?",
+			"Like FigureTeamIsInRangeToEntity, but ignores the avatar."
+		]
+	},
+	"FigureTeamExludingAvatarIsNotInRange": {
+		"prefix": "SF2.Condition.FigureTeamExludingAvatarIsNotInRange",
+		"body": [
+			"FigureTeamExludingAvatarIsNotInRange",
+			"{",
+			"\tTeam = \"${1:Team}\",  -- The team name from the editor.",
+			"\tRange = ${2:Range},   -- The radius of the query in grid points.",
+			"\tX = ${3:X},           -- The X coordinate in world coordinates.",
+			"\tY = ${4:Y}            -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a figure of a team (excluding the avatar) near these coordinates?"
+		]
+	},
+	"FigureTeamExludingAvatarIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureTeamExludingAvatarIsNotInRangeToEntity",
+		"body": [
+			"FigureTeamExludingAvatarIsNotInRangeToEntity",
+			"{",
+			"\tTeam = \"${1:Team}\",       -- The team name from the editor.",
+			"\tRange = ${2:Range},        -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Tag}\"   -- The script tag of the target.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a figure of a team (excluding the avatar) near this tag?"
+		]
+	},
+	"FigureTeamIsInRange": {
+		"prefix": "SF2.Condition.FigureTeamIsInRange",
+		"body": [
+			"FigureTeamIsInRange",
+			"{",
+			"\tTeam = \"${1:Team}\",  -- The team name from the editor.",
+			"\tRange = ${2:Range},   -- The radius of the query in grid points.",
+			"\tX = ${3:X},           -- The X coordinate in world coordinates.",
+			"\tY = ${4:Y}            -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Is a figure of a team near these coordinates?",
+			"Checks if a figure belonging to a specified team is within range of the given coordinates."
+		]
+	},
+	"FigureTeamIsInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureTeamIsInRangeToEntity",
+		"body": [
+			"FigureTeamIsInRangeToEntity",
+			"{",
+			"\tTeam = \"${1:Team}\",       -- The team name from the editor.",
+			"\tRange = ${2:Range},        -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Tag}\"   -- The script tag of the target.",
+			"}"
+		],
+		"description": [
+			"Is a figure of a team near this tag?",
+			"Checks if a figure belonging to a specified team is within range of the given entity."
+		]
+	},
+	"FigureTeamIsNotInRange": {
+		"prefix": "SF2.Condition.FigureTeamIsNotInRange",
+		"body": [
+			"FigureTeamIsNotInRange",
+			"{",
+			"\tTeam = \"${1:Team}\",  -- The team name from the editor.",
+			"\tRange = ${2:Range},   -- The radius of the query in grid points.",
+			"\tX = ${3:X},           -- The X coordinate in world coordinates.",
+			"\tY = ${4:Y}            -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a figure of a team near these coordinates?",
+			"Checks if no figure belonging to a specified team is within range of the given coordinates."
+		]
+	},
+	"FigureTeamIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureTeamIsNotInRangeToEntity",
+		"body": [
+			"FigureTeamIsNotInRangeToEntity",
+			"{",
+			"\tTeam = \"${1:Team}\",       -- The team name from the editor.",
+			"\tRange = ${2:Range},        -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Tag}\"   -- The script tag of the target.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a figure of a team near this tag?",
+			"Checks if no figure belonging to a specified team is within range of the given entity."
+		]
+	},
+	"FigureUnitNpcIsInRange": {
+		"prefix": "SF2.Condition.FigureUnitNpcIsInRange",
+		"body": [
+			"FigureUnitNpcIsInRange",
+			"{",
+			"\tUnitId = ${1:0},   -- The UnitId as defined in the database. Use 0 to match all NPC units.",
+			"\tRange = ${2:Range}, -- The radius of the query in grid points.",
+			"\tX = ${3:X},        -- The X coordinate in world coordinates.",
+			"\tY = ${4:Y}         -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Is a specific NPC unit near these coordinates?",
+			"Checks if an NPC figure of a given UnitId is within the specified range of the coordinates.",
+			"If UnitId = 0, the query applies to all NPC units."
+		]
+	},
+	"FigureUnitNpcIsInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureUnitNpcIsInRangeToEntity",
+		"body": [
+			"FigureUnitNpcIsInRangeToEntity",
+			"{",
+			"\tUnitId = ${1:0},        -- The UnitId as defined in the database. Use 0 to match all NPC units.",
+			"\tRange = ${2:Range},     -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Tag}\" -- The Script Tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Is a specific NPC unit near this entity tag?",
+			"Checks if an NPC figure of a given UnitId is within the specified range of the entity with the given tag.",
+			"If UnitId = 0, the query applies to all NPC units."
+		]
+	},
+	"FigureUnitNpcIsNotInRange": {
+		"prefix": "SF2.Condition.FigureUnitNpcIsNotInRange",
+		"body": [
+			"FigureUnitNpcIsNotInRange",
+			"{",
+			"\tUnitId = ${1:0},    -- The UnitId as defined in the database. Use 0 to match all NPC units.",
+			"\tRange = ${2:Range}, -- The radius of the query in grid points.",
+			"\tX = ${3:X},         -- The X coordinate in world coordinates.",
+			"\tY = ${4:Y}          -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a specific NPC unit NOT near these coordinates?",
+			"Checks if no NPC figure of the given UnitId is within the specified range of the given coordinates.",
+			"If UnitId = 0, the query applies to all NPC units."
+		]
+	},
+	"FigureUnitNpcIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureUnitNpcIsNotInRangeToEntity",
+		"body": [
+			"FigureUnitNpcIsNotInRangeToEntity",
+			"{",
+			"\tUnitId = ${1:0},        -- The UnitId as defined in the database. Use 0 to match all NPC units.",
+			"\tRange = ${2:Range},     -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Tag}\" -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a specific NPC unit NOT near this tag?",
+			"Checks if no NPC figure of the given UnitId is within the specified range of the given entity tag.",
+			"If UnitId = 0, the query applies to all NPC units."
+		]
+	},
+	"FigureUnitRtsIsInRange": {
+		"prefix": "SF2.Condition.FigureUnitRtsIsInRange",
+		"body": [
+			"FigureUnitRtsIsInRange",
+			"{",
+			"\tUnitId = ${1:0},    -- The UnitId as defined in the database. Use 0 to match all RTS units.",
+			"\tRange = ${2:Range}, -- The radius of the query in grid points.",
+			"\tX = ${3:X},         -- The X coordinate in world coordinates.",
+			"\tY = ${4:Y}          -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Is a specific RTS unit near these coordinates?",
+			"Checks if an RTS figure with the given UnitId is within the specified range of the given coordinates.",
+			"If UnitId = 0, the query applies to all RTS units regardless of their ID."
+		]
+	},
+	"FigureUnitRtsIsInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureUnitRtsIsInRangeToEntity",
+		"body": [
+			"FigureUnitRtsIsInRangeToEntity",
+			"{",
+			"\tUnitId = ${1:0},       -- The UnitId as defined in the database. Use 0 to match all RTS units.",
+			"\tRange = ${2:Range},    -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Tag}\" -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Is a specific RTS unit near this tag?",
+			"Checks if an RTS figure with the given UnitId is within the specified range of the given target entity.",
+			"If UnitId = 0, the query applies to all RTS units regardless of their ID."
+		]
+	},
+	"FigureUnitRtsIsNotInRange": {
+		"prefix": "SF2.Condition.FigureUnitRtsIsNotInRange",
+		"body": [
+			"FigureUnitRtsIsNotInRange",
+			"{",
+			"\tUnitId = ${1:0},    -- The UnitId as defined in the database. Use 0 to match all RTS units.",
+			"\tRange = ${2:Range}, -- The radius of the query in grid points.",
+			"\tX = ${3:X},         -- The X coordinate in world space.",
+			"\tY = ${4:Y}          -- The Y coordinate in world space.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a specific RTS unit *not* near these coordinates?",
+			"Checks if no RTS figure with the given UnitId is within the specified range of the given world coordinates.",
+			"If UnitId = 0, the query applies to all RTS units regardless of their ID."
+		]
+	},
+	"FigureUnitRtsIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.FigureUnitRtsIsNotInRangeToEntity",
+		"body": [
+			"FigureUnitRtsIsNotInRangeToEntity",
+			"{",
+			"\tUnitId = ${1:0},       -- The UnitId as defined in the database. Use 0 to match all RTS units.",
+			"\tRange = ${2:Range},    -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Tag}\" -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a specific RTS unit *not* near this entity?",
+			"Checks if no RTS figure with the given UnitId is within the specified range of the target entity.",
+			"If UnitId = 0, the query applies to all RTS units regardless of their ID."
+		]
+	},
+	"GameInterfaceIsNotVisible": {
+		"prefix": "SF2.Condition.GameInterfaceIsNotVisible",
+		"body": [
+			"GameInterfaceIsNotVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Negated: Are the interface bars (currently only for dialogs) not visible?"
+		]
+	},
+	"GameInterfaceIsVisible": {
+		"prefix": "SF2.Condition.GameInterfaceIsVisible",
+		"body": [
+			"GameInterfaceIsVisible",
+			"{",
+			"}"
+		],
+		"description": [
+			"Are the interface bars (currently only for dialogs) visible?",
+			"Checks whether the black bars of a just-ended dialog are no longer visible,",
+			"and instead the game interface is shown again.",
+			"Must be used together with AvatarIsNotTalking!"
+		]
+	},
+	"GateIsClosed": {
+		"prefix": "SF2.Condition.GateIsClosed",
+		"body": [
+			"GateIsClosed",
+			"{",
+			"\tTag = \"${1:GateTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Checks whether a gate is closed.",
+			"Negated: Is the gate open?",
+			"Default value for Tag is 'GateTag'."
+		]
+	},
+	"GateIsOpen": {
+		"prefix": "SF2.Condition.GateIsOpen",
+		"body": [
+			"GateIsOpen",
+			"{",
+			"\tTag = \"${1:GateTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Checks whether a specific gate is open (unblocked).",
+			"Question: Is the gate open?",
+			"Default value for Tag is 'GateTag'."
+		]
+	},
+	"HeroHasNoSkillPointsLeft": {
+		"prefix": "SF2.Condition.HeroHasNoSkillPointsLeft",
+		"body": [
+			"HeroHasNoSkillPointsLeft",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tHero = ${2:0}               -- The ID 1 to 5 of a hero, 0 for the avatar.",
+			"}"
+		],
+		"description": [
+			"Checks whether a hero or the avatar has no skill points left.",
+			"Negated: Does a hero or the avatar still have skill points available?",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for Hero is '0' (Avatar)."
+		]
+	},
+	"HeroHasSkillPointsLeft": {
+		"prefix": "SF2.Condition.HeroHasSkillPointsLeft",
+		"body": [
+			"HeroHasSkillPointsLeft",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tHero = ${2:0}               -- The ID 1 to 5 of a hero, 0 for the avatar.",
+			"}"
+		],
+		"description": [
+			"Checks whether a hero or the avatar still has skill points available.",
+			"Question: Does a hero or the avatar still have skill points left?",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for Hero is '0' (Avatar)."
+		]
+	},
+	"LeverIsOff": {
+		"prefix": "SF2.Condition.LeverIsOff",
+		"body": [
+			"LeverIsOff",
+			"{",
+			"\tTag = \"${1:LeverTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Checks whether a lever is switched off.",
+			"Negated: Is the lever switched on?",
+			"Default value for Tag is 'LeverTag'."
+		]
+	},
+	"LeverIsOn": {
+		"prefix": "SF2.Condition.LeverIsOn",
+		"body": [
+			"LeverIsOn",
+			"{",
+			"\tTag = \"${1:LeverTag}\"  -- A script tag.",
+			"}"
+		],
+		"description": [
+			"Checks whether a specific lever is switched on.",
+			"Question: Is the lever switched on?",
+			"Default value for Tag is 'LeverTag'."
+		]
+	},
+	"MapFlagIsFalse": {
+		"prefix": "SF2.Condition.MapFlagIsFalse",
+		"body": [
+			"MapFlagIsFalse",
+			"{",
+			"\tName = \"${1:MapVar}\"  -- The name of the map variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether the map variable is false.",
+			"Negated: Is the map variable true?",
+			"Default value for Name is 'MapVar'."
+		]
+	},
+	"MapFlagIsTrue": {
+		"prefix": "SF2.Condition.MapFlagIsTrue",
+		"body": [
+			"MapFlagIsTrue",
+			"{",
+			"\tName = \"${1:MapVar}\"  -- The name of the map variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether the map variable is true.",
+			"Question: Is the map variable true?",
+			"Default value for Name is 'MapVar'."
+		]
+	},
+	"MapTimerIsElapsed": {
+		"prefix": "SF2.Condition.MapTimerIsElapsed",
+		"body": [
+			"MapTimerIsElapsed",
+			"{",
+			"\tName = \"${1:MapTimer}\"   -- The name of the map timer.",
+			"\tSeconds = ${2:60}         -- Number of seconds.",
+			"}"
+		],
+		"description": [
+			"Checks whether the map timer has elapsed.",
+			"Question: Has the map timer expired?",
+			"Default value for Name is 'MapTimer'.",
+			"Default value for Seconds is '60'."
+		]
+	},
+	"MapTimerIsNotElapsed": {
+		"prefix": "SF2.Condition.MapTimerIsNotElapsed",
+		"body": [
+			"MapTimerIsNotElapsed",
+			"{",
+			"\tName = \"${1:MapTimer}\"   -- The name of the map timer.",
+			"\tSeconds = ${2:60}         -- Number of seconds.",
+			"}"
+		],
+		"description": [
+			"Checks whether the map timer has not yet elapsed.",
+			"Negated: Has the map timer expired?",
+			"Default value for Name is 'MapTimer'.",
+			"Default value for Seconds is '60'."
+		]
+	},
+	"MapValueIsEqual": {
+		"prefix": "SF2.Condition.MapValueIsEqual",
+		"body": [
+			"MapValueIsEqual",
+			"{",
+			"\tName = \"${1:MapVar}\"  -- The name of the map variable.",
+			"\tValue = ${2:0}         -- The value of the variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether the map variable has the given value.",
+			"Question: Does the map variable have this value?",
+			"Default value for Name is 'MapVar'.",
+			"Default value for Value is '0'."
+		]
+	},
+	"MapValueIsEqualToVariable": {
+		"prefix": "SF2.Condition.MapValueIsEqualToVariable",
+		"body": [
+			"MapValueIsEqualToVariable",
+			"{",
+			"\tName = \"${1:MapVar1}\"       -- The name of the first map variable.",
+			"\tVariable = \"${2:MapVar2}\"  -- The name of the second map variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether one map variable has the same value as another.",
+			"Question: Does the map variable have this value?",
+			"Default value for Name is 'MapVar1'.",
+			"Default value for Variable is 'MapVar2'."
+		]
+	},
+	"MapValueIsGreater": {
+		"prefix": "SF2.Condition.MapValueIsGreater",
+		"body": [
+			"MapValueIsGreater",
+			"{",
+			"\tName = \"${1:MapVar}\"  -- The name of the map variable.",
+			"\tValue = ${2:0}         -- The value of the variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether the map variable is greater than the given value.",
+			"Question: Is the map variable greater than this value?",
+			"Default value for Name is 'MapVar'.",
+			"Default value for Value is '0'."
+		]
+	},
+	"MapValueIsGreaterOrEqual": {
+		"prefix": "SF2.Condition.MapValueIsGreaterOrEqual",
+		"body": [
+			"MapValueIsGreaterOrEqual",
+			"{",
+			"\tName = \"${1:MapVar}\"  -- The name of the map variable.",
+			"\tValue = ${2:0}         -- The value of the variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether the map variable is greater than or equal to the given value.",
+			"Negated: Is the map variable greater than this value?",
+			"Default value for Name is 'MapVar'.",
+			"Default value for Value is '0'."
+		]
+	},
+	"MapValueIsGreaterOrEqualThanVariable": {
+		"prefix": "SF2.Condition.MapValueIsGreaterOrEqualThanVariable",
+		"body": [
+			"MapValueIsGreaterOrEqualThanVariable",
+			"{",
+			"\tName = \"${1:MapVar1}\"       -- The name of the first map variable.",
+			"\tVariable = \"${2:MapVar2}\"  -- The name of the second map variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether one map variable is greater than or equal to another map variable.",
+			"Negated: Is the map variable greater than this value?",
+			"Default value for Name is 'MapVar1'.",
+			"Default value for Variable is 'MapVar2'."
+		]
+	},
+	"MapValueIsGreaterThanVariable": {
+		"prefix": "SF2.Condition.MapValueIsGreaterThanVariable",
+		"body": [
+			"MapValueIsGreaterThanVariable",
+			"{",
+			"\tName = \"${1:MapVar1}\"       -- The name of the first map variable.",
+			"\tVariable = \"${2:MapVar2}\"  -- The name of the second map variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether one map variable is greater than another map variable.",
+			"Question: Is the map variable greater than this value?",
+			"Default value for Name is 'MapVar1'.",
+			"Default value for Variable is 'MapVar2'."
+		]
+	},
+	"MapValueIsLess": {
+		"prefix": "SF2.Condition.MapValueIsLess",
+		"body": [
+			"MapValueIsLess",
+			"{",
+			"\tName = \"${1:MapVar}\"  -- The name of the map variable.",
+			"\tValue = ${2:0}         -- The value of the variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether the map variable is less than the given value.",
+			"Question: Is the map variable less than this value?",
+			"Default value for Name is 'MapVar'.",
+			"Default value for Value is '0'."
+		]
+	},
+	"MapValueIsLessOrEqual": {
+		"prefix": "SF2.Condition.MapValueIsLessOrEqual",
+		"body": [
+			"MapValueIsLessOrEqual",
+			"{",
+			"\tName = \"${1:MapVar}\"  -- The name of the map variable.",
+			"\tValue = ${2:0}         -- The value of the variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether the map variable is less than or equal to the given value.",
+			"Negated: Is the map variable greater than this value?",
+			"Default value for Name is 'MapVar'.",
+			"Default value for Value is '0'."
+		]
+	},
+	"MapValueIsLessOrEqualThanVariable": {
+		"prefix": "SF2.Condition.MapValueIsLessOrEqualThanVariable",
+		"body": [
+			"MapValueIsLessOrEqualThanVariable",
+			"{",
+			"\tName = \"${1:MapVar1}\"       -- The name of the first map variable.",
+			"\tVariable = \"${2:MapVar2}\"  -- The name of the second map variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether one map variable is less than or equal to another map variable.",
+			"Negated: Is the map variable greater than this value?",
+			"Default value for Name is 'MapVar1'.",
+			"Default value for Variable is 'MapVar2'."
+		]
+	},
+	"MapValueIsLessThanVariable": {
+		"prefix": "SF2.Condition.MapValueIsLessThanVariable",
+		"body": [
+			"MapValueIsLessThanVariable",
+			"{",
+			"\tName = \"${1:MapVar1}\"       -- The name of the first map variable.",
+			"\tVariable = \"${2:MapVar2}\"  -- The name of the second map variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether one map variable is less than another map variable.",
+			"Question: Is the map variable less than this value?",
+			"Default value for Name is 'MapVar1'.",
+			"Default value for Variable is 'MapVar2'."
+		]
+	},
+	"MapValueIsNotEqual": {
+		"prefix": "SF2.Condition.MapValueIsNotEqual",
+		"body": [
+			"MapValueIsNotEqual",
+			"{",
+			"\tName = \"${1:MapVar}\"  -- The name of the map variable.",
+			"\tValue = ${2:0}         -- The value of the variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether the map variable is not equal to the given value.",
+			"Negated: Does the map variable have this value?",
+			"Default value for Name is 'MapVar'.",
+			"Default value for Value is '0'."
+		]
+	},
+	"MapValueIsNotEqualToVariable": {
+		"prefix": "SF2.Condition.MapValueIsNotEqualToVariable",
+		"body": [
+			"MapValueIsNotEqualToVariable",
+			"{",
+			"\tName = \"${1:MapVar1}\"       -- The name of the first map variable.",
+			"\tVariable = \"${2:MapVar2}\"  -- The name of the second map variable.",
+			"}"
+		],
+		"description": [
+			"Checks whether one map variable is not equal to another map variable.",
+			"Negated: Does the map variable have this value?",
+			"Default value for Name is 'MapVar1'.",
+			"Default value for Variable is 'MapVar2'."
+		]
+	},
+	"NotAND": {
+		"prefix": "SF2.Condition.NotAND",
+		"body": [
+			"NotAND",
+			"{",
+			"}"
+		],
+		"description": [
+			"Checks whether the logical AND of two or more conditions is false.",
+			"Negated: Performs a logical AND on two or more conditions."
+		]
+	},
+	"NotOR": {
+		"prefix": "SF2.Condition.NotOR",
+		"body": [
+			"NotOR",
+			"{",
+			"}"
+		],
+		"description": [
+			"Checks whether the logical OR of two or more conditions is false.",
+			"Negated: Performs a logical OR on two or more conditions."
+		]
+	},
+	"OR": {
+		"prefix": "SF2.Condition.OR",
+		"body": [
+			"OR",
+			"{",
+			"}"
+		],
+		"description": [
+			"Performs a logical OR on two or more conditions.",
+			"There is no known limit to how many conditions can be provided; from a script perspective, there is no restriction.",
+			"Both AND and OR can be nested, for example:",
+			"AND",
+			"{",
+			"\tMapTimerIsElapsed {Name = \"\", Seconds = },",
+			"\tPlayerValueIsEqual {Name = \"\", Value = },",
+			"\tTeamIsInRange {Team = , X = , Y = },",
+			"\tOR",
+			"\t{",
+			"\t\tAnyFigureIsInRange {X = , Y = },",
+			"\t\tEntityFlagIsTrue {Name = \"\"},",
+			"\t\tMapTimerIsElapsed {Name = \"\", Seconds = },",
+			"\t},",
+			"}",
+			"",
+			"Related operator: NotOR means 'neither...nor':",
+			"NotOR(c1, c2) is true when neither c1 nor c2 is true.",
+			"It is false when c1 or c2 is true, or when both are true."
+		]
+	},
+	"PlayerBuildingIsInEntityRange": {
+		"prefix": "SF2.Condition.PlayerBuildingIsInEntityRange",
+		"body": [
+			"PlayerBuildingIsInEntityRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tBuildingId = ${2:0}         -- The building ID from the database.",
+			"\tRange = ${3:10}             -- The radius of the query in grid points.",
+			"\tTargetTag = \"${4:Target}\" -- The script tag of the target.",
+			"}"
+		],
+		"description": [
+			"Checks whether an RTS building of a player is within range of a given entity.",
+			"Question: Is a player's RTS building near this entity?",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for BuildingId is '0'.",
+			"Default value for Range is '10'.",
+			"Default value for TargetTag is 'Target'."
+		]
+	},
+	"PlayerBuildingIsInRange": {
+		"prefix": "SF2.Condition.PlayerBuildingIsInRange",
+		"body": [
+			"PlayerBuildingIsInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tBuildingId = ${2:0}         -- The building ID from the database (0 = all buildings).",
+			"\tRange = ${3:10}             -- The radius of the query in grid points.",
+			"\tX = ${4:0}                  -- The X coordinate in world coordinates.",
+			"\tY = ${5:0}                  -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Checks whether a building of a player is within range of the given coordinates.",
+			"Queries whether a specific building (by BuildingId) of a player is near the provided coordinates.",
+			"If BuildingId = 0, all buildings of the player are checked, not just a specific one.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for BuildingId is '0' (all buildings).",
+			"Default value for Range is '10'.",
+			"Default value for X is '0'.",
+			"Default value for Y is '0'."
+		]
+	},
+	"PlayerBuildingIsInRangeToEntity": {
+		"prefix": "SF2.Condition.PlayerBuildingIsInRangeToEntity",
+		"body": [
+			"PlayerBuildingIsInRangeToEntity",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tBuildingId = ${2:0}         -- The building ID from the database (0 = all buildings).",
+			"\tRange = ${3:10}             -- The radius of the query in grid points.",
+			"\tTargetTag = \"${4:Target}\" -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Checks whether a building of a player is within range of a given entity.",
+			"Queries whether a specific building (by BuildingId) of a player is near the specified entity.",
+			"If BuildingId = 0, all buildings of the player are checked, not just a specific one.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for BuildingId is '0' (all buildings).",
+			"Default value for Range is '10'.",
+			"Default value for TargetTag is 'Target'."
+		]
+	},
+	"PlayerBuildingIsNotInEntityRange": {
+		"prefix": "SF2.Condition.PlayerBuildingIsNotInEntityRange",
+		"body": [
+			"PlayerBuildingIsNotInEntityRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tBuildingId = ${2:0}         -- The building ID from the database (0 = all buildings).",
+			"\tRange = ${3:10}             -- The radius of the query in grid points.",
+			"\tTargetTag = \"${4:Target}\" -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Checks whether a building of a player is not within range of a given entity.",
+			"Negated: Is a player's RTS building near this entity?",
+			"If BuildingId = 0, all buildings of the player are checked, not just a specific one.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for BuildingId is '0' (all buildings).",
+			"Default value for Range is '10'.",
+			"Default value for TargetTag is 'Target'."
+		]
+	},
+	"PlayerBuildingIsNotInRange": {
+		"prefix": "SF2.Condition.PlayerBuildingIsNotInRange",
+		"body": [
+			"PlayerBuildingIsNotInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tBuildingId = ${2:0}         -- The building ID from the database (0 = all buildings).",
+			"\tRange = ${3:10}             -- The radius of the query in grid points.",
+			"\tX = ${4:0}                  -- The X coordinate in world coordinates.",
+			"\tY = ${5:0}                  -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Checks whether a building of a player is not within range of the given coordinates.",
+			"Negated: Is a player's building near the specified coordinates?",
+			"If BuildingId = 0, all buildings of the player are checked, not just a specific one.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for BuildingId is '0' (all buildings).",
+			"Default value for Range is '10'.",
+			"Default value for X is '0'.",
+			"Default value for Y is '0'."
+		]
+	},
+	"PlayerBuildingIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.PlayerBuildingIsNotInRangeToEntity",
+		"body": [
+			"PlayerBuildingIsNotInRangeToEntity",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tBuildingId = ${2:0}         -- The building ID from the database (0 = all buildings).",
+			"\tRange = ${3:10}             -- The radius of the query in grid points.",
+			"\tTargetTag = \"${4:Target}\" -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Checks whether a building of a player is not within range of the specified entity.",
+			"Negated: Is a player's RTS building near this entity?",
+			"If BuildingId = 0, all buildings of the player are checked, not just a specific one.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for BuildingId is '0' (all buildings).",
+			"Default value for Range is '10'.",
+			"Default value for TargetTag is 'Target'."
+		]
+	},
+	"PlayerFigureExcludingAvatarIsInRange": {
+		"prefix": "SF2.Condition.PlayerFigureExcludingAvatarIsInRange",
+		"body": [
+			"PlayerFigureExcludingAvatarIsInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tRange = ${2:10}             -- The radius of the query in grid points.",
+			"\tX = ${3:0}                  -- The X coordinate in world coordinates.",
+			"\tY = ${4:0}                  -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Checks whether a figure of a specific player is within range of the given coordinates.",
+			"This variant excludes the avatar from the query.",
+			"See also: PlayerFigureIsInRange.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for Range is '10'.",
+			"Default value for X is '0'.",
+			"Default value for Y is '0'."
+		]
+	},
+	"PlayerFigureExcludingAvatarIsInRangeToEntity": {
+		"prefix": "SF2.Condition.PlayerFigureExcludingAvatarIsInRangeToEntity",
+		"body": [
+			"PlayerFigureExcludingAvatarIsInRangeToEntity",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"   -- The player name as set in the team setup.",
+			"\tRange = ${2:10}              -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Target}\"  -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Checks whether a figure of a specific player is within range of the given entity.",
+			"This variant excludes the avatar from the query.",
+			"See also: PlayerFigureIsInRange.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for Range is '10'.",
+			"Default value for TargetTag is 'Target'."
+		]
+	},
+	"PlayerFigureExcludingAvatarIsNotInRange": {
+		"prefix": "SF2.Condition.PlayerFigureExcludingAvatarIsNotInRange",
+		"body": [
+			"PlayerFigureExcludingAvatarIsNotInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"   -- The player name as set in the team setup.",
+			"\tRange = ${2:10}              -- The radius of the query in grid points.",
+			"\tX = ${3:0}                   -- The X coordinate in world coordinates.",
+			"\tY = ${4:0}                   -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Checks whether no figure of the specified player is within range of the given coordinates.",
+			"Negated: Determines that none of the player’s figures are near the given coordinates.",
+			"This variant excludes the avatar from the query.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for Range is '10'.",
+			"Default values for X and Y are '0'."
+		]
+	},
+	"PlayerFigureExcludingAvatarIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.PlayerFigureExcludingAvatarIsNotInRangeToEntity",
+		"body": [
+			"PlayerFigureExcludingAvatarIsNotInRangeToEntity",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"   -- The player name as set in the team setup.",
+			"\tRange = ${2:10}              -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:Target}\"  -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Checks whether no figure of the specified player is within range of the given entity.",
+			"Negated: Determines that none of the player’s figures are near the specified entity.",
+			"This variant excludes the avatar from the query.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for Range is '10'.",
+			"Default value for TargetTag is 'Target'."
+		]
+	},
+	"PlayerFigureIsInRange": {
+		"prefix": "SF2.Condition.PlayerFigureIsInRange",
+		"body": [
+			"PlayerFigureIsInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"   -- The player name as set in the team setup.",
+			"\tRange = ${2:10}              -- The radius of the query in grid points.",
+			"\tX = ${3:0}                   -- The X coordinate in world coordinates.",
+			"\tY = ${4:0}                   -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Checks whether a figure of the specified player is within range of the given coordinates.",
+			"Determines if any unit belonging to the player is near the specified location.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for Range is '10'.",
+			"Default values for coordinates X and Y are '0'."
+		]
+	},
+	"PlayerFigureIsInRangeToEntity": {
+		"prefix": "SF2.Condition.PlayerFigureIsInRangeToEntity",
+		"body": [
+			"PlayerFigureIsInRangeToEntity",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"   -- The player name as set in the team setup.",
+			"\tRange = ${2:10}              -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:}\"        -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Checks whether a figure of the specified player is within range of the given entity.",
+			"Determines if any unit belonging to the player is near the specified entity.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for Range is '10'."
+		]
+	},
+	"PlayerFigureIsNotInRange": {
+		"prefix": "SF2.Condition.PlayerFigureIsNotInRange",
+		"body": [
+			"PlayerFigureIsNotInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"   -- The player name as set in the team setup.",
+			"\tRange = ${2:10}              -- The radius of the query in grid points.",
+			"\tX = ${3:0}                   -- The X coordinate in world coordinates.",
+			"\tY = ${4:0}                   -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks whether a figure of the specified player is within range of the given coordinates.",
+			"Returns true if no unit belonging to the player is within the specified range.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for Range is '10'.",
+			"Default values for X and Y are '0'."
+		]
+	},
+	"PlayerFigureIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.PlayerFigureIsNotInRangeToEntity",
+		"body": [
+			"PlayerFigureIsNotInRangeToEntity",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"   -- The player name as set in the team setup.",
+			"\tRange = ${2:10}              -- The radius of the query in grid points.",
+			"\tTargetTag = \"${3:}\"        -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks whether a figure of the specified player is within range of the given entity.",
+			"Returns true if no unit belonging to the player is within the specified range of the entity.",
+			"Default value for Player is 'pl_Human'.",
+			"Default value for Range is '10'."
+		]
+	},
+	"PlayerHasBuilding": {
+		"prefix": "SF2.Condition.PlayerHasBuilding",
+		"body": [
+			"PlayerHasBuilding",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"    -- The player name as set in the team setup.",
+			"\tBuildingId = ${2:0}           -- The building ID as defined in the database.",
+			"\tUpgradeId = ${3:0}            -- The building upgrade ID as defined in the database. Default: 0 (no upgrade).",
+			"\tAmount = ${4:1}               -- The required number of buildings.",
+			"\tOnlyCompleted = ${5:true}     -- If true, only fully constructed buildings count. If false, construction orders also count.",
+			"}"
+		],
+		"description": [
+			"Checks if a specific player owns a certain number of buildings with a given BuildingId and optionally a specific UpgradeId.",
+			"OnlyCompleted controls whether buildings under construction are counted:",
+			" - true  → Only finished buildings count.",
+			" - false → Buildings under construction also count.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - UpgradeId = 0",
+			" - Amount = 1",
+			" - OnlyCompleted = true"
+		]
+	},
+	"PlayerHasBuildingAmount": {
+		"prefix": "SF2.Condition.PlayerHasBuildingAmount",
+		"body": [
+			"PlayerHasBuildingAmount",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"    -- The player name as set in the team setup.",
+			"\tAmount = ${2:1}               -- The minimum required number of buildings.",
+			"\tOnlyCompleted = ${3:true}     -- If true, only fully constructed buildings count. If false, construction orders also count.",
+			"}"
+		],
+		"description": [
+			"Checks if a specific player owns at least a given number of buildings.",
+			"OnlyCompleted controls whether buildings under construction are counted:",
+			" - true  → Only finished buildings count.",
+			" - false → Buildings under construction also count.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 1",
+			" - OnlyCompleted = true"
+		]
+	},
+	"PlayerHasFigureAmount": {
+		"prefix": "SF2.Condition.PlayerHasFigureAmount",
+		"body": [
+			"PlayerHasFigureAmount",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tAmount = ${2:1}             -- The minimum required number of figures.",
+			"}"
+		],
+		"description": [
+			"Checks if a specific player owns at least a given number of figures (units).",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 1"
+		]
+	},
+	"PlayerHasFigureAmountEx": {
+		"prefix": "SF2.Condition.PlayerHasFigureAmountEx",
+		"body": [
+			"PlayerHasFigureAmountEx",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"           -- The player name as set in the team setup.",
+			"\tAmount = ${2:1}                      -- The minimum required number of figures.",
+			"\tCountWorkers = ${3:false}            -- Whether workers should be counted.",
+			"\tCountAvatarAndHeroes = ${4:false}    -- Whether the avatar and heroes should be counted.",
+			"}"
+		],
+		"description": [
+			"Checks if a specific player owns at least a given number of figures (units).",
+			"Additional options:",
+			" - CountWorkers: include workers in the count (default = false).",
+			" - CountAvatarAndHeroes: include the avatar and heroes in the count (default = false).",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 1"
+		]
+	},
+	"PlayerHasNotBuilding": {
+		"prefix": "SF2.Condition.PlayerHasNotBuilding",
+		"body": [
+			"PlayerHasNotBuilding",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"   -- The player name as set in the team setup.",
+			"\tBuildingId = ${2:0}          -- The building ID as defined in the database (0 = any building).",
+			"\tUpgradeId = ${3:0}           -- The building upgrade ID as defined in the database.",
+			"\tAmount = ${4:1}              -- A required amount.",
+			"\tOnlyCompleted = ${5:true}    -- Whether to only count fully constructed buildings.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a player does NOT own a certain number of RTS buildings.",
+			"- BuildingId = 0 means all buildings of the player are checked, not only specific ones.",
+			"- UpgradeId = 0 means no upgrade requirement.",
+			"- OnlyCompleted determines whether only finished buildings are counted (default = true).",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - BuildingId = 0",
+			" - UpgradeId = 0",
+			" - Amount = 1",
+			" - OnlyCompleted = true"
+		]
+	},
+	"PlayerHasNotBuildingAmount": {
+		"prefix": "SF2.Condition.PlayerHasNotBuildingAmount",
+		"body": [
+			"PlayerHasNotBuildingAmount",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"   -- The player name as set in the team setup.",
+			"\tAmount = ${2:1}              -- A required minimum amount.",
+			"\tOnlyCompleted = ${3:true}    -- Whether to only count fully constructed buildings.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a player does NOT have at least a certain number of buildings.",
+			"- OnlyCompleted determines whether only finished buildings are counted (default = true).",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 1",
+			" - OnlyCompleted = true"
+		]
+	},
+	"PlayerHasNotFigureAmount": {
+		"prefix": "SF2.Condition.PlayerHasNotFigureAmount",
+		"body": [
+			"PlayerHasNotFigureAmount",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tAmount = ${2:1}             -- A required minimum amount.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a player does NOT have at least a certain number of figures.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 1"
+		]
+	},
+	"PlayerHasNotFigureAmountEx": {
+		"prefix": "SF2.Condition.PlayerHasNotFigureAmountEx",
+		"body": [
+			"PlayerHasNotFigureAmountEx",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"           -- The player name as set in the team setup.",
+			"\tAmount = ${2:1}                      -- A required minimum amount.",
+			"\tCountWorkers = ${3:false}            -- Whether workers should be counted.",
+			"\tCountAvatarAndHeroes = ${4:false}    -- Whether avatar and heroes should be counted.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a player does NOT have at least a certain number of figures.",
+			"Extended version allows specifying whether workers, avatar and heroes are included.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 1",
+			" - CountWorkers = false",
+			" - CountAvatarAndHeroes = false"
+		]
+	},
+	"PlayerHasNotResourceLenya": {
+		"prefix": "SF2.Condition.PlayerHasNotResourceLenya",
+		"body": [
+			"PlayerHasNotResourceLenya",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tAmount = ${2:0}             -- A required amount of Lenya.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a player does NOT have a certain amount of Lenya.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 0"
+		]
+	},
+	"PlayerHasNotResourceSilver": {
+		"prefix": "SF2.Condition.PlayerHasNotResourceSilver",
+		"body": [
+			"PlayerHasNotResourceSilver",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tAmount = ${2:0}             -- A required amount of silver.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a player does NOT have a certain amount of silver.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 0"
+		]
+	},
+	"PlayerHasNotResourceStone": {
+		"prefix": "SF2.Condition.PlayerHasNotResourceStone",
+		"body": [
+			"PlayerHasNotResourceStone",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tAmount = ${2:0}             -- A required amount of stone.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a player does NOT have a certain amount of stone.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 0"
+		]
+	},
+	"PlayerHasNotUnitAmount": {
+		"prefix": "SF2.Condition.PlayerHasNotUnitAmount",
+		"body": [
+			"PlayerHasNotUnitAmount",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tUnitId = ${2:0}             -- The UnitId as defined in the database.",
+			"\tAmount = ${3:0}             -- Any desired number.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a player does NOT have at least a certain number of a specific unit.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - UnitId = 0",
+			" - Amount = 0"
+		]
+	},
+	"PlayerHasResourceLenya": {
+		"prefix": "SF2.Condition.PlayerHasResourceLenya",
+		"body": [
+			"PlayerHasResourceLenya",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tAmount = ${2:0}             -- Any desired amount.",
+			"}"
+		],
+		"description": [
+			"Checks if a player has at least a certain amount of Lenya.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 0"
+		]
+	},
+	"PlayerHasResourceSilver": {
+		"prefix": "SF2.Condition.PlayerHasResourceSilver",
+		"body": [
+			"PlayerHasResourceSilver",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tAmount = ${2:0}             -- Any desired amount.",
+			"}"
+		],
+		"description": [
+			"Checks if a player has at least a certain amount of Silver.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 0"
+		]
+	},
+	"PlayerHasResourceStone": {
+		"prefix": "SF2.Condition.PlayerHasResourceStone",
+		"body": [
+			"PlayerHasResourceStone",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tAmount = ${2:0}             -- Any desired amount.",
+			"}"
+		],
+		"description": [
+			"Checks if a player has at least a certain amount of Stone.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Amount = 0"
+		]
+	},
+	"PlayerHasUnitAmount": {
+		"prefix": "SF2.Condition.PlayerHasUnitAmount",
+		"body": [
+			"PlayerHasUnitAmount",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tUnitId = ${2:0}             -- The UnitId as defined in the database.",
+			"\tAmount = ${3:0}             -- Any desired amount.",
+			"}"
+		],
+		"description": [
+			"Checks if a player has at least a certain number of a specific unit.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - UnitId = 0",
+			" - Amount = 0"
+		]
+	},
+	"PlayerHeroHasItemEquipped": {
+		"prefix": "SF2.Condition.PlayerHeroHasItemEquipped",
+		"body": [
+			"PlayerHeroHasItemEquipped",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tTag = \"${2:HeroMordecay}\" -- The script tag of the hero (without the 'pl_Human' prefix).",
+			"\tItemId = ${3:0}             -- The Item ID as defined in the database.",
+			"}"
+		],
+		"description": [
+			"Checks if a specific hero has a specific equipment item equipped.",
+			"If Tag = 'Avatar', this works the same as AvatarHasItemEquipped.",
+			"IMPORTANT: The ScriptTag is just the hero's tag, e.g., 'HeroMordecay', without 'pl_Human' in front.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Tag = ''",
+			" - ItemId = 0"
+		]
+	},
+	"PlayerHeroHasNotItemEquipped": {
+		"prefix": "SF2.Condition.PlayerHeroHasNotItemEquipped",
+		"body": [
+			"PlayerHeroHasNotItemEquipped",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tTag = \"${2:HeroMordecay}\" -- The script tag of the hero (without the 'pl_Human' prefix).",
+			"\tItemId = ${3:0}             -- The Item ID as defined in the database.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a specific hero does NOT have a specific equipment item equipped.",
+			"If Tag = 'Avatar', this works the same as AvatarHasNotItemEquipped.",
+			"IMPORTANT: The ScriptTag is just the hero's tag, e.g., 'HeroMordecay', without 'pl_Human' in front.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Tag = ''",
+			" - ItemId = 0"
+		]
+	},
+	"PlayerIsExisting": {
+		"prefix": "SF2.Condition.PlayerIsExisting",
+		"body": [
+			"PlayerIsExisting",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"}"
+		],
+		"description": [
+			"Checks if the specified player exists (i.e., is connected in multiplayer matches).",
+			"Default values:",
+			" - Player = 'pl_Human'"
+		]
+	},
+	"PlayerIsGameOver": {
+		"prefix": "SF2.Condition.PlayerIsGameOver",
+		"body": [
+			"PlayerIsGameOver",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"}"
+		],
+		"description": [
+			"Checks if the specified player is 'Game Over'.",
+			"Default values:",
+			" - Player = 'pl_Human'"
+		]
+	},
+	"PlayerIsNotExisting": {
+		"prefix": "SF2.Condition.PlayerIsNotExisting",
+		"body": [
+			"PlayerIsNotExisting",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the specified player is NOT connected (for multiplayer games).",
+			"Default values:",
+			" - Player = 'pl_Human'"
+		]
+	},
+	"PlayerIsNotGameOver": {
+		"prefix": "SF2.Condition.PlayerIsNotGameOver",
+		"body": [
+			"PlayerIsNotGameOver",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the player is NOT 'Game Over'.",
+			"Default values:",
+			" - Player = 'pl_Human'"
+		]
+	},
+	"PlayerSpellIsMemorized": {
+		"prefix": "SF2.Condition.PlayerSpellIsMemorized",
+		"body": [
+			"PlayerSpellIsMemorized",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup.",
+			"\tHero = ${2:0},               -- The hero ID from 1 to 5, or 0 for Avatar.",
+			"\tSpell = ${3:}                -- The spell ID from the database.",
+			"}"
+		],
+		"description": [
+			"Checks if the specified spell is memorized by the given hero or avatar."
+		]
+	},
+	"PlayerSpellIsNotMemorized": {
+		"prefix": "SF2.Condition.PlayerSpellIsNotMemorized",
+		"body": [
+			"PlayerSpellIsNotMemorized",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup.",
+			"\tHero = ${2:0},               -- The hero ID from 1 to 5, or 0 for Avatar.",
+			"\tSpell = ${3:0}               -- The spell ID from the database.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the specified spell is *not* memorized by the given hero or avatar."
+		]
+	},
+	"PlayerUnitIsAmountSelected": {
+		"prefix": "SF2.Condition.PlayerUnitIsAmountSelected",
+		"body": [
+			"PlayerUnitIsAmountSelected",
+			"{",
+			"\tAmount = ${1:}   -- Any number.",
+			"}"
+		],
+		"description": [
+			"Checks if a minimum number of RTS units of the player are currently selected."
+		]
+	},
+	"PlayerUnitIsInGroup": {
+		"prefix": "SF2.Condition.PlayerUnitIsInGroup",
+		"body": [
+			"PlayerUnitIsInGroup",
+			"{",
+			"\tGroup = ${1:}   -- The number of one of the 10 groups the player can define.",
+			"\tUnitId = ${2:}  -- The UnitId as defined in the database.",
+			"\tAmount = ${3:}  -- Any number.",
+			"}"
+		],
+		"description": [
+			"Checks if a specific unit is in one of the 10 groups defined by the player."
+		]
+	},
+	"PlayerUnitIsNotAmountSelected": {
+		"prefix": "SF2.Condition.PlayerUnitIsNotAmountSelected",
+		"body": [
+			"PlayerUnitIsNotAmountSelected",
+			"{",
+			"\tAmount = ${1:}  -- Any number.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a certain minimum number of RTS units of the player selected?"
+		]
+	},
+	"PlayerUnitIsNotInGroup": {
+		"prefix": "SF2.Condition.PlayerUnitIsNotInGroup",
+		"body": [
+			"PlayerUnitIsNotInGroup",
+			"{",
+			"\tGroup = ${1:}   -- The number of one of the 10 groups the player can define.",
+			"\tUnitId = ${2:}  -- The UnitId as from the database.",
+			"\tAmount = ${3:}  -- Any number.",
+			"}"
+		],
+		"description": [
+			"Negated: Is a certain unit in one of the 10 player-defined groups?"
+		]
+	},
+	"PlayerUnitNpcIsInRange": {
+		"prefix": "SF2.Condition.PlayerUnitNpcIsInRange",
+		"body": [
+			"PlayerUnitNpcIsInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tUnitId = ${2:}              -- The UnitId as from the database (0 = all NPC units).",
+			"\tRange = ${3:}               -- The query radius in grid points.",
+			"\tX = ${4:}                   -- The X coordinate in world coordinates.",
+			"\tY = ${5:}                   -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Is a specific NPC unit near the given coordinates?",
+			"Checks if an NPC unit of a certain UnitId and player is located near the specified coordinates.",
+			"If UnitId = 0, the check applies to all NPC units."
+		]
+	},
+	"PlayerUnitNpcIsInRangeToEntity": {
+		"prefix": "SF2.Condition.PlayerUnitNpcIsInRangeToEntity",
+		"body": [
+			"PlayerUnitNpcIsInRangeToEntity",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tUnitId = ${2:}              -- The UnitId as from the database (0 = all NPC units).",
+			"\tRange = ${3:}               -- The query radius in grid points.",
+			"\tTargetTag = \"${4:}\"       -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Is a specific NPC unit near the given tag?",
+			"Checks if an NPC unit of a certain UnitId and player is located near the specified tag.",
+			"If UnitId = 0, the check applies to all NPC units."
+		]
+	},
+	"PlayerUnitNpcIsNotInRange": {
+		"prefix": "SF2.Condition.PlayerUnitNpcIsNotInRange",
+		"body": [
+			"PlayerUnitNpcIsNotInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tUnitId = ${2:}              -- The UnitId as from the database (0 = all NPC units).",
+			"\tRange = ${3:}               -- The query radius in grid points.",
+			"\tX = ${4:}                   -- The X coordinate in world coordinates.",
+			"\tY = ${5:}                   -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a specific NPC unit is NOT near the given coordinates.",
+			"If UnitId = 0, the check applies to all NPC units."
+		]
+	},
+	"PlayerUnitNpcIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.PlayerUnitNpcIsNotInRangeToEntity",
+		"body": [
+			"PlayerUnitNpcIsNotInRangeToEntity",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tUnitId = ${2:}              -- The UnitId as from the database (0 = all NPC units).",
+			"\tRange = ${3:}               -- The query radius in grid points.",
+			"\tTargetTag = \"${4:}\"       -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a specific NPC unit is NOT near the given tag.",
+			"If UnitId = 0, the check applies to all NPC units."
+		]
+	},
+	"PlayerUnitRtsIsInRange": {
+		"prefix": "SF2.Condition.PlayerUnitRtsIsInRange",
+		"body": [
+			"PlayerUnitRtsIsInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tUnitId = ${2:}              -- The UnitId as from the database (0 = all RTS units).",
+			"\tRange = ${3:}               -- The query radius in grid points.",
+			"\tX = ${4:}                   -- The X coordinate in world coordinates.",
+			"\tY = ${5:}                   -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Checks if a specific RTS unit is near the given coordinates.",
+			"Checks if an RTS unit of a certain UnitId and player is located near the specified coordinates.",
+			"If UnitId = 0, the check applies to all RTS units."
+		]
+	},
+	"PlayerUnitRtsIsInRangeToEntity": {
+		"prefix": "SF2.Condition.PlayerUnitRtsIsInRangeToEntity",
+		"body": [
+			"PlayerUnitRtsIsInRangeToEntity",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tUnitId = ${2:}              -- The UnitId as from the database (0 = all RTS units).",
+			"\tRange = ${3:}               -- The query radius in grid points.",
+			"\tTargetTag = \"${4:}\"       -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Checks if a specific RTS unit is near the given entity tag.",
+			"Checks if an RTS unit of a certain UnitId and player is located near the specified tag.",
+			"If UnitId = 0, the check applies to all RTS units."
+		]
+	},
+	"PlayerUnitRtsIsNotInRange": {
+		"prefix": "SF2.Condition.PlayerUnitRtsIsNotInRange",
+		"body": [
+			"PlayerUnitRtsIsNotInRange",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tUnitId = ${2:}              -- The UnitId as from the database (0 = all RTS units).",
+			"\tRange = ${3:}               -- The query radius in grid points.",
+			"\tX = ${4:}                   -- The X coordinate in world coordinates.",
+			"\tY = ${5:}                   -- The Y coordinate in world coordinates.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a specific RTS unit is NOT near the given coordinates.",
+			"If UnitId = 0, the check applies to all RTS units."
+		]
+	},
+	"PlayerUnitRtsIsNotInRangeToEntity": {
+		"prefix": "SF2.Condition.PlayerUnitRtsIsNotInRangeToEntity",
+		"body": [
+			"PlayerUnitRtsIsNotInRangeToEntity",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tUnitId = ${2:}              -- The UnitId as from the database (0 = all RTS units).",
+			"\tRange = ${3:}               -- The query radius in grid points.",
+			"\tTargetTag = \"${4:}\"       -- The script tag of the target entity.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if a specific RTS unit is NOT near the given entity tag.",
+			"If UnitId = 0, the check applies to all RTS units."
+		]
+	},
+	"QuestIsActive": {
+		"prefix": "SF2.Condition.QuestIsActive",
+		"body": [
+			"QuestIsActive",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tQuest = \"${2:}\"           -- The name or tag of the quest.",
+			"}"
+		],
+		"description": [
+			"Checks if the specified quest is active for the given player.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Quest = ''"
+		]
+	},
+	"QuestIsKnown": {
+		"prefix": "SF2.Condition.QuestIsKnown",
+		"body": [
+			"QuestIsKnown",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tQuest = \"${2:}\"           -- The name or tag of the quest.",
+			"}"
+		],
+		"description": [
+			"Checks if the specified quest is known for the given player.",
+			"A quest is considered known if it is either active, solved, or unsolvable.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Quest = ''"
+		]
+	},
+	"QuestIsNotActive": {
+		"prefix": "SF2.Condition.QuestIsNotActive",
+		"body": [
+			"QuestIsNotActive",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tQuest = \"${2:}\"           -- The name or tag of the quest.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the specified quest is NOT active for the given player.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Quest = ''"
+		]
+	},
+	"QuestIsNotKnown": {
+		"prefix": "SF2.Condition.QuestIsNotKnown",
+		"body": [
+			"QuestIsNotKnown",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tQuest = \"${2:}\"           -- The name or tag of the quest.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the specified quest is NOT known for the given player.",
+			"A quest is considered known if it is either active, solved, or unsolvable.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Quest = ''"
+		]
+	},
+	"QuestIsNotSolved": {
+		"prefix": "SF2.Condition.QuestIsNotSolved",
+		"body": [
+			"QuestIsNotSolved",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tQuest = \"${2:}\"           -- The name or tag of the quest.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the specified quest is NOT solved for the given player.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Quest = ''"
+		]
+	},
+	"QuestIsNotUnsolvable": {
+		"prefix": "SF2.Condition.QuestIsNotUnsolvable",
+		"body": [
+			"QuestIsNotUnsolvable",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tQuest = \"${2:}\"           -- The name or tag of the quest.",
+			"}"
+		],
+		"description": [
+			"Negated: Checks if the specified quest is NOT unsolvable for the given player.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Quest = ''"
+		]
+	},
+	"QuestIsSolved": {
+		"prefix": "SF2.Condition.QuestIsSolved",
+		"body": [
+			"QuestIsSolved",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\"  -- The player name as set in the team setup.",
+			"\tQuest = \"${2:}\"           -- The name or tag of the quest.",
+			"}"
+		],
+		"description": [
+			"Checks if the specified quest is solved for the given player.",
+			"Default values:",
+			" - Player = 'pl_Human'",
+			" - Quest = ''"
+		]
+	},
+	"QuestIsUnsolvable": {
+		"prefix": "SF2.Condition.QuestIsUnsolvable",
+		"body": [
+			"QuestIsUnsolvable",
+			"{",
+			"\tPlayer = \"${1:pl_Human}\",  -- The player name as set in the team setup.",
+			"\tQuest = \"${2:}\"            -- The name or tag of the quest.",
+			"}"
+		],
+		"description": [
+			"Checks if the specified quest is unsolvable for the given player."
+		]
+	},
+    "SetUpdateInterval": {
+        "prefix": "SF2.Action.SetUpdateInterval",
+        "body": [
+            "SetUpdateInterval",
+            "{",
+            "\tSteps = ${1:10}  -- The update interval in GD Steps (1 Step = 1/10 second).",
+            "}"
+        ],
+        "description": [
+            "Set the update interval for the following conditions in your game logic.",
+            "Automatically applies the specified interval to all subsequent conditions.",
+            "Useful for performance optimization when a small delay is irrelevant or the order of condition satisfaction is unpredictable.",
+            "Example: Checking if 10 different entities are dead without caring about the exact order or timing.",
+            "You can also force conditions to be checked more frequently by setting a lower update interval.",
+            "Important: Conditions following SetUpdateInterval will only be evaluated every x Steps.",
+            "Be careful when using it: you might miss events that happen between checks, like an entity respawning.",
+            "Do not use SetUpdateInterval inside OR conditions—it does not make sense.",
+            "Examples:",
+            "1) Assigning an update interval to conditions without one:",
+            "   Condition = {",
+            "       SetUpdateInterval {Steps = 10},",
+            "       EntityFlagIsTrue {Name = \"ef_IAmTrue1\"},",
+            "       EntityFlagIsTrue {Name = \"ef_IAmTrue2\"},",
+            "       EntityFlagIsTrue {Name = \"ef_IAmTrue3\"},",
+            "       EntityFlagIsTrue {Name = \"ef_IAmTrue4\"},",
+            "       EntityFlagIsTrue {Name = \"ef_IAmTrue5\"},",
+            "   }",
+            "2) Reducing the update interval of conditions:",
+            "   Condition = {",
+            "       EntityFlagIsTrue {Name = \"ef_IAmTrue1\"},",
+            "       SetUpdateInterval {Steps = 2},",
+            "       PlayerFigureIsInRange {X = 100, Y = 200, Range = 0.5},",
+            "   }"
+        ]
+    },
+    "TimeIsBetween": {
+        "prefix": "SF2.Condition.TimeIsBetween",
+        "body": [
+            "TimeIsBetween",
+            "{",
+            "\tStartHour = ${1:0.0},  -- A starting hour between 0.0 and 24.0, decimals allowed",
+            "\tEndHour = ${2:24.0}    -- An ending hour between 0.0 and 24.0, decimals allowed",
+            "}"
+        ],
+        "description": [
+            "Checks whether the current in-game time is between two specified hours.",
+            "The condition is true if the game time falls between StartHour and EndHour.",
+            "StartHour must always be less than EndHour.",
+            "Example: To check if the time is between 22:00 and 04:00, use:",
+            "  TimeIsNotBetween {StartHour = 4, EndHour = 22}",
+            "Decimal values are allowed: 10.5 means 10:30, 12.33 means 12:20, 15.1 means 15:06.",
+            "Usually, you only need to check time in 15 or 30-minute increments."
+        ]
+    },
+    "TimeIsNotBetween": {
+        "prefix": "SF2.Condition.TimeIsNotBetween",
+        "body": [
+            "TimeIsNotBetween",
+            "{",
+            "\tStartHour = ${1:0.0},  -- A starting hour between 0.0 and 24.0, decimals allowed",
+            "\tEndHour = ${2:24.0}    -- An ending hour between 0.0 and 24.0, decimals allowed",
+            "}"
+        ],
+        "description": [
+            "Checks whether the current in-game time is NOT between two specified hours.",
+            "This condition is the negation of TimeIsBetween.",
+            "The condition is true if the game time falls outside the interval from StartHour to EndHour.",
+            "StartHour must always be less than EndHour.",
+            "Example: To check if the time is outside 04:00 to 22:00, use:",
+            "  TimeIsNotBetween {StartHour = 4, EndHour = 22}",
+            "Decimal values are allowed: 10.5 means 10:30, 12.33 means 12:20, 15.1 means 15:06."
+        ]
+    },
+    "TutorialCameraIsIn3rdPersonView": {
+        "prefix": "SF2.Condition.TutorialCameraIsIn3rdPersonView",
+        "body": [
+            "TutorialCameraIsIn3rdPersonView",
+            "{",
+            "}"
+        ],
+        "description": [
+            "Checks whether the tutorial camera is currently in 3rd person view.",
+            "The condition returns true if the camera is in 3rd person mode.",
+            "No additional parameters are needed for this check."
+        ]
+    },
+    "TutorialCameraIsNotIn3rdPersonView": {
+        "prefix": "SF2.Condition.TutorialCameraIsNotIn3rdPersonView",
+        "body": [
+            "TutorialCameraIsNotIn3rdPersonView",
+            "{",
+            "}"
+        ],
+        "description": [
+            "Checks whether the tutorial camera is NOT in 3rd person view.",
+            "This condition is the negation of TutorialCameraIsIn3rdPersonView.",
+            "Returns true if the camera is in a different mode than 3rd person.",
+            "No additional parameters are needed for this check."
+        ]
+    },
+    "TutorialStateIsNotSet": {
+        "prefix": "SF2.Condition.TutorialStateIsNotSet",
+        "body": [
+            "TutorialStateIsNotSet",
+            "{",
+            "\tTutorialState = \"${1:STATE_CONSTANT}\"  -- Specify a tutorial state constant here",
+            "}"
+        ],
+        "description": [
+            "Checks whether a specific tutorial state is NOT set.",
+            "This is the negation of TutorialStateIsSet.",
+            "Returns true if the hint or instruction text is no longer present in the queue.",
+            "Replace STATE_CONSTANT with the appropriate tutorial state identifier."
+        ]
+    },
+    "TutorialStateIsSet": {
+        "prefix": "SF2.Condition.TutorialStateIsSet",
+        "body": [
+            "TutorialStateIsSet",
+            "{",
+            "\tTutorialState = \"${1:STATE_CONSTANT}\"  -- Specify a tutorial state constant here",
+            "}"
+        ],
+        "description": [
+            "Checks whether a specific tutorial state is set.",
+            "Returns true if the hint or instruction text is currently present in the queue.",
+            "Replace STATE_CONSTANT with the appropriate tutorial state identifier."
+        ]
+    },
+    "TutorialTaskTextIsNotOnScreen": {
+        "prefix": "SF2.Condition.TutorialTaskTextIsNotOnScreen",
+        "body": [
+            "TutorialTaskTextIsNotOnScreen",
+            "{",
+            "\tTake = ${1:0}  -- The take number of a TutorialTask text",
+            "}"
+        ],
+        "description": [
+            "Checks whether a TutorialTask text is NOT currently displayed on screen.",
+            "This is the negation of TutorialTaskTextIsOnScreen.",
+            "Returns true if the specified TutorialTask text is no longer visible.",
+            "Parameter 'Take' defines the tutorial task text number."
+        ]
+    },
+    "TutorialTaskTextIsOnScreen": {
+        "prefix": "SF2.Condition.TutorialTaskTextIsOnScreen",
+        "body": [
+            "TutorialTaskTextIsOnScreen",
+            "{",
+            "\tTake = ${1:0}  -- The take number of a TutorialTask text",
+            "}"
+        ],
+        "description": [
+            "Checks whether a TutorialTask text is currently displayed on screen.",
+            "This is the counterpart of TutorialTaskTextIsNotOnScreen.",
+            "Returns true if the specified TutorialTask text is visible.",
+            "Parameter 'Take' defines the tutorial task text number."
+        ]
+    },
+    "TutorialTextIsFinished": {
+        "prefix": "SF2.Condition.TutorialTextIsFinished",
+        "body": [
+            "TutorialTextIsFinished",
+            "{",
+            "\tTake = ${1:0}  -- The take number of a TutorialTask text",
+            "}"
+        ],
+        "description": [
+            "Checks whether a tutorial hint or instruction text has finished.",
+            "Returns true if the specified tutorial text is no longer present in the queue.",
+            "Parameter 'Take' defines the tutorial task text number."
+        ]
+    },
+    "TutorialTextIsNotFinished": {
+        "prefix": "SF2.Condition.TutorialTextIsNotFinished",
+        "body": [
+            "TutorialTextIsNotFinished",
+            "{",
+            "\tTake = ${1:0}  -- The take number of a TutorialTask text",
+            "}"
+        ],
+        "description": [
+            "Checks whether a tutorial hint or instruction text is NOT finished.",
+            "This is the negation of TutorialTextIsFinished.",
+            "Returns true if the specified tutorial text is still present in the queue.",
+            "Parameter 'Take' defines the tutorial task text number."
+        ]
+    },
+    "TutorialWorkerIsGatheringSilver": {
+        "prefix": "SF2.Condition.TutorialWorkerIsGatheringSilver",
+        "body": [
+            "TutorialWorkerIsGatheringSilver",
+            "{",
+            "\tAmount = ${1:1}  -- Any amount of silver",
+            "}"
+        ],
+        "description": [
+            "Checks whether a tutorial worker is currently gathering silver.",
+            "The condition becomes true if the worker is collecting the specified amount of silver.",
+            "Parameter 'Amount' defines how much silver should be gathered.",
+            "Default is 1."
+        ]
+    },
+    "TutorialWorkerIsNotGatheringSilver": {
+        "prefix": "SF2.Condition.TutorialWorkerIsNotGatheringSilver",
+        "body": [
+            "TutorialWorkerIsNotGatheringSilver",
+            "{",
+            "\tAmount = ${1:1}  -- Any amount of silver",
+            "}"
+        ],
+        "description": [
+            "Checks whether a tutorial worker is NOT gathering silver.",
+            "This is the negation of TutorialWorkerIsGatheringSilver.",
+            "The condition becomes true if the worker is not collecting the specified amount of silver.",
+            "Parameter 'Amount' defines how much silver should be gathered.",
+            "Default is 1."
+        ]
+    },
+    "VisualTimerIsActive": {
+        "prefix": "SF2.Condition.VisualTimerIsActive",
+        "body": [
+            "VisualTimerIsActive",
+            "{",
+            "\t-- No parameters required",
+            "}"
+        ],
+        "description": [
+            "Checks whether a visual timer is currently active.",
+            "Returns true if a visual timer is displayed on screen.",
+            "No parameters are required for this condition."
+        ]
+    },
+    "VisualTimerIsNotActive": {
+        "prefix": "SF2.Condition.VisualTimerIsNotActive",
+        "body": [
+            "VisualTimerIsNotActive",
+            "{",
+            "\t-- No parameters required",
+            "}"
+        ],
+        "description": [
+            "Checks whether a visual timer is NOT active.",
+            "This is the negation of VisualTimerIsActive.",
+            "Returns true if no visual timer is displayed on screen.",
+            "No parameters are required for this condition."
+        ]
+    },
+    "XAND": {
+        "prefix": "SF2.Condition.XAND",
+        "body": [
+            "XAND",
+            "{",
+            "\t-- No parameters required",
+            "}"
+        ],
+        "description": [
+            "Logical XOR (exclusive AND/OR) between two conditions.",
+            "This is the negated combination of conditions: it returns true if exactly one condition is true, but not both.",
+            "Can be used to create more complex logical checks in condition blocks.",
+            "No parameters are required for this condition."
+        ]
+    },
+    "XOR": {
+        "prefix": "SF2.Condition.XOR",
+        "body": [
+            "XOR",
+            "{",
+            "\t-- No parameters required",
+            "}"
+        ],
+        "description": [
+            "Logical XOR (exclusive OR) between two conditions.",
+            "XOR means 'either ... or'.",
+            "XOR(C1, C2) is true if either C1 or C2 is true, but not both and not neither.",
+            "In other words: C1 and C2 must not have the same truth value (contravalence condition).",
+            "",
+            "Logical equivalent:",
+            "  XOR = OR{ AND{C1, not C2}, AND{not C1, C2} }",
+            "",
+            "Examples:",
+            "  XOR(PlayerHasChicken, PlayerHasFox) is true",
+            "   - if the player has either the chicken OR the fox.",
+            "  It is false",
+            "   - if the player has both, or",
+            "   - if the player has neither.",
+            "",
+            "For comparison:",
+            "  XAND(C1, C2) is true if both are true OR both are false (equivalence).",
+            "  XOR(C1, C2) is true if exactly one is true (contravalence).",
+            "",
+            "No parameters are required for this condition."
+        ]
+    },
+    "OnCutsceneFigureDespawnEvent": {
+        "prefix": "SF2.Event.OnCutsceneFigureDespawnEvent",
+        "body": [
+            "OnCutsceneFigureDespawnEvent",
+            "{",
+            "\tEventName = \"${1:MyEvent}\"      -- The name of the event (useful for debugging)",
+            "\tConditions = {${2}}              -- Conditions that must all be true",
+            "\tActions = {${3}}                 -- Actions to execute when conditions are met",
+            "\tGotoState = \"${4:self}\"        -- The state to transition to (default: self)",
+            "}"
+        ],
+        "description": [
+            "Executes actions when a cutscene figure despawns and specified conditions are met.",
+            "Automatically respawns the entity when the conditions become true.",
+            "Runs all actions listed under 'Actions'.",
+            "Parameter 'EventName' is mainly for debugging.",
+            "Parameter 'Conditions' is a list of conditions that must all be true.",
+            "Parameter 'Actions' defines the actions to run once triggered.",
+            "Parameter 'GotoState' sets the state to transition to (default is 'self')."
+        ]
+    },
+    "OnCutsceneFigureRespawnEvent": {
+        "prefix": "SF2.Event.OnCutsceneFigureRespawnEvent",
+        "body": [
+            "OnCutsceneFigureRespawnEvent",
+            "{",
+            "\tConditions = {${1}}              -- Conditions that must all be true",
+            "\tActions = {${2}}                 -- Actions to execute when conditions are met",
+            "\tTags = {${3}}                    -- One or more script tags",
+            "\tCoop = ${4:false}                -- Whether this event applies in coop mode",
+            "\tAllowCombat = ${5:false}         -- Whether combat is allowed during a cutscene",
+            "\tGotoState = \"${6:self}\"        -- The state to transition to (default: self)",
+            "}"
+        ],
+        "description": [
+            "Executes actions when a cutscene figure respawns and specified conditions are met.",
+            "Runs all actions listed under 'Actions'.",
+            "Conditions: list of checks that must all be true.",
+            "Tags: one or more script tags to classify or link the event.",
+            "Coop: determines if the command is valid in coop mode (default: false).",
+            "AllowCombat: defines whether combat is allowed during a cutscene (default: false).",
+            "GotoState: the state to transition to (default: self)."
+        ]
+    },
+    "OnDeadEvent": {
+        "prefix": "SF2.Event.OnDeadEvent",
+        "body": [
+            "OnDeadEvent",
+            "{",
+            "\tEventName = \"${1:MyDeadEvent}\"  -- The name of the event (useful for debugging)",
+            "\tConditions = {${2}}              -- Conditions that must all be true",
+            "\tActions = {${3}}                 -- Actions to execute when conditions are met",
+            "}"
+        ],
+        "description": [
+            "Event that triggers whenever the figure in the corresponding state dies.",
+            "This event only runs if:",
+            "  - The figure dies in the state where the OnDeadEvent is defined.",
+            "  - There is a corresponding RespawnEvent in that same state.",
+            "  - All specified conditions are met.",
+            "Parameters:",
+            "  - EventName: for debugging or identifying the event.",
+            "  - Conditions: list of checks that must all be true.",
+            "  - Actions: list of actions to execute when triggered."
+        ]
+    },
+    "OnEvent": {
+        "prefix": "SF2.Event.OnEvent",
+        "body": [
+            "OnEvent",
+            "{",
+            "\tEventName = \"${1:MyEvent}\"      -- The name of the event (useful for debugging)",
+            "\tConditions = {${2}}              -- Conditions that must all be true",
+            "\tActions = {${3}}                 -- Actions to execute when conditions are met",
+            "\tGotoState = \"${4:self}\"        -- The state to transition to (default: self)",
+            "}"
+        ],
+        "description": [
+            "Base event that is executed whenever the specified conditions are true.",
+            "This is the fundamental event type upon which all other events are built.",
+            "",
+            "Important usage notes:",
+            "- OnEvent executes continuously while its conditions are true.",
+            "- To prevent infinite repetition, at least one action should alter the state (e.g., set a flag).",
+            "- A common pattern is to check if a flag is false, then set it to true in the actions.",
+            "  (This effectively turns the event into a one-time trigger → better to use OnOneTimeEvent directly.)",
+            "",
+            "Performance considerations:",
+            "- Running OnEvent every step is almost never useful.",
+            "- It may cause redundant actions to run repeatedly, leading to performance issues.",
+            "- Example: a Goto action every step would restart pathing constantly, making movement stutter.",
+            "",
+            "Best practice:",
+            "- Use OnEvent only when conditions should remain reactive.",
+            "- If an event should only trigger once, use OnOneTimeEvent instead.",
+            "",
+            "Technical note:",
+            "- OnEvent is functionally similar to a transition in a state machine."
+        ]
+    },
+    "OnFigureDeadOneTimeEvent": {
+        "prefix": "SF2.Event.OnFigureDeadOneTimeEvent",
+        "body": [
+            "OnFigureDeadOneTimeEvent",
+            "{",
+            "\tConditions = {${1}}  -- Conditions that must all be true",
+            "\tActions = {${2}}     -- Actions that will be executed once",
+            "}"
+        ],
+        "description": [
+            "Executes actions once when the figure is dead and all specified conditions are true.",
+            "",
+            "Usage:",
+            "- This event is triggered only once after the figure has died.",
+            "- It is ideal for one-time reactions tied to a character’s death.",
+            "",
+            "Important note:",
+            "- If the figure has an OnRespawn* event, then use the DeathActions of the respawn event instead.",
+            "- This ensures that actions are properly aligned with the respawn system.",
+            "",
+            "General rule:",
+            "- Applies the same logic rules as other events.",
+            "- Conditions must all evaluate to true for the actions to trigger."
+        ]
+    },
+    "OnFigureDyingOneTimeEvent": {
+        "prefix": "SF2.Event.OnFigureDyingOneTimeEvent",
+        "body": [
+            "OnFigureDyingOneTimeEvent",
+            "{",
+            "\tConditions = {${1}}  -- Conditions that must all be true",
+            "\tActions = {${2}}     -- Actions that will be executed once at the moment of death",
+            "}"
+        ],
+        "description": [
+            "Executes actions once at the exact moment the figure dies, provided all conditions are true.",
+            "",
+            "Usage:",
+            "- Triggered in the instant the figure transitions into a dying state.",
+            "- Useful for reactions that must happen immediately when death occurs (before respawn logic).",
+            "",
+            "Important note:",
+            "- If the figure has an OnRespawn* event, use the DeathActions of the respawn event instead.",
+            "- This ensures consistency with the respawn system.",
+            "",
+            "General rule:",
+            "- Applies the same logic rules as other events.",
+            "- Conditions must all evaluate to true for the actions to execute."
+        ]
+    },
+    "OnFigureRespawnEvent": {
+        "prefix": "SF2.Event.OnFigureRespawnEvent",
+        "body": [
+            "OnFigureRespawnEvent",
+            "{",
+            "\tWaitTime = ${1:0},              -- Seconds to wait after death before respawn",
+            "\tX = ${2:self},                 -- X coordinate in grid points",
+            "\tY = ${3:self},                 -- Y coordinate in grid points",
+            "\tConditions = {${4}},           -- All conditions must be true for respawn",
+            "\tActions = {${5}},              -- Executed at respawn",
+            "\tDeathActions = {${6}},         -- Executed immediately when the figure dies",
+            "\tDelayedActions = {${7}},       -- Spawn actions executed with delay",
+            "\tNoSpawnEffect = ${8:false},    -- Suppress spawn effect if true",
+            "\tIsSpawnOnlyWhen = ${9:false}   -- Internal use only (distinguishes SpawnOnlyWhen & Respawn)",
+            "}"
+        ],
+        "description": [
+            "Respawns an entity when conditions are met and executes associated actions.",
+            "",
+            "Execution flow:",
+            "- DeathActions: executed immediately when the figure dies.",
+            "- Actions: executed at the moment of respawn.",
+            "- DelayedActions: executed later after respawn with a delay.",
+            "",
+            "Important rules:",
+            "- ALL DeathActions of ALL RespawnEvents in a state are executed when the figure dies.",
+            "- Only one RespawnEvent per state should be logically possible (conditions must be exclusive).",
+            "- Conditions must be true for respawn to occur.",
+            "",
+            "Restrictions:",
+            "- Works only for NPC units (RTS units cannot be scripted).",
+            "",
+            "Additional options:",
+            "- NoSpawnEffect: suppresses the visual spawn effect.",
+            "- IsSpawnOnlyWhen: internal flag to separate SpawnOnlyWhen from Respawn events."
+        ]
+    },
+    "OnFigureSpawnOnlyWhenEvent": {
+        "prefix": "SF2.Event.OnFigureSpawnOnlyWhenEvent",
+        "body": [
+            "OnFigureSpawnOnlyWhenEvent",
+            "{",
+            "\tX = ${1:self},               -- X coordinate in grid points",
+            "\tY = ${2:self},               -- Y coordinate in grid points",
+            "\tConditions = {${3}},         -- All conditions must be true for spawn",
+            "\tActions = {${4}},            -- Executed when the figure spawns",
+            "\tDelayedActions = {${5}},     -- Spawn actions executed with delay",
+            "\tNoSpawnEffect = ${6:false}   -- Suppress spawn effect if true",
+            "}"
+        ],
+        "description": [
+            "The figure will only appear on the map when this event triggers.",
+            "",
+            "Execution flow:",
+            "- At first load, the figure is immediately removed from the map.",
+            "- It will only spawn once the Conditions are true.",
+            "- On spawn, Actions are executed.",
+            "- DelayedActions can run later, after spawn with a delay.",
+            "",
+            "Important notes:",
+            "- Until spawned, the figure is considered 'dead'.",
+            "  → This affects other scripts: if another script checks for this figure’s death, it will see it as already dead until spawn.",
+            "  → Inside the figure’s own script this does not matter, because dead figures do not execute script events.",
+            "",
+            "Restrictions:",
+            "- Works only for NPC units (RTS units cannot be scripted)."
+        ]
+    },
+    "OnFollowEvent": {
+        "prefix": "SF2.Event.OnFollowEvent",
+        "body": [
+            "OnFollowEvent",
+            "{",
+            "\tTag = \"${1}\",              -- Script tag of the figure that will follow",
+            "\tTargetTag = \"${2}\",       -- Script tag of the target figure",
+            "\tOnConditions = {${3}},      -- Conditions that must be true for follow to happen",
+            "\tActions = {${4}}            -- Actions executed when follow is active",
+            "}"
+        ],
+        "description": [
+            "Follow event: controls follow mode between figures.",
+            "",
+            "Behavior:",
+            "- When OnConditions are true, the figure (Tag) follows the target (TargetTag).",
+            "- When OnConditions become false, the figure stops following (stands still).",
+            "- If OnConditions become true again, the figure resumes following.",
+            "- If no OnConditions are given, the figure follows unconditionally.",
+            "",
+            "Features:",
+            "- Properly handles platform changes: figures keep following after a platform switch as long as conditions are true."
+        ]
+    },
+    "OnFormationEvent": {
+        "prefix": "SF2.Event.OnFormationEvent",
+        "body": [
+            "OnFormationEvent",
+            "{",
+            "\tEventName = \"${1}\",          -- Debug name of the event",
+            "\tWaitTime = ${2:0},            -- Seconds to wait (e.g. after death before respawn)",
+            "\tX = ${3:self},                -- X coordinate in grid points (self = current position)",
+            "\tY = ${4:self},                -- Y coordinate in grid points (self = current position)",
+            "\tDirection = ${5:0},           -- Direction in degrees (0 = south, 90 = east, etc.)",
+            "\tGotoMode = \"${6:SimpleForcedWalk}\", -- Movement mode (e.g. SimpleForcedWalk)",
+            "\tUpdateInterval = ${7:0},      -- Update interval for the event",
+            "\tConditions = {${8}},          -- Conditions that must all be true",
+            "\tActions = {${9}},             -- Actions executed when the event triggers",
+            "\tHomeActions = {${10}},        -- Actions executed each time the NPC reaches the home point",
+            "\tFormation = {${11}},          -- Formation table (see documentation for details)",
+            "\tGotoState = \"${12:self}\"    -- Target state name",
+            "}"
+        ],
+        "description": [
+            "OnFormationEvent: Arranges figures according to a defined formation.",
+            "",
+            "Behavior:",
+            "- Spawns or repositions figures at (X,Y) in a defined formation.",
+            "- Figures align according to Direction (0°=South, 90°=East, etc.).",
+            "- Supports custom GotoMode for movement (e.g. SimpleForcedWalk).",
+            "- Actions are executed when the event triggers.",
+            "- HomeActions are executed every time an NPC reaches the home point.",
+            "",
+            "Notes:",
+            "- Formation must be defined in a formation table (see documentation).",
+            "- UpdateInterval can be used to optimize performance.",
+            "- GotoState determines the next state after formation setup."
+        ]
+    },
+    "OnIdleGoHomeFake": {
+        "prefix": "SF2.Event.OnIdleGoHomeFake",
+        "body": [
+            "OnIdleGoHomeFake",
+            "{",
+            "\tEventName = \"${1}\",                        -- Debug name of the event",
+            "\tX = ${2:self},                              -- X coordinate in grid points (default = self position from editor)",
+            "\tY = ${3:self},                              -- Y coordinate in grid points (default = self position from editor)",
+            "\tRange = ${4:8},                             -- Range around homepoint considered as 'arrived'",
+            "\tGotoForced = ${5:false},                    -- Switch movement to forced Goto mode",
+            "\tUpdateInterval = ${6:0},                    -- Event update interval",
+            "\tStopFigureWhenConditionsAreFalse = ${7:false}, -- If true, cancels going home when conditions are no longer met",
+            "\tConditions = {${8}},                        -- Conditions that must all be true",
+            "\tActions = {${9}},                           -- Actions executed when the event triggers",
+            "\tHomeActions = {${10}},                      -- Actions executed each time NPC reaches homepoint",
+            "\tOneTimeHomeActions = {${11}}                -- Actions executed only once on first arrival at homepoint",
+            "}"
+        ],
+        "description": [
+            "OnIdleGoHomeFake: Sends a figure back to its 'homepoint'.",
+            "",
+            "Behavior:",
+            "- Homepoint is defined by (X, Y). If omitted, the editor’s initial figure position is used.",
+            "- The NPC will go to its homepoint as long as:",
+            "   * Conditions are true,",
+            "   * The NPC is idle, and",
+            "   * The NPC is not already at the homepoint.",
+            "- When the NPC reaches the homepoint:",
+            "   * HomeActions are executed every time,",
+            "   * OneTimeHomeActions are executed only once, on first arrival.",
+            "- If the NPC later leaves (e.g., swapped away or engaged in combat), it will return again when conditions are still true.",
+            "",
+            "Range parameter:",
+            "- Determines how close to the coordinates counts as 'arrived'.",
+            "- Useful to prevent NPCs from endlessly swapping/overlapping at the same spot.",
+            "- Guidelines: 2–3 NPCs → Range 2, 4–6 → Range 3, 7–10 → Range 4, 10+ → Range 5.",
+            "",
+            "Notes:",
+            "- GotoForced enforces movement even if standard AI would resist.",
+            "- StopFigureWhenConditionsAreFalse cancels the action if conditions no longer hold."
+        ]
+    },
+    "OnIdleRunHomeFake": {
+        "prefix": "SF2.Event.OnIdleRunHomeFake",
+        "body": [
+            "OnIdleRunHomeFake",
+            "{",
+            "\tEventName = \"${1}\",                        -- Debug name of the event",
+            "\tX = ${2:self},                              -- X coordinate in grid points (default = self position from editor)",
+            "\tY = ${3:self},                              -- Y coordinate in grid points (default = self position from editor)",
+            "\tRange = ${4:8},                             -- Range around homepoint considered as 'arrived'",
+            "\tGotoForced = ${5:false},                    -- Switch movement to forced Goto mode",
+            "\tUpdateInterval = ${6:0},                    -- Event update interval",
+            "\tStopFigureWhenConditionsAreFalse = ${7:false}, -- If true, cancels running home when conditions are no longer met",
+            "\tConditions = {${8}},                        -- Conditions that must all be true",
+            "\tActions = {${9}},                           -- Actions executed when the event triggers",
+            "\tHomeActions = {${10}},                      -- Actions executed each time NPC reaches homepoint",
+            "\tOneTimeHomeActions = {${11}}                -- Actions executed only once on first arrival at homepoint",
+            "}"
+        ],
+        "description": [
+            "OnIdleRunHomeFake: Sends a figure back to its 'homepoint' by running instead of walking.",
+            "",
+            "Behavior:",
+            "- Works identically to OnIdleGoHomeFake, except the NPC will *run* back to the homepoint.",
+            "- Homepoint is defined by (X, Y). If omitted, the editor’s initial figure position is used.",
+            "- The NPC will run to its homepoint as long as:",
+            "   * Conditions are true,",
+            "   * The NPC is idle, and",
+            "   * The NPC is not already at the homepoint.",
+            "- When the NPC reaches the homepoint:",
+            "   * HomeActions are executed every time,",
+            "   * OneTimeHomeActions are executed only once, on first arrival.",
+            "- If the NPC later leaves (swapped or in combat), it will run back again if conditions are still true.",
+            "",
+            "Range parameter:",
+            "- Determines how close to the coordinates counts as 'arrived'.",
+            "- Prevents NPCs from endlessly swapping/overlapping at the same point.",
+            "- Guidelines: 2–3 NPCs → Range 2, 4–6 → Range 3, 7–10 → Range 4, 10+ → Range 5.",
+            "",
+            "Notes:",
+            "- GotoForced enforces running movement even if standard AI would resist.",
+            "- StopFigureWhenConditionsAreFalse cancels the action if conditions no longer hold.",
+            "- Otherwise behaves exactly like OnIdleGoHomeFake, but faster."
+        ]
+    },
+    "OnLeverEvent": {
+        "prefix": "SF2.Event.OnLeverEvent",
+        "body": [
+            "OnLeverEvent",
+            "{",
+            "\tDelay = ${1:5},                  -- Seconds before the lever can be used again",
+            "\tLever = \"${2}\",                -- ScriptTag of the lever",
+            "\tOnConditions = {${3}},           -- Conditions that must all be true to enable the lever",
+            "\tActions = {${4}}                 -- Actions executed when the lever is switched ON",
+            "}"
+        ],
+        "description": [
+            "OnLeverEvent: A reusable lever event that executes actions when a lever is switched ON.",
+            "",
+            "Behavior:",
+            "- Waits until the lever is switched ON by the player.",
+            "- Executes the defined Actions immediately.",
+            "- After 'Delay' seconds, the lever resets automatically to OFF.",
+            "- During this cooldown, the lever cannot be used again (prevents spamming and bugs).",
+            "- Lever must initially be set to OFF in the editor (default).",
+            "",
+            "Notes:",
+            "- Lever parameter must be the ScriptTag of the lever entity.",
+            "- The lever is enabled (usable by the player) only when OnConditions are true (or empty).",
+            "- If OnConditions become false, the lever becomes disabled.",
+            "- This allows quest logic to enable/disable lever interaction dynamically.",
+            "- Use for levers that can be operated multiple times.",
+            "- For one-time levers, use a different event (no reset)."
+        ]
+    },
+    "OnObjectSpawnOnlyWhenEvent": {
+        "prefix": "SF2.Event.OnObjectSpawnOnlyWhenEvent",
+        "body": [
+            "OnObjectSpawnOnlyWhenEvent",
+            "{",
+            "\tConditions = {${1}},   -- Conditions that must all be true before the object appears",
+            "\tActions = {${2}}       -- Actions executed when the object spawns",
+            "}"
+        ],
+        "description": [
+            "OnObjectSpawnOnlyWhenEvent: Spawns an object only when the defined conditions are met.",
+            "",
+            "Behavior:",
+            "- The object is initially removed from the map when the level loads.",
+            "- It will appear only when all Conditions are true.",
+            "- Upon spawning, the defined Actions are executed.",
+            "",
+            "Notes:",
+            "- Works similar to OnFigureSpawnOnlyWhen, but for objects instead of figures.",
+            "- Until the object spawns, it is considered non-existent in the game world."
+        ]
+    },
+    "OnOneTimeDeadEvent": {
+        "prefix": "SF2.Event.OnOneTimeDeadEvent",
+        "body": [
+            "OnOneTimeDeadEvent",
+            "{",
+            "\tEventName = \"${1}\",   -- Name of the event (for debugging).",
+            "\tConditions = {${2}},   -- Conditions that must all be true.",
+            "\tActions = {${3}}       -- Actions executed once when the figure dies.",
+            "}"
+        ],
+        "description": [
+            "OnOneTimeDeadEvent: Executes once when a figure dies in the corresponding state.",
+            "",
+            "Behavior:",
+            "- Runs only once when the figure dies in the state containing this DeadEvent.",
+            "- Requires that the state also has a RespawnEvent.",
+            "- Executes only if the defined Conditions are true.",
+            "",
+            "Usage:",
+            "- Place inside a state that includes both a RespawnEvent and this event.",
+            "- Useful for handling one-time death triggers without repeating."
+        ]
+    },
+    "OnOneTimeEvent": {
+        "prefix": "SF2.Event.OnOneTimeEvent",
+        "body": [
+            "OnOneTimeEvent",
+            "{",
+            "\tEventName = \"${1}\",      -- Name of the event (for debugging).",
+            "\tConditions = {${2}},      -- Conditions that must all be true.",
+            "\tActions = {${3}},         -- Actions executed when conditions are met.",
+            "\tGotoState = \"${4:self}\" -- State name to switch to (default is self).",
+            "}"
+        ],
+        "description": [
+            "OnOneTimeEvent: Executes exactly once when conditions are true.",
+            "",
+            "Behavior:",
+            "- Works like OnEvent but can only trigger once.",
+            "- Internally checks if the event’s flag is still False.",
+            "- When triggered, it sets the event flag to True, preventing re-execution.",
+            "",
+            "Usage:",
+            "- Place in a state to run actions only once when conditions are satisfied.",
+            "- Can also transition to another state via GotoState."
+        ]
+    },
+    "OnOneTimeLeverEvent": {
+        "prefix": "SF2.Event.OnOneTimeLeverEvent",
+        "body": [
+            "OnOneTimeLeverEvent",
+            "{",
+            "\tLever = \"${1}\",        -- ScriptTag of the lever.",
+            "\tOnConditions = {${2}},  -- Conditions that must all be true.",
+            "\tActions = {${3}}        -- Actions executed when lever is switched ON.",
+            "}"
+        ],
+        "description": [
+            "OnOneTimeLeverEvent: Waits until the lever is ON, executes actions, then disables the lever permanently.",
+            "",
+            "Behavior:",
+            "- Lever must start in OFF state (default in editor).",
+            "- Once switched ON, it executes Actions and is permanently disabled.",
+            "- OnConditions control whether the lever is enabled or disabled before usage.",
+            "- OnConditions can toggle availability multiple times until the lever is used.",
+            "",
+            "Usage:",
+            "- Ideal for single-use quest levers or triggers.",
+            "- Place Actions for what should happen when the lever is activated once."
+        ]
+    },
+    "OnOneTimePlayHeroAnimEvent": {
+        "prefix": "SF2.Event.OnOneTimePlayHeroAnimEvent",
+        "body": [
+            "OnOneTimePlayHeroAnimEvent",
+            "{",
+            "\tEventName = \"${1}\",     -- Name of the event (for debugging).",
+            "\tTag = \"${2}\",          -- Script Tag of the figure.",
+            "\tAnim = \"${3}\",         -- Name of the hero animation file (without extension).",
+            "\tConditions = {${4}},     -- Conditions that must all be true.",
+            "\tActions = {${5}},        -- Actions executed when the event triggers.",
+            "\tGotoState = \"${6:self}\", -- State name to switch to.",
+            "\tLooped = ${7:false}      -- Whether the animation should loop.",
+            "}"
+        ],
+        "description": [
+            "OnOneTimePlayHeroAnimEvent: Plays a hero animation once when conditions are met.",
+            "",
+            "Behavior:",
+            "- Executes only a single time when all Conditions are true.",
+            "- Plays the specified hero animation (non-looped or looped).",
+            "- EventFlag ensures it cannot be triggered again.",
+            "- Can also perform Actions after the animation.",
+            "",
+            "Usage:",
+            "- Use for cutscenes or one-time hero animations.",
+            "- Example: Hero waves, salutes, or performs a unique scripted move."
+        ]
+    },
+    "OnOneTimeRepeatEvent": {
+        "prefix": "SF2.Event.OnOneTimeRepeatEvent",
+        "body": [
+            "OnOneTimeRepeatEvent",
+            "{",
+            "\tEventName = \"${1}\",     -- Name of the event (for debugging).",
+            "\tName = \"${2}\",          -- Unique name of the repeatable event (used with EventReEnable).",
+            "\tConditions = {${3}},     -- Conditions that must all be true.",
+            "\tActions = {${4}},        -- Actions executed when the event triggers.",
+            "\tGotoState = \"${5:self}\" -- State name to switch to.",
+            "}"
+        ],
+        "description": [
+            "OnOneTimeRepeatEvent: Like OnOneTimeEvent, but can be re-enabled via EventReEnable.",
+            "",
+            "Behavior:",
+            "- Executes only once when all Conditions are true.",
+            "- After triggering, the EventFlag is set to True, preventing repeat execution.",
+            "- Using the Action 'EventReEnable' with this event's Name resets the EventFlag.",
+            "- After re-enabling, Conditions are checked again and the event can trigger again.",
+            "",
+            "Usage:",
+            "- Useful for events that should be repeatable but still controlled.",
+            "- Example: A puzzle mechanism that can be reset and retried.",
+            "- Example: Timed or staged encounters that should repeat only when explicitly reactivated."
+        ]
+    },
+    "OnPlayHeroAnimEvent": {
+        "prefix": "SF2.Event.OnPlayHeroAnimEvent",
+        "body": [
+            "OnPlayHeroAnimEvent",
+            "{",
+            "\tEventName = \"${1}\",     -- Name of the event (for debugging).",
+            "\tTag = \"${2}\",          -- Script Tag of the hero figure.",
+            "\tAnim = \"${3}\",         -- Name of the 'figure_hero_(fe)male_' animation file (without extension).",
+            "\tConditions = {${4}},     -- Conditions that must all be true.",
+            "\tActions = {${5}},        -- Actions executed when the event triggers.",
+            "\tGotoState = \"${6:self}\", -- State name to switch to.",
+            "\tLooped = ${7:false}      -- Whether the animation should loop.",
+            "}"
+        ],
+        "description": [
+            "OnPlayHeroAnimEvent: Executes whenever all Conditions are true.",
+            "",
+            "Behavior:",
+            "- Plays the specified hero animation when triggered.",
+            "- Continues to check Conditions, and will execute each time they are true.",
+            "- Can optionally loop the animation if 'Looped' is set to true.",
+            "",
+            "Usage:",
+            "- Useful for cutscenes or scripted hero actions.",
+            "- Example: Hero kneeling, cheering, or gesturing repeatedly.",
+            "- Example: Looping idle pose for a cinematic sequence."
+        ]
+    },
+    "OnToggleEvent": {
+        "prefix": "SF2.Event.OnToggleEvent",
+        "body": [
+            "OnToggleEvent",
+            "{",
+            "\tEventName = \"${1}\",       -- Name of the event (for debugging).",
+            "\tOnConditions = {${2}},     -- Conditions that must all be true when toggling ON.",
+            "\tOnActions = {${3}},        -- Actions executed when switching ON.",
+            "\tOffConditions = {${4}},    -- Conditions that must all be true when toggling OFF.",
+            "\tOffActions = {${5}}        -- Actions executed when switching OFF.",
+            "}"
+        ],
+        "description": [
+            "OnToggleEvent: Switches between two states based on conditions.",
+            "",
+            "Behavior:",
+            "- Functions like two OnEvents controlled by an internal flag.",
+            "- When EventFlag == False and OnConditions are true, executes OnActions and sets flag True.",
+            "- When EventFlag == True and OffConditions are true, executes OffActions and sets flag False.",
+            "",
+            "Usage:",
+            "- Useful for switches, recurring state changes, or alternating behaviors.",
+            "- Example: Toggling lights ON and OFF.",
+            "- Example: NPC patrol switching between two paths.",
+            "",
+            "⚠ Note:",
+            "- Ensure conditions prevent rapid switching back and forth.",
+            "- Uncontrolled toggling may cause performance or logic errors."
+        ]
+    },
+    "MapQuestStates": {
+        "prefix": "SF2.Event.MapQuestStates",
+        "body": [
+            "MapQuestStates",
+            "{",
+            "\tQuestSolveActions = {${1}},  -- Actions executed once when the quest is solved.",
+            "\tOutcries = {${2}},          -- Outcries played at specific quest events.",
+            "\tQuestParams = {${3}},       -- Parameters defining the quest type and behavior.",
+            "\tRewards = {${4}}            -- Rewards given to the player upon quest completion.",
+            "}"
+        ],
+        "description": [
+            "MapQuestStates: Creates states for cooperative Map Quests.",
+            "",
+            "Usage Notes:",
+            "- Only this command should be in the script.",
+            "- For multiple map quests, create a separate script per quest.",
+            "- Attach the script either to an object or preferably to an empty script group.",
+            "- Human team must be named 'tm_Human'.",
+            "- Human players must be 'pl_Human1', 'pl_Human2', and 'pl_Human3'.",
+            "",
+            "Ranges:",
+            "- Always relative to the Avatar of a player.",
+            "- Quests apply to all players collectively (resources/requirements are shared).",
+            "",
+            "QuestParams:",
+            "- Quest: Database quest tag.",
+            "- TimeLimit: Minutes until quest ends (0 = no timer).",
+            "- StartWith: 'Area', 'Map', or 'Lever' defines how quest begins.",
+            "- StartTag: Tag of lever/entity for area trigger.",
+            "- StartRange: Area radius (if applicable).",
+            "- Type: Kill | Protect | Acquire | Conquer.",
+            "",
+            "Quest Types Examples:",
+            "- Kill: Defeat units with specific tags.",
+            "- Protect: Keep units/buildings alive.",
+            "- Acquire: Gather resources/items.",
+            "- Conquer: Capture or build in target area.",
+            "",
+            "Rewards:",
+            "- Items, XP, currencies, RTS units, or ownership transfer of tagged entities.",
+            "",
+            "⚠ Important:",
+            "- Remove collected misc items from inventory at map start.",
+            "- TransferTags must be divisible by 3 (distributed across players)."
+        ]
+    },
+    "PathStates": {
+        "prefix": "SF2.Event.PathStates",
+        "body": [
+            "PathStates",
+            "{",
+            "\tStateName = \"${1:pathwalking}\",  -- State name, can be jumped to with GotoState.",
+            "\tGotoState = \"${2:self}\",        -- Target state when StopConditions are true.",
+            "\tConditions = {${3}},             -- Conditions required before walking starts.",
+            "\tActions = {${4}},                -- Actions executed once walking begins.",
+            "\tStopConditions = {${5}},         -- Conditions that stop walking.",
+            "\tStopActions = {${6}},            -- Actions executed when walking is stopped.",
+            "\tPoints = {${7}}                  -- Path points (see documentation).",
+            "}"
+        ],
+        "description": [
+            "PathStates: Creates states for path walking (figure movement along defined points).",
+            "",
+            "Usage:",
+            "- Use StateName to define a named state that can be entered via GotoState.",
+            "- If StopConditions are true, walking halts and GotoState is triggered.",
+            "- Points must contain at least 2 entries with a 'Point' parameter.",
+            "",
+            "Point Parameters:",
+            "- Point: Target object/entity tag. (If figure tag, 'Follow' mode must be on!)",
+            "- WaitTime: Steps to wait at the point.",
+            "- Direction: Facing direction at the point (requires WaitTime > 0).",
+            "- Range: Distance threshold to consider point reached.",
+            "- GotoMode: Movement mode. Options:",
+            "   • 'run' | 'walk' | 'simple' | 'forced' (as string)",
+            "   • 'Teleport' (teleports instantly to point)",
+            "   • 'Follow' (follow mode, useful only on figures; range auto-adjusted).",
+            "- PingPong: Loops back and forth between points (⚠ buggy).",
+            "- Loop: Loops continuously at the point.",
+            "- Actions: Executed when moving to the next point.",
+            "- HomeActions: Executed upon arrival at point.",
+            "",
+            "Example:",
+            "PathStates",
+            "{",
+            "   StateName = \"pathwalking\",",
+            "   GotoState = \"Idle\",",
+            "   Conditions = {},",
+            "   Actions = {},",
+            "   StopConditions = {},",
+            "   Points = {",
+            "      {",
+            "         Point = \"MyPathPoint1\",",
+            "         WaitTime = 30,",
+            "         Direction = 4,",
+            "         Range = 0.2,",
+            "         GotoMode = \"SimpleForcedRun\",",
+            "         Actions = {},",
+            "         HomeActions = {},",
+            "      },",
+            "   },",
+            "}"
+        ]
+    },
+    "QuestRewardStates": {
+        "prefix": "SF2.Event.QuestRewardStates",
+        "body": [
+            "QuestRewardStates",
+            "{",
+            "\tRewards = {${1}}  -- Rewards given to the player when solving the quest.",
+            "}"
+        ],
+        "description": [
+            "QuestRewardStates: Creates states for quest rewards.",
+            "",
+            "Usage:",
+            "- Place all reward definitions inside the Rewards table.",
+            "- Rewards are handed to the player upon quest completion.",
+            "",
+            "Reward Options:",
+            "- ItemsMisc   = {[ItemId] = Amount, ...}   → Miscellaneous items.",
+            "- ItemsEquip  = {[ItemId] = Amount, ...}   → Equipment items.",
+            "- XP          = N                          → Experience points.",
+            "- Silver      = N, Gold = N, Lenya = N     → Resource rewards.",
+            "- Stone, Iron = N                          → Additional resources.",
+            "- SpawnRTSUnits = {Level = N, [UnitId] = Amount, ...} → Spawns RTS units.",
+            "- TransferTags = {\"tag1\", \"tag2\", ...} → Transfers existing neutral entities/buildings.",
+            "",
+            "Example:",
+            "QuestRewardStates",
+            "{",
+            "   Rewards = {",
+            "       ItemsMisc  = {[234] = 1, [567] = 2},",
+            "       ItemsEquip = {[123] = 5},",
+            "       XP         = 5000,",
+            "       Gold       = 100,",
+            "       SpawnRTSUnits = {Level = 14, [876] = 5},",
+            "       TransferTags  = {\"unit1\", \"unit2\", \"unit3\"},",
+            "   }",
+            "}"
+        ]
+    },
+    "State": {
+        "prefix": "SF2.Event.State",
+        "body": [
+            "State",
+            "{",
+            "\tStateName = \"${1:state_name}\",       -- Name of the state.",
+            "\t${2:Events} = {${3:self}}            -- Add one or more events here (or 'self').",
+            "}"
+        ],
+        "description": [
+            "State: Creates a new state that contains events.",
+            "",
+            "Usage:",
+            "- Each State is a container for events.",
+            "- One or more States form a finite state machine.",
+            "- Only the Conditions of events inside the currently active State are checked.",
+            "- Initially, the first State in a script is the active one.",
+            "",
+            "Parameters:",
+            "- StateName   → Unique name of the state.",
+            "- Events      → One or more events placed in this state (use 'self' if none).",
+            "",
+            "Notes:",
+            "- Events with a GotoState parameter allow transitioning between states.",
+            "- Delaying a state switch (via conditions) can prevent errors and improve performance.",
+            "- At any given time, only one State is active.",
+            "",
+            "More info: See Wikipedia on Finite State Machines (FSM)."
+        ]
+    }																																		
 }
